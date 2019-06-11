@@ -1,14 +1,13 @@
 ---
-layout: feed
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 	<title>Maykell Sánchez Romero's Blog</title>
-	<link href='https://{{ site.blog_home }}/blog/atom.xml' rel='self'/>
-	<link href="https://{{ site.blog_home }}/blog"/>
+	<link href='https://{{ site.blog_home }}/feed.xml' rel='self'/>
+	<link href="https://{{ site.blog_home }}"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>https://{{ site.blog_home }}/blog</id>
+	<id>https://{{ site.blog_home }}</id>
 	<author>
 		<name>{{ site.author }}</name>
 		<email>{{ site.email }}</email>
