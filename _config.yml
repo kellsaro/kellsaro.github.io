@@ -5,12 +5,11 @@ description: > # this means to ignore newlines until "baseurl:"
 permalink: ':title/'
 baseurl: '' # the subpath of your site, e.g. /blog
 url: '' # the base hostname & protocol for your site, e.g. http://example.com
-site-twitter: # Add the site's Twitter
 
 # Author Settings
 author: Maykell Sánchez Romero # add your name
 author-img: kellsaro.jpg # add your photo
-about-author: I'm Full Stack Web Developer interested in happy programming and productivity being in the Zone. Always hungry to keep learning. May the Flow be with you. # add description
+about-author: I'm Full Stack Web Developer interested in happy programming and productivity being in the Zone. May the Flow be with you. # add description
 social-twitter: kellsaro
 social-facebook: kellsaro
 social-github: kellsaro # add your Github handle
