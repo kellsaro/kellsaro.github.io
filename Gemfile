@@ -8,7 +8,7 @@ source 'https://rubygems.org'
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem 'jekyll'
+gem 'jekyll', '~> 3.10.0'
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem 'minima', '~> 2.0'
@@ -18,11 +18,11 @@ gem 'minima', '~> 2.0'
 #gem 'github-pages', group: :jekyll_plugins
 
 group :jekyll_plugins do
-  gem 'jekyll-feed'
-  gem 'jekyll-paginate'
-  gem 'jekyll-seo-tag'
-  gem 'jekyll-sitemap'
-  gem 'jemoji'
+  gem 'jekyll-feed', '~> 0.17.0'
+  gem 'jekyll-paginate', '~> 1.1.0'
+  gem 'jekyll-seo-tag', '~> 2.8.0'
+  gem 'jekyll-sitemap', '~> 1.4.0'
+  gem 'jemoji', '~> 0.13.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -34,3 +34,5 @@ gem 'wdm', '~> 0.1.0' if Gem.win_platform?
 gem "webrick", "~> 1.8"
 
 gem "csv", "~> 3.3"
+
+gem 'kramdown-parser-gfm', '~> 1.1.0'
