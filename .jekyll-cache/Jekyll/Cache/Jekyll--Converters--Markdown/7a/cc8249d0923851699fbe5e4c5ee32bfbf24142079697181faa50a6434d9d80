@@ -1,0 +1,48 @@
+I"¸<p>Two facts:</p>
+<ul>
+  <li>Collections are one of the most used data types in all kind of software projects.</li>
+  <li>Java has been criticized as a very verbose programming language.</li>
+</ul>
+
+<p>I realized that each time I used my collections I had to check if they were null. It is boring and it bloats my code.</p>
+
+<p>In projects I have developed, for practical purposes there is no difference if a collection is null or empty. So, since some time ago I have adopted the practice to instantiate the class fields of collections data types in the corresponding getter method when the field is null.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span><span class="o">{</span>
+
+   <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Thing</span><span class="o">&gt;</span> <span class="n">things</span><span class="o">;</span>
+   
+   <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Thing</span><span class="o">&gt;</span> <span class="nf">getThings</span><span class="o">(){</span>
+ 
+       <span class="k">if</span><span class="o">(</span><span class="n">things</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="n">things</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+ 
+       <span class="k">return</span> <span class="n">things</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Thus, I do not need null checking anymore because I access my collections through the corresponding getter method even when I am coding inside the same class, applying The Uniform Access Principle.</p>
+
+<p>This convention has saved me a lot of time, has cleaned up my code for a better understanding and now my applications are more robust.</p>
+
+<p>I hope this could be useful to you, but do not apply it blindly.</p>
+
+<h3 id="pd">P.D.</h3>
+<p>After publish this post in <a href="https://www.linkedin.com/pulse/using-getters-instantiate-collections-java-maykell-s%25C3%25A1nchez-romero/">LinkedIn</a> a <a href="https://www.linkedin.com/in/atguz/">friend of mine</a> pointed that this is a known pattern
+called <strong>Lazy initialization</strong> and with the new <strong>Optional</strong> type introduced in Java languaje
+the code could be even more elegant and syntetic:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span><span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Thing</span><span class="o">&gt;</span> <span class="n">things</span><span class="o">;</span>
+   
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Thing</span><span class="o">&gt;</span> <span class="nf">getThings</span><span class="o">(){</span>
+ 
+      <span class="k">return</span> <span class="n">things</span> <span class="o">=</span> <span class="nc">Optional</span><span class="o">.</span><span class="na">ofNullable</span><span class="o">(</span><span class="n">things</span><span class="o">).</span><span class="na">orElseGet</span><span class="o">(</span><span class="nl">ArrayList:</span><span class="o">:</span><span class="k">new</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>I like it :)</p>
+
+:ET

@@ -1,0 +1,196 @@
+I"�K<p><strong>DCI</strong> ha devenido en uno de los patrones que siempre tengo a mano para usar cuando programo. Complementario con <strong>MVC</strong> y no tan afamado como éste, he podido encontrar en su aplicación una forma estándar y simple de organizar los artefactos en la implementación de lógicas de negocio complejas.</p>
+
+<h3 id="patrón-de-diseño">Patrón de diseño</h3>
+
+<p>Datos, Contexto e Interacción(DCI) es un patrón de diseño utilizado en el desarrollo de sistemas complejos para aportar mecanismos simples, bien definidos, robustos y uniformes en la organización, implementación e invocación de la lógica de negocio.</p>
+
+<p>Entre sus objetivos están:</p>
+<ul>
+  <li>Simplificar la implementación de la lógica de negocio y sus dependencias de ejecución mediante la creación de contextos.</li>
+  <li>Estandarizar la implementación de la lógica de negocio mediante el uso de convenciones simples.</li>
+  <li>Facilitar el cambio de la lógica de negocio del sistema de manera ágil mediante el bajo acoplamiento del código.</li>
+  <li>Mejorar la comprensión del flujo del sistema mediante el otorgamiento de un status de primera clase a la lógica de negocio.</li>
+</ul>
+
+<h3 id="explicación-de-dci">Explicación de DCI</h3>
+
+<p>DCI conceptualiza la implementación de la lógica de negocio en tres partes:</p>
+
+<ul>
+  <li>Datos: son todos los datos necesarios para la implementación de la lógica de negocio.</li>
+  <li>Contexto: es la agrupación de los datos y asignación de roles a los mismos. La asignación de roles se explica en que un dato puede ser interpretado en contextos diferentes de diferentes formas. Por ejemplo: suponiendo un sistema de gestión de salud, los datos de una persona pueden estar en rol de Paciente en un contexto de aplicación de un tratamiento médico, o en rol de Acompañante en el contexto de ciudados de otro paciente. El contexto define un dominio autocontenido y sensible a validación para la ejecución de la lógica de negocio.</li>
+  <li>Interacción: es la implementación de la lógica de negocio. Para ello hace uso del contexto válido pues en él están todos los datos y roles suficientes.</li>
+</ul>
+
+<p>DCI se puede ver como una aplicación del Principio de Responsabilidad Única a la implementación de la lógica de negocio de un sistema.</p>
+
+<h3 id="un-tín-de-historia">Un tín de historia</h3>
+
+<p>DCI fue inventado por Trygve Reenskaug y James O. Coplien, científicos de la computación. Trygve Reenkaug también es el autor del patrón de diseño MVC.</p>
+
+<p>MVC y DCI son patrones complementarios, pues se centran en partes diferentes del funcionamiento de los sistemas. El dominio de aplicación de MVC comprende la interacción de los usuarios con la interfaz de la aplicación/sistema: información a mostrar, procesamiento de eventos de la interfaz de usuario, recepción y respuesta a peticiones, etc.</p>
+
+<p>El dominio de aplicación de DCI es la ejecución de la lógica de negocio, por lo cual MVC se puede apoyar en DCI para dar respuesta a la petición de un usuario.</p>
+
+<p>Es común ver la implementación de lógica de negocio en los Controladores del patrón MVC, lo cual es factible para operaciones triviales en sistemas no complejos con lógica de aplicación que raramente cambia. Pero cuando los sistemas comienzan a crecer, no aplicar DCI conlleva a una creciente complejidad de los controladores, mayor acoplamiento de código, mayor dificultad en la detección/corrección de errores y pérdida de agilidad para responder a los cambios en la lógica de negocio.</p>
+
+<h3 id="una-posible-implementación-del-patrón-de-diseño-dci-para-entornos-java-ee">Una posible implementación del patrón de diseño DCI para entornos Java EE</h3>
+
+<p>Esta implementación consta de tres artefactos:</p>
+
+<ul>
+  <li>Interfaz Contexto: define el comportamiento de un contexto básicamente como una entidad sensibles a ser validada. Las clases que implementen esta interfaz deben adicionar los diferentes roles que serán utilizados en sus contextos específicos y dar una definición de cuándo es válido el contexto, a través de la implementación del método:
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">esValido</span><span class="o">();</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Clase abstracta <strong>InteraccionBasica</strong>: define cómo se ejecuta cualquier lógica de negocio de una interacción a través del método ejecutar() que en ningún caso debe ser redefinido en clases hijas. El método no ha sido declarado como <em>final</em> pues no permitiría usar CDI como vía de implementación de las interacciones.
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">InteraccionBasica</span> <span class="kd">implements</span> <span class="nc">Serializable</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">ejecutar</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">ContextoNoValido</span><span class="o">,</span> <span class="nc">Exception</span> <span class="o">{</span>
+
+      <span class="k">if</span> <span class="o">(!</span><span class="n">getContexto</span><span class="o">().</span><span class="na">esValido</span><span class="o">())</span> <span class="k">throw</span> <span class="k">new</span> <span class="nc">ContextoNoValido</span><span class="o">(</span><span class="n">getContexto</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+
+      <span class="nc">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="n">ejecucionDeLaLogicaDeNegocio</span><span class="o">();</span>
+
+      <span class="k">return</span> <span class="n">o</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">protected</span> <span class="kd">abstract</span> <span class="nc">Object</span> <span class="nf">ejecucionDeLaLogicaDeNegocio</span><span class="o">();</span>
+
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="nc">Contexto</span> <span class="nf">getContexto</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Excepción <strong>ContextoNoValido</strong>: Es lanzada en la ejecución de una interacción si al invocar el método <code class="language-plaintext highlighter-rouge">esValido()</code> del contexto relacionado con la interacción se devuelve <em>false</em>.</li>
+</ul>
+
+<p>Adicionalmente cualquier interacción que extienda de <code class="language-plaintext highlighter-rouge">InteraccionBasica</code> debe proveer implementaciones concretas para los métodos <code class="language-plaintext highlighter-rouge">ejecucionDeLaLogicaDeNegocio</code> y <code class="language-plaintext highlighter-rouge">getContexto</code>. En el método <code class="language-plaintext highlighter-rouge">ejecucionDeLaLogicaDeNegocio</code> es donde deben centrarse los esfuerzos del desarrollador por brindar una implementación adecuada de la misma.</p>
+
+<h3 id="uso">Uso</h3>
+
+<p>A continuación se considera el caso de uso de búsqueda de una persona dado su id.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ContextoBusquedaDePersonaPorId</span> <span class="kd">implements</span> <span class="nc">Contexto</span><span class="o">,</span> <span class="nc">Serializable</span> <span class="o">{</span> 
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="nc">EntityManager</span> <span class="n">em</span><span class="o">;</span> 
+
+    <span class="kd">private</span> <span class="nc">BigDecimal</span> <span class="n">id</span><span class="o">;</span> 
+
+    <span class="nd">@Override</span> 
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">esValido</span><span class="o">()</span> <span class="o">{</span> 
+        <span class="k">return</span> <span class="nf">getEm</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">getId</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> 
+    <span class="o">}</span> 
+    <span class="c1">// getters y setters no incluidos</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>De notar:</p>
+<ul>
+  <li>El contexto <code class="language-plaintext highlighter-rouge">ContextoBusquedaDePersonaPorId</code> implementa las interfaces <code class="language-plaintext highlighter-rouge">Contexto</code> y <code class="language-plaintext highlighter-rouge">Serializable</code>.</li>
+  <li>Se definen los datos y roles que necesita el contexto, ej: <code class="language-plaintext highlighter-rouge">em</code> es un <code class="language-plaintext highlighter-rouge">EntityManager</code> que referencia a una fuente de Datos.</li>
+  <li>Se brinda una implementación del método <code class="language-plaintext highlighter-rouge">esValido</code> acorde al contexto. En este caso el contexto es válido cuando los campos <code class="language-plaintext highlighter-rouge">id</code> y <code class="language-plaintext highlighter-rouge">em</code> no son null.</li>
+</ul>
+
+<p>La interacción <code class="language-plaintext highlighter-rouge">InteraccionBusquedaDePersonaPorId</code>:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Model</span> 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">InteraccionBusquedaDePersonaPorId</span> <span class="kd">extends</span> <span class="nc">InteraccionBasica</span> <span class="o">{</span> 
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">4591028478174556531L</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">ContextoBusquedaDePersonaPorId</span> <span class="n">contexto</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ContextoBusquedaDePersonaPorId</span><span class="o">();</span> 
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Contexto</span> <span class="nf">getContexto</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">contexto</span><span class="o">;</span> <span class="o">}</span> 
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="nc">Object</span> <span class="nf">ejecucionDeLaLogicaDeNegocio</span><span class="o">()</span> <span class="o">{</span>  
+
+        <span class="c1">// Implementación de la lógica de negocio</span>
+
+        <span class="k">return</span> <span class="n">_resultado</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>De notar:</p>
+<ul>
+  <li>La anotación <code class="language-plaintext highlighter-rouge">@Model</code> indica que estamos en presencia de un <strong>CDI</strong> bean el cual podrá ser inyectado como dependencia utilizando el nombre <code class="language-plaintext highlighter-rouge">interaccionBusquedaDePersonaPorId</code>. La dependencia tiene un ámbito de <code class="language-plaintext highlighter-rouge">Request</code>.</li>
+  <li>La interacción extiende la clase <code class="language-plaintext highlighter-rouge">InteraccionBasica</code>.</li>
+  <li>Se declara e instancia el contexto asociado a la interacción. Con la instanciación se asegura que no es nulo, evitando chequeos innecesarios.</li>
+  <li>Se define el método <code class="language-plaintext highlighter-rouge">getContexto</code>.</li>
+  <li>Se define el método <code class="language-plaintext highlighter-rouge">ejecucionDeLaLogicaDeNegocio</code> donde se implementa la lógica de negocio en concreto.</li>
+</ul>
+
+<p>El uso del contexto y la interacción se hace a través de un <strong>EJB</strong> que brinda un contexto de ejecución transaccional a la lógica de negocio así como un punto de entrada estándar para su uso.</p>
+
+<p>La interfaz del EJB define el comportamiento del mismo. Como pauta se debe definir un método <code class="language-plaintext highlighter-rouge">ejecutar</code> con parámetros en dependencia del caso de uso. Estos parámetros son los datos utilizados en el contexto.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ServIntBusquedaDePersonaPorId</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">ejecutar</span><span class="o">(</span><span class="nc">BigDecimal</span> <span class="n">id</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ContextoNoValido</span><span class="o">,</span> <span class="nc">OptimisticLockException</span><span class="o">,</span> <span class="nc">Exception</span><span class="o">;</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Implementación de la interfaz:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Stateless</span> 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServImpBusquedaDePersonaPorId</span> <span class="kd">implements</span> <span class="nc">ServIntBusquedaDePersonaPorId</span><span class="o">,</span> <span class="nc">Serializable</span><span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
+
+    <span class="nd">@PersistenceContext</span>
+    <span class="kd">transient</span> <span class="kd">private</span> <span class="nc">EntityManager</span> <span class="n">em</span><span class="o">;</span> 
+
+    <span class="nd">@Inject</span>
+    <span class="kd">transient</span> <span class="kd">private</span> <span class="nc">InteraccionBusquedaDePersonaPorId</span> <span class="n">interaccion</span><span class="o">;</span> 
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">ejecutar</span><span class="o">(</span><span class="nc">BigDecimal</span> <span class="n">id</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ContextoNoValido</span><span class="o">,</span> <span class="nc">OptimisticLockException</span><span class="o">,</span> <span class="nc">Exception</span> <span class="o">{</span>
+
+        <span class="nc">ContextoBusquedaDePersonaPorId</span> <span class="n">ctx</span> <span class="o">=</span> <span class="o">(</span><span class="nc">ContextoBusquedaDePersonaPorId</span><span class="o">)</span><span class="n">interaccion</span><span class="o">.</span><span class="na">getContexto</span><span class="o">();</span>
+
+        <span class="n">ctx</span><span class="o">.</span><span class="na">setEm</span><span class="o">(</span><span class="n">em</span><span class="o">);</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">interaccion</span><span class="o">.</span><span class="na">ejecutar</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>De notar:</p>
+<ul>
+  <li>Se inyecta el recurso EntityManager que va a ser utilizado en el contexto.</li>
+  <li>Se inyecta el CDI bean de la interacción.</li>
+  <li>Se setean los datos relevantes al contexto y se devuelve el resultado de la ejecución de la interacción.</li>
+</ul>
+
+<p>Una vez implementados los artefactos, se puede utilizar el servicio en el controlador CDI bean inyectando el EJB e invocando el método ejecutar:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Named</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonaDatos</span> <span class="kd">implements</span> <span class="nc">Serializable</span> <span class="o">{</span>
+  
+    <span class="nd">@EJB</span>
+    <span class="kd">private</span> <span class="nc">ServIntBusquedaDePersonaPorId</span> <span class="n">busquedaDePersonaPorId</span><span class="o">;</span> 
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">buscar</span><span class="o">(</span><span class="nc">BigDecimal</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">id</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="nc">Persona</span> <span class="n">_p</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Persona</span><span class="o">)</span> <span class="n">busquedaDePersonaPorId</span><span class="o">.</span><span class="na">ejecutar</span><span class="o">(</span><span class="n">id</span><span class="o">);</span> 
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">_e</span><span class="o">)</span> <span class="o">{</span><span class="n">_e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="palabras-finales">Palabras finales</h3>
+
+<p>La utilización del patrón de diseño DCI me ha facilitado la programación de lógica de negocio compleja y ha hecho mi código más fácil de comprender por otras personas. Como ocurre con frecuencia, no es una bala de plata, su aplicación en casos de lógica simple no es necesaria pues al menos hay que implementar un contexto y una interacción por cada caso de uso.</p>
+
+<p>Si has tenido experiencias haciendo uso del patrón y quisieras compartirlas quedo atento :)</p>
+:ET
