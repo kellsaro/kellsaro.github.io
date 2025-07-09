@@ -1,0 +1,142 @@
+<!-- Bilingual Article Header -->
+<!-- Include this in bilingual articles for language switching functionality -->
+
+<style>
+/* Bilingual Article Styles */
+.language-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.lang-btn {
+  background-color: #ffffff;
+  border: 2px solid #e9ecef;
+  color: #495057;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-btn:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  transform: translateY(-1px);
+}
+
+.lang-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.lang-btn.active:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.lang-content {
+  transition: opacity 0.3s ease;
+}
+
+.lang-content.hidden {
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .language-selector {
+    padding: 8px;
+  }
+  
+  .lang-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+</style>
+
+<div class="language-selector">
+  <button class="lang-btn active" onclick="switchLanguage('es')" data-lang="es">🇪🇸 Español</button>
+  <button class="lang-btn" onclick="switchLanguage('en')" data-lang="en">🇺🇸 English</button>
+</div>
+
+<script>
+// Bilingual Article Functionality
+function switchLanguage(lang) {
+  // Hide all language content
+  document.querySelectorAll('.lang-content').forEach(content => {
+    content.classList.add('hidden');
+  });
+  
+  // Show selected language content
+  const selectedContent = document.getElementById('lang-' + lang);
+  if (selectedContent) {
+    selectedContent.classList.remove('hidden');
+  }
+  
+  // Update button states
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  // Activate selected button
+  const selectedBtn = document.querySelector(`[data-lang="${lang}"]`);
+  if (selectedBtn) {
+    selectedBtn.classList.add('active');
+  }
+  
+  // Save language preference
+  localStorage.setItem('preferredLanguage', lang);
+  
+  // Update URL hash without scrolling
+  if (history.replaceState) {
+    history.replaceState(null, null, '#' + lang);
+  }
+}
+
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Get language preference from URL hash, localStorage, or default to Spanish
+  let lang = 'es'; // Default to Spanish
+  
+  // Check URL hash first
+  if (window.location.hash) {
+    const hashLang = window.location.hash.substring(1);
+    if (hashLang === 'es' || hashLang === 'en') {
+      lang = hashLang;
+    }
+  } else {
+    // Check localStorage
+    const savedLang = localStorage.getItem('preferredLanguage');
+    if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
+      lang = savedLang;
+    }
+  }
+  
+  // Apply the language
+  switchLanguage(lang);
+});
+
+// Handle browser back/forward navigation
+window.addEventListener('hashchange', function() {
+  if (window.location.hash) {
+    const hashLang = window.location.hash.substring(1);
+    if (hashLang === 'es' || hashLang === 'en') {
+      switchLanguage(hashLang);
+    }
+  }
+});
+</script>
