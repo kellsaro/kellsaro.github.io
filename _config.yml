@@ -15,6 +15,8 @@ author: Maykell Sánchez Romero
 
 navbar-links:
   About Me: "aboutme"
+  Blog: "/"
+  Contact: "mailto:kellsaro@gmail.com"
   #-- Resources: --#
   #--   - Beautiful Jekyll: "https://beautifuljekyll.com" --#
   #--   - Learn markdown: "https://www.markdowntutorial.com/" --#
@@ -32,6 +34,9 @@ round-avatar: true
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
 #title-img: /path/to/image
+
+# Website description for SEO and social media
+description: "Personal website and technical blog of Maykell Sánchez Romero, Senior Full Stack Software Developer with 10+ years of experience in Ruby on Rails, Java, System Architecture, and ETL processes."
 
 
 # --- Footer social media links --- #
@@ -65,7 +70,7 @@ social-network-links:
 
 # If you want to show a link to an RSS in the footer, add the site description here.
 # If you don't want to show an RSS link, remove the following line.
-#- rss-description: This website is a virtual proof that I'm awesome
+rss-description: "Stay updated with the latest technical articles and insights from Maykell Sánchez Romero on software development, system architecture, and full-stack technologies."
 
 # --- General options --- #
 
@@ -93,7 +98,7 @@ feed_show_tags: true
 post_search: true
 
 # The keywords to associate with your website, for SEO purposes
-#keywords: "my,list,of,keywords"
+keywords: "Maykell Sánchez Romero, Software Developer, Ruby on Rails, Full Stack, Java, Spring Boot, System Architecture, ETL, AWS, Technical Blog, Software Engineering, Web Development"
 
 # --- Colours / background image --- #
 
