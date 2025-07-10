@@ -11,7 +11,7 @@ tags: [Elixir, BEAM, Programación Funcional, Functional Programming, Erlang, Ph
 <!-- Spanish Content -->
 <div class="lang-content" id="lang-es" markdown="1">
 
-Bienvenidos al primer artículo de la serie **Lecciones de Elixir**. Esta serie integral explorará el ecosistema Elixir, desde conceptos básicos del lenguaje hasta patrones avanzados de OTP y desarrollo con el framework Phoenix.
+Bienvenidos al primer artículo de la serie **Lecciones de Elixir**. Esta serie explorará el ecosistema Elixir, desde conceptos básicos del lenguaje hasta patrones avanzados de OTP y desarrollo con el framework Phoenix.
 
 ## 🎯 Resumen de la Serie
 
@@ -150,7 +150,7 @@ end
 4. **Plataformas de trading o juegos en tiempo real**: Baja latencia y concurrencia masiva
 5. **Automatización industrial y telecomunicaciones**: Robustez y tolerancia a fallos
 6. **Aplicaciones web** con el framework Phoenix
-7. **Sistemas distribuidos** y microservicios
+7. **Sistemas distribuidos**
 8. **Sistemas financieros** que requieren tolerancia a fallos
 
 ### Adopción Industrial:
@@ -208,7 +208,7 @@ sudo apt-get install elixir
    ```elixir
    IO.puts("Hola Mundo")
    ```
-   
+
    Verás en pantalla:
    ```
    Hola Mundo
@@ -219,19 +219,19 @@ sudo apt-get install elixir
    ```elixir
    # Ver ayuda
    h()
-   
+
    # Ayuda sobre una función específica
    h(IO.puts)
-   
+
    # Ver información sobre un tipo
    i("hola")
-   
+
    # Limpiar pantalla
    clear()
-   
+
    # Recompilar código (útil para desarrollo)
    recompile()
-   
+
    # Salir de IEx
    # Ctrl+C dos veces o System.halt()
    ```
@@ -242,7 +242,7 @@ sudo apt-get install elixir
    nombre = "Elixir"
    edad = 14  # años desde 2011
    IO.puts("#{nombre} tiene #{edad} años")
-   
+
    # El valor de la última expresión se muestra automáticamente
    5 + 3  # → 8
    ```
@@ -256,36 +256,36 @@ sudo apt-get install elixir
 defmodule HolaMundo do
   @moduledoc """
   Módulo que proporciona diferentes formas de saludar.
-  
+
   Este es nuestro primer módulo en Elixir, diseñado para
   demostrar conceptos básicos de documentación y funciones.
   """
-  
+
   @doc """
   Saluda de manera informal a una persona.
-  
+
   ## Ejemplos
-  
+
       iex> HolaMundo.saludar("Ana")
       "¡Hola, Ana!"
-      
+
       iex> HolaMundo.saludar("Elixir")
       "¡Hola, Elixir!"
   """
   def saludar(nombre) do
     "¡Hola, #{nombre}!"
   end
-  
+
   @doc """
   Saluda de manera formal usando nombre y apellido.
-  
+
   ## Parámetros
-  
+
     - nombre: String con el nombre de la persona
     - apellido: String con el apellido de la persona
-    
+
   ## Ejemplos
-  
+
       iex> HolaMundo.saludar_formal("Ana", "García")
       "Buenos días, Ana García"
   """
@@ -327,7 +327,7 @@ defmodule Calculadora do
   def dividir(a, b) when b != 0 do
     {:ok, a / b}
   end
-  
+
   def dividir(_, 0) do
     {:error, "División por cero"}
   end
@@ -351,15 +351,15 @@ send(pid, {:sumar, 5, 3})
 # Ejemplo de GenServer
 defmodule Contador do
   use GenServer
-  
+
   def start_link(valor_inicial) do
     GenServer.start_link(__MODULE__, valor_inicial)
   end
-  
+
   def incrementar(pid) do
     GenServer.cast(pid, :incrementar)
   end
-  
+
   def obtener_valor(pid) do
     GenServer.call(pid, :obtener_valor)
   end
@@ -431,7 +431,7 @@ En **Lección 02: Tipos de Datos Básicos** *(próximamente)*, exploraremos:
 16. ```elixir
     defmodule Calculadora do
       @moduledoc "Módulo para operaciones matemáticas básicas"
-      
+
       @doc "Suma dos números"
       def sumar(a, b), do: a + b
     end
@@ -477,7 +477,7 @@ Como alguien que ha trabajado con Java, Ruby y otros lenguajes durante más de 2
 
 *Esta es la Parte 1 de la serie Lecciones de Elixir. Síguenos mientras exploramos el fascinante mundo de la programación funcional y el ecosistema BEAM.*
 
-**Próximo Artículo**: [Lecciones de Elixir: 02 - Tipos de Datos Básicos](/2025-01-10-elixir-lessons-02-tipos-de-datos-basicos)
+**Próximo Artículo**: Lecciones de Elixir: 02 - Tipos de Datos Básicos
 
 ---
 
@@ -627,7 +627,7 @@ end
 4. **Trading platforms or real-time games**: Low latency and massive concurrency
 5. **Industrial automation and telecommunications**: Robustness and fault tolerance
 6. **Web applications** with Phoenix framework
-7. **Distributed systems** and microservices
+7. **Distributed systems**
 8. **Financial systems** requiring fault tolerance
 
 ### Industry Adoption:
@@ -685,7 +685,7 @@ sudo apt-get install elixir
    ```elixir
    IO.puts("Hello World")
    ```
-   
+
    You'll see on screen:
    ```
    Hello World
@@ -696,19 +696,19 @@ sudo apt-get install elixir
    ```elixir
    # See help
    h()
-   
+
    # Help about a specific function
    h(IO.puts)
-   
+
    # See information about a type
    i("hello")
-   
+
    # Clear screen
    clear()
-   
+
    # Recompile code (useful for development)
    recompile()
-   
+
    # Exit IEx
    # Ctrl+C twice or System.halt()
    ```
@@ -719,7 +719,7 @@ sudo apt-get install elixir
    name = "Elixir"
    age = 14  # years since 2011
    IO.puts("#{name} is #{age} years old")
-   
+
    # The value of the last expression is shown automatically
    5 + 3  # → 8
    ```
@@ -733,36 +733,36 @@ sudo apt-get install elixir
 defmodule HelloWorld do
   @moduledoc """
   Module that provides different ways to greet.
-  
+
   This is our first module in Elixir, designed to
   demonstrate basic documentation and function concepts.
   """
-  
+
   @doc """
   Greets a person informally.
-  
+
   ## Examples
-  
+
       iex> HelloWorld.greet("Ana")
       "Hello, Ana!"
-      
+
       iex> HelloWorld.greet("Elixir")
       "Hello, Elixir!"
   """
   def greet(name) do
     "Hello, #{name}!"
   end
-  
+
   @doc """
   Greets formally using first and last name.
-  
+
   ## Parameters
-  
+
     - first_name: String with the person's first name
     - last_name: String with the person's last name
-    
+
   ## Examples
-  
+
       iex> HelloWorld.greet_formal("Ana", "García")
       "Good morning, Ana García"
   """
@@ -804,7 +804,7 @@ defmodule Calculator do
   def divide(a, b) when b != 0 do
     {:ok, a / b}
   end
-  
+
   def divide(_, 0) do
     {:error, "Division by zero"}
   end
@@ -828,15 +828,15 @@ send(pid, {:add, 5, 3})
 # GenServer example
 defmodule Counter do
   use GenServer
-  
+
   def start_link(initial_value) do
     GenServer.start_link(__MODULE__, initial_value)
   end
-  
+
   def increment(pid) do
     GenServer.cast(pid, :increment)
   end
-  
+
   def get_value(pid) do
     GenServer.call(pid, :get_value)
   end
@@ -908,7 +908,7 @@ In **Lesson 02: Basic Data Types** *(coming soon)*, we'll explore:
 16. ```elixir
     defmodule Calculator do
       @moduledoc "Module for basic mathematical operations"
-      
+
       @doc "Adds two numbers"
       def add(a, b), do: a + b
     end
@@ -954,7 +954,7 @@ As someone who has worked with Java, Ruby, and other languages for over 20 years
 
 *This is Part 1 of the Elixir Lessons series. Follow along as we explore the fascinating world of functional programming and the BEAM ecosystem.*
 
-**Next Article**: [Elixir Lessons: 02 - Basic Data Types](/2025-01-10-elixir-lessons-02-basic-data-types)
+**Next Article**: Elixir Lessons: 02 - Basic Data Types
 
 ---
 
@@ -1012,7 +1012,7 @@ As someone who has worked with Java, Ruby, and other languages for over 20 years
     flex-direction: column;
     align-items: center;
   }
-  
+
   .lang-btn {
     margin: 5px 0;
     width: 200px;
@@ -1050,19 +1050,19 @@ function switchLanguage(lang) {
   document.querySelectorAll('.lang-content').forEach(el => {
     el.style.display = 'none';
   });
-  
+
   // Remove active class from all buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.remove('active');
   });
-  
+
   // Show selected language
   document.getElementById('lang-' + lang).style.display = 'block';
   document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
-  
+
   // Remember user preference
   localStorage.setItem('elixir-lessons-preferred-language', lang);
-  
+
   // Update URL hash without scrolling
   if (history.replaceState) {
     history.replaceState(null, null, '#lang-' + lang);
@@ -1074,9 +1074,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check URL hash first
   const urlLang = window.location.hash.replace('#lang-', '');
   const validLangs = ['es', 'en'];
-  
+
   let preferredLang = 'es'; // default
-  
+
   if (validLangs.includes(urlLang)) {
     preferredLang = urlLang;
   } else {
@@ -1086,7 +1086,7 @@ document.addEventListener('DOMContentLoaded', function() {
       preferredLang = storedLang;
     }
   }
-  
+
   switchLanguage(preferredLang);
 });
 
@@ -1094,7 +1094,7 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('hashchange', function() {
   const urlLang = window.location.hash.replace('#lang-', '');
   const validLangs = ['es', 'en'];
-  
+
   if (validLangs.includes(urlLang)) {
     switchLanguage(urlLang);
   }
