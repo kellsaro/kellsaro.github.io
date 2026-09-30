@@ -5,6 +5,7 @@ subtitle: Know what competitors changed, how AI frames your market, and what to 
 permalink: /projects/agonai/
 css: ["/assets/css/projects.css"]
 description: "Agonai automates competitor monitoring and AI Visibility tracking, then turns the signals into insights, battlecards and briefings."
+share-img: "/assets/img/projects/agonai/00-landing.png"
 ---
 
 **[Agonai](https://agonai.io)** is a competitive intelligence (CI) platform built for small and mid-sized businesses. It watches your competitors across the web, tracks how AI assistants like ChatGPT, Perplexity and Gemini describe your market, and turns all of those signals into something a team can act on: insights, battlecards, win/loss analyses and briefings.
@@ -20,7 +21,7 @@ Most CI tools stop at "here is what changed". Agonai goes two steps further: it 
 </ul>
 
 <figure class="project-shot">
-  <a href="{{ '/assets/img/projects/agonai/00-landing.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/00-landing.png' | relative_url }}" alt="Agonai landing page showing a weekly competitor digest, an AI Visibility score of 72/100 and a sales talk track" loading="lazy"></a>
+  <a href="{{ '/assets/img/projects/agonai/00-landing.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/00-landing.webp' | relative_url }}" alt="Agonai landing page showing a weekly competitor digest, an AI Visibility score of 72/100 and a sales talk track" loading="lazy"></a>
   <figcaption>The public site at agonai.io. The cards preview the three kinds of output: a weekly digest of competitor moves, an AI Visibility score, and a ready-to-use sales talk track.</figcaption>
 </figure>
 
@@ -38,7 +39,7 @@ Everything starts with a **portfolio**: one of your products plus the competitor
 Each card already gives a quick read of your **position** across five dimensions (pricing, features, messaging, market presence and innovation). The green bar is you, the purple bar is the competitor average, and the arrow tells you whether you are ahead, on par or behind.
 
 <figure class="project-shot">
-  <a href="{{ '/assets/img/projects/agonai/01-portfolios.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/01-portfolios.png' | relative_url }}" alt="Portfolios screen with two portfolio cards, Agonai and TechRepair.site, each showing a position chart against the competitor average" loading="lazy"></a>
+  <a href="{{ '/assets/img/projects/agonai/01-portfolios.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/01-portfolios.webp' | relative_url }}" alt="Portfolios screen with two portfolio cards, Agonai and TechRepair.site, each showing a position chart against the competitor average" loading="lazy"></a>
   <figcaption>Two portfolios, each with its competitor count and a position summary against the competitor average.</figcaption>
 </figure>
 </section>
@@ -53,7 +54,7 @@ Agonai continuously monitors each competitor's website, pricing, product, hiring
 In this example, the feed caught the co-founder of a competitor launching a separate consumer product, alongside the baseline "initial briefing" snapshots of that competitor's positioning and pricing model.
 
 <figure class="project-shot">
-  <a href="{{ '/assets/img/projects/agonai/02-changes.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/02-changes.png' | relative_url }}" alt="Changes table listing detected competitor changes with source, type, severity, sentiment, summary and detection date" loading="lazy"></a>
+  <a href="{{ '/assets/img/projects/agonai/02-changes.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/02-changes.webp' | relative_url }}" alt="Changes table listing detected competitor changes with source, type, severity, sentiment, summary and detection date" loading="lazy"></a>
   <figcaption>The Changes feed: what changed at each competitor, newest first, classified by source, severity and sentiment.</figcaption>
 </figure>
 </section>
@@ -68,7 +69,7 @@ A raw change is just a fact. **Insights** are where Agonai reasons about it: it 
 Every insight carries a **confidence score** (the dots and percentage next to the label). This is what keeps the feed useful: weak or speculative conclusions are clearly marked instead of being presented as certainties. Below each insight, a short rationale shows the reasoning behind it.
 
 <figure class="project-shot">
-  <a href="{{ '/assets/img/projects/agonai/03-insights.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/03-insights.png' | relative_url }}" alt="AI Insights screen with a Threat insight at 72% confidence and an Opportunity insight at 75% confidence, each with a rationale" loading="lazy"></a>
+  <a href="{{ '/assets/img/projects/agonai/03-insights.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/03-insights.webp' | relative_url }}" alt="AI Insights screen with a Threat insight at 72% confidence and an Opportunity insight at 75% confidence, each with a rationale" loading="lazy"></a>
   <figcaption>Insights labelled as Threat or Opportunity, each with a confidence score and the reasoning behind it.</figcaption>
 </figure>
 </section>
@@ -83,7 +84,7 @@ Insights become action through **battlecards**: one per competitor, telling your
 Battlecards come in different views for **Sales, Product and Executive** audiences, because a sales rep on a call and a CEO planning the roadmap need different things. Every claim is backed by numbered references to the underlying data, and the card states its data window and which AI model generated it, so the team always knows how fresh and how grounded it is.
 
 <figure class="project-shot">
-  <a href="{{ '/assets/img/projects/agonai/04-battlecards.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/04-battlecards.png' | relative_url }}" alt="Battlecard for a competitor with a medium threat level, audience tabs for General, Sales, Product and Executive, and an overview with source references" loading="lazy"></a>
+  <a href="{{ '/assets/img/projects/agonai/04-battlecards.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/04-battlecards.webp' | relative_url }}" alt="Battlecard for a competitor with a medium threat level, audience tabs for General, Sales, Product and Executive, and an overview with source references" loading="lazy"></a>
   <figcaption>A battlecard with its threat level, audience views, section navigation and a referenced overview.</figcaption>
 </figure>
 </section>
@@ -98,7 +99,7 @@ Battlecards come in different views for **Sales, Product and Executive** audienc
 The radar chart shows the overall shape of your position at a glance, the bar chart makes the gaps easy to compare, and each dimension is marked as **ahead**, **on par** or **behind**. In this example, Agonai leads clearly on pricing competitiveness while still trailing established players in market presence, which is exactly the kind of honest picture a strategy discussion needs.
 
 <figure class="project-shot">
-  <a href="{{ '/assets/img/projects/agonai/05-briefing.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/05-briefing.png' | relative_url }}" alt="Briefing with a written market assessment, a radar chart and a bar chart comparing Agonai with the competitor average across five dimensions" loading="lazy"></a>
+  <a href="{{ '/assets/img/projects/agonai/05-briefing.png' | relative_url }}"><img src="{{ '/assets/img/projects/agonai/05-briefing.webp' | relative_url }}" alt="Briefing with a written market assessment, a radar chart and a bar chart comparing Agonai with the competitor average across five dimensions" loading="lazy"></a>
   <figcaption>A briefing: written assessment, radar overview and score comparison against the competitor average.</figcaption>
 </figure>
 </section>

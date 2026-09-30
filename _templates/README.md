@@ -38,13 +38,13 @@ This directory contains templates and infrastructure for creating bilingual arti
    ```
 
 2. Update the front matter:
-   - Change title to "Spanish Title | English Title"
+   - Change title to "English Title | Spanish Title" (English is the main language)
    - Update date, description, and tags
-   - Ensure description follows "Spanish description | English description"
+   - Ensure description follows "English description | Spanish description"
 
 3. Fill in content in both languages:
-   - Spanish content goes in `<div class="lang-content" id="lang-es">`
-   - English content goes in `<div class="lang-content hidden" id="lang-en">`
+   - English content goes first, in `<div class="lang-content" id="lang-en">` (shown by default)
+   - Spanish content goes second, in `<div class="lang-content hidden" id="lang-es">`
 
 4. Include the bilingual header with `{% include bilingual_header.html %}`
 
@@ -61,24 +61,24 @@ This directory contains templates and infrastructure for creating bilingual arti
 ```markdown
 ---
 layout: post
-title: "Título Español | English Title"
+title: "English Title | Título Español"
 date: 2025-01-09
-description: "Descripción en español | English description"
+description: "English description | Descripción en español"
 tags: [Tag1, Tag2, Bilingual, Tutorial]
 ---
 
 {% include bilingual_header.html %}
 
-<!-- Spanish Content -->
-<div class="lang-content" id="lang-es" markdown="1">
-# Título en Español
-Content in Spanish...
-</div>
-
 <!-- English Content -->
-<div class="lang-content hidden" id="lang-en" markdown="1">
+<div class="lang-content" id="lang-en" markdown="1">
 # English Title
 Content in English...
+</div>
+
+<!-- Spanish Content -->
+<div class="lang-content hidden" id="lang-es" markdown="1">
+# Título en Español
+Content in Spanish...
 </div>
 ```
 

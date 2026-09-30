@@ -1,15 +1,16 @@
 ---
 layout: post
-title: "Lecciones de Elixir: 01 - Introducción a Elixir y BEAM | Elixir Lessons: 01 - Introduction to Elixir and BEAM"
+title: "Elixir Lessons: 01 - Introduction to Elixir and BEAM | Lecciones de Elixir: 01 - Introducción a Elixir y BEAM"
 date: 2025-01-09
-description: "Introducción al lenguaje de programación Elixir y la máquina virtual BEAM | Introduction to Elixir programming language and BEAM virtual machine"
+share-title: "Elixir Lessons 01: Introduction to Elixir and BEAM"
+description: "Introduction to the Elixir programming language and the BEAM virtual machine | Introducción al lenguaje de programación Elixir y la máquina virtual BEAM"
 tags: [Elixir, BEAM, Programación Funcional, Functional Programming, Erlang, Phoenix, OTP, Serie Elixir, Bilingual, Tutorial]
 ---
 
 {% include bilingual_header.html %}
 
 <!-- Spanish Content -->
-<div class="lang-content" id="lang-es" markdown="1">
+<div class="lang-content hidden" id="lang-es" markdown="1">
 
 Bienvenidos al primer artículo de la serie **Lecciones de Elixir**. Esta serie explorará el ecosistema Elixir, desde conceptos básicos del lenguaje hasta patrones avanzados de OTP y desarrollo con el framework Phoenix.
 
@@ -486,7 +487,7 @@ Como alguien que ha trabajado con Java, Ruby y otros lenguajes durante más de 2
 </div>
 
 <!-- English Content -->
-<div class="lang-content hidden" id="lang-en" markdown="1">
+<div class="lang-content" id="lang-en" markdown="1">
 
 Welcome to the first article in the **Elixir Lessons** series! This comprehensive series will explore the Elixir ecosystem, from basic language concepts to advanced OTP patterns and Phoenix framework development.
 

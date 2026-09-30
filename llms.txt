@@ -1,0 +1,23 @@
+---
+layout: null
+sitemap: false
+---
+# {{ site.title }}
+
+> {{ site.description }}
+
+Maykell Sánchez Romero is a Senior Software Engineer and computer scientist based in Ecuador, working remotely with distributed teams, who builds production systems end to end with Elixir, Phoenix LiveView, Ash Framework, Ruby on Rails, React and Java, and practices AI-assisted software engineering with LLMs (Claude Code, Codex). Contact: {{ site.social-network-links.email }}.
+
+## Profile
+
+- [Resume and overview]({{ '/' | absolute_url }}): summary, current focus, technologies, notable projects, experience and education
+- [Professional experience]({{ '/experience/' | absolute_url }}): each role with its main stack and duration
+- [Technical expertise]({{ '/technical-expertise/' | absolute_url }}): skills, tools and domain knowledge
+
+## Projects
+{% for link in site.navbar-links.Projects %}{% for item in link %}
+- [{{ item[0] }}]({{ item[1] | absolute_url }}){% endfor %}{% endfor %}
+
+## Blog
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url | absolute_url }}){% if post.description %}: {{ post.description }}{% endif %}{% endfor %}

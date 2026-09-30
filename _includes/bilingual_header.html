@@ -69,8 +69,8 @@
 </style>
 
 <div class="language-selector">
-  <button class="lang-btn active" onclick="switchLanguage('es')" data-lang="es">🇪🇸 Español</button>
-  <button class="lang-btn" onclick="switchLanguage('en')" data-lang="en">🇺🇸 English</button>
+  <button class="lang-btn active" onclick="switchLanguage('en')" data-lang="en">🇺🇸 English</button>
+  <button class="lang-btn" onclick="switchLanguage('es')" data-lang="es">🇪🇸 Español</button>
 </div>
 
 <script>
@@ -109,8 +109,8 @@ function switchLanguage(lang) {
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', function() {
-  // Get language preference from URL hash, localStorage, or default to Spanish
-  let lang = 'es'; // Default to Spanish
+  // Get language preference from URL hash, localStorage, or default to English (the site's main language)
+  let lang = 'en'; // Default to English
   
   // Check URL hash first
   if (window.location.hash) {

@@ -35,8 +35,8 @@ function switchLanguage(lang) {
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', function() {
-  // Get language preference from URL hash, localStorage, or default to Spanish
-  let lang = 'es'; // Default to Spanish
+  // Get language preference from URL hash, localStorage, or default to English (the site's main language)
+  let lang = 'en'; // Default to English
   
   // Check URL hash first
   if (window.location.hash) {

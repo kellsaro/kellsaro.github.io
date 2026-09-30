@@ -5,6 +5,7 @@ subtitle: A monday.com app to review, transform and replace text without leaving
 permalink: /projects/text-tools/
 css: ["/assets/css/projects.css"]
 description: "Text Tools for Workdocs is a monday.com app that counts, transforms and finds-and-replaces selected text directly inside monday.com Workdocs."
+share-img: "/assets/img/projects/text-tools/overview.png"
 ---
 
 {% assign img = "/assets/img/projects/text-tools/" %}
@@ -31,7 +32,7 @@ I built it with **React** as part of [montools](https://montools.github.io), a s
 
 There is nothing to open in another tab. When you select text in a Workdoc, monday.com shows its contextual toolbar above the selection, and Text Tools appears there as its own button. The app opens in a small panel with three tabs, and everything it does applies **only to the selected text**, never to the rest of the document.
 
-{% include project-figure.html dir=img file="overview.png" alt="A monday.com Workdoc with text selected, the contextual toolbar above it, and the Text Tools panel open on the Review tab" caption="The Text Tools panel, opened from the contextual toolbar on a text selection." %}
+{% include project-figure.html dir=img file="overview.png" display="overview.webp" alt="A monday.com Workdoc with text selected, the contextual toolbar above it, and the Text Tools panel open on the Review tab" caption="The Text Tools panel, opened from the contextual toolbar on a text selection." %}
 </section>
 
 <section class="project-step" markdown="1">

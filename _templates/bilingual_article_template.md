@@ -1,70 +1,17 @@
 ---
 layout: post
-title: "Título en Español | English Title"
+title: "English Title | Título en Español"
+# Optional: shorter title for search results and link previews (aim for ~60 characters)
+share-title: "Short English title"
 date: YYYY-MM-DD
-description: "Descripción en español | English description"
+description: "English description | Descripción en español"
 tags: [Elixir, Tag1, Tag2, Serie Elixir, Bilingual, Tutorial]
 ---
 
 {% include bilingual_header.html %}
 
-<!-- Spanish Content -->
-<div class="lang-content" id="lang-es" markdown="1">
-
-# Título en Español
-
-## Introducción
-
-Contenido en español aquí...
-
-### Sección 1
-
-Más contenido en español...
-
-## Ejercicios
-
-### Ejercicios Teóricos
-
-1. Pregunta teórica 1
-2. Pregunta teórica 2
-3. Pregunta teórica 3
-
-### Ejercicios Prácticos
-
-4. Ejercicio práctico 1 *(Básico)*
-5. Ejercicio práctico 2 *(Básico)*
-6. Ejercicio práctico 3 *(Intermedio)*
-
-## Respuestas
-
-### Respuestas Teóricas
-
-1. Respuesta 1
-2. Respuesta 2
-3. Respuesta 3
-
-### Respuestas Prácticas
-
-4. Solución 1
-5. Solución 2
-6. Solución 3
-
-## ¿Qué Sigue?
-
-En **Lección XX: Título de la Próxima Lección** *(próximamente)*, exploraremos:
-- Tema 1
-- Tema 2
-- Tema 3
-
-## Referencias
-
-- [Enlace 1](https://ejemplo.com)
-- [Enlace 2](https://ejemplo.com)
-
-</div>
-
 <!-- English Content -->
-<div class="lang-content hidden" id="lang-en" markdown="1">
+<div class="lang-content" id="lang-en" markdown="1">
 
 # English Title
 
@@ -115,5 +62,60 @@ In **Lesson XX: Next Lesson Title** *(coming soon)*, we'll explore:
 
 - [Link 1](https://example.com)
 - [Link 2](https://example.com)
+
+</div>
+
+<!-- Spanish Content -->
+<div class="lang-content hidden" id="lang-es" markdown="1">
+
+# Título en Español
+
+## Introducción
+
+Contenido en español aquí...
+
+### Sección 1
+
+Más contenido en español...
+
+## Ejercicios
+
+### Ejercicios Teóricos
+
+1. Pregunta teórica 1
+2. Pregunta teórica 2
+3. Pregunta teórica 3
+
+### Ejercicios Prácticos
+
+4. Ejercicio práctico 1 *(Básico)*
+5. Ejercicio práctico 2 *(Básico)*
+6. Ejercicio práctico 3 *(Intermedio)*
+
+## Respuestas
+
+### Respuestas Teóricas
+
+1. Respuesta 1
+2. Respuesta 2
+3. Respuesta 3
+
+### Respuestas Prácticas
+
+4. Solución 1
+5. Solución 2
+6. Solución 3
+
+## ¿Qué Sigue?
+
+En **Lección XX: Título de la Próxima Lección** *(próximamente)*, exploraremos:
+- Tema 1
+- Tema 2
+- Tema 3
+
+## Referencias
+
+- [Enlace 1](https://ejemplo.com)
+- [Enlace 2](https://ejemplo.com)
 
 </div>

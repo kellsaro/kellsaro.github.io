@@ -5,6 +5,7 @@ subtitle: Measuring how effective educational programs are, with Apache Hop pipe
 permalink: /projects/fundacion-telefonica/
 css: ["/assets/css/projects.css"]
 description: "KPIs on the effectiveness of educational programs: Apache Hop ETL pipelines and Looker Studio dashboards that track the yearly goals of Fundación Telefónica Ecuador's education, employability, culture, communication and volunteering programs."
+share-img: "/assets/img/projects/fundacion-telefonica/p-01.jpg"
 ---
 
 {% assign img = "/assets/img/projects/fundacion-telefonica/" %}

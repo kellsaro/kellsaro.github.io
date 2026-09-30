@@ -1,0 +1,83 @@
+{%- comment -%}
+  Schema.org structured data (JSON-LD) for search engines and AI assistants.
+  - Home page: ProfilePage + WebSite describing the person behind the site.
+  - Blog posts: BlogPosting.
+{%- endcomment -%}
+{%- capture person_id -%}{{ '/' | absolute_url }}#person{%- endcapture -%}
+{%- if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": {{ person_id | jsonify }},
+        "name": {{ site.author | jsonify }},
+        "url": {{ '/' | absolute_url | jsonify }},
+        "image": {{ site.avatar | absolute_url | jsonify }},
+        "jobTitle": "Senior Software Engineer",
+        "description": {{ page.description | default: site.description | jsonify }},
+        "email": "mailto:{{ site.social-network-links.email }}",
+        "address": { "@type": "PostalAddress", "addressCountry": "EC" },
+        "sameAs": [
+          "https://www.linkedin.com/in/{{ site.social-network-links.linkedin }}",
+          "https://github.com/{{ site.social-network-links.github }}"
+        ],
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "University of Havana" },
+          { "@type": "CollegeOrUniversity", "name": "University of Informatics Sciences" }
+        ],
+        "knowsLanguage": ["es", "en", "fr", "it"],
+        "knowsAbout": [
+          "Elixir", "Phoenix LiveView", "Ash Framework", "Ruby on Rails", "React", "Java",
+          "PostgreSQL", "Distributed systems", "Software architecture",
+          "AI-assisted software engineering", "ETL", "HL7"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ '/' | absolute_url }}#website",
+        "url": {{ '/' | absolute_url | jsonify }},
+        "name": {{ site.title | jsonify }},
+        "description": {{ site.description | jsonify }},
+        "publisher": { "@id": {{ person_id | jsonify }} }
+      },
+      {
+        "@type": "ProfilePage",
+        "url": {{ '/' | absolute_url | jsonify }},
+        "name": {{ site.title | jsonify }},
+        "mainEntity": { "@id": {{ person_id | jsonify }} },
+        "isPartOf": { "@id": "{{ '/' | absolute_url }}#website" }
+      }
+    ]
+  }
+  </script>
+{%- elsif page.id and page.collection == "posts" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | strip_html | jsonify }},
+    {%- if page.description %}
+    "description": {{ page.description | strip_html | jsonify }},
+    {%- endif %}
+    "url": {{ page.url | absolute_url | jsonify }},
+    "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+    "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+    {%- if page.last_modified_at %}
+    "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+    {%- endif %}
+    "inLanguage": {{ page.language | default: site.language | default: "en" | jsonify }},
+    {%- if page.tags.size > 0 %}
+    "keywords": {{ page.tags | join: ", " | jsonify }},
+    {%- endif %}
+    "image": {{ page.share-img | default: site.avatar | absolute_url | jsonify }},
+    "author": {
+      "@type": "Person",
+      "@id": {{ person_id | jsonify }},
+      "name": {{ site.author | jsonify }},
+      "url": {{ '/' | absolute_url | jsonify }}
+    }
+  }
+  </script>
+{%- endif %}

@@ -6,6 +6,7 @@ description: Las clases de Java pueden ser más sintéticas sin pérdida semánt
 #img: i-rest.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Java, Lombok]
+language: es
 ---
 Escribir una clase en Java, y específicamente en proyectos JavaEE, a veces puede ser tedioso pues JavaEE descansa sobre convenciones, ampliamente adoptadas en el mundo Java, para integrar parte de sus componentes.
 

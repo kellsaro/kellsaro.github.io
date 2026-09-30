@@ -8,8 +8,17 @@
   {%- assign path = include.dir | append: include.file -%}
 {%- endif -%}
 {%- assign src = path | relative_url -%}
+{%- comment -%}
+  Optional display="lighter-copy.webp" (same folder): the page shows that lighter copy,
+  while clicking the image still opens the original file.
+{%- endcomment -%}
+{%- if include.display -%}
+  {%- assign shown = include.dir | append: include.display | relative_url -%}
+{%- else -%}
+  {%- assign shown = src -%}
+{%- endif -%}
 <figure class="project-shot">
-  <a href="{{ src }}"><img src="{{ src }}" alt="{{ include.alt | escape }}" loading="lazy"></a>
+  <a href="{{ src }}"><img src="{{ shown }}" alt="{{ include.alt | escape }}" loading="lazy"></a>
   {%- if include.caption %}
   <figcaption>{{ include.caption }}</figcaption>
   {%- endif %}

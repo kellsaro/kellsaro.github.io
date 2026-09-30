@@ -2,6 +2,7 @@
 layout: page
 title: Technical Expertise
 subtitle: Skills, Tools & Domain Knowledge
+description: "Technical profile of Maykell Sánchez Romero: languages, frameworks, architecture, data engineering, cloud and domain expertise."
 ---
 
 ## Programming Languages & Frameworks

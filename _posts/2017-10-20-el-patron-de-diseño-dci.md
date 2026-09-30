@@ -2,10 +2,11 @@
 layout: post
 title: El patrón de diseño DCI
 date: 2017-10-20
-description: # Add post description (optional)
+description: "Qué es el patrón de diseño DCI (Datos, Contexto e Interacción), sus objetivos y cómo organiza la implementación de lógicas de negocio complejas."
 #img: i-rest.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Java, DCI, Patrón de diseño, design pattern]
+language: es
 ---
 
 __DCI__ ha devenido en uno de los patrones que siempre tengo a mano para usar cuando programo. Complementario con __MVC__ y no tan afamado como éste, he podido encontrar en su aplicación una forma estándar y simple de organizar los artefactos en la implementación de lógicas de negocio complejas.

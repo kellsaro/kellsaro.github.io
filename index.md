@@ -3,6 +3,7 @@ layout: page
 title: Maykell Sánchez Romero
 subtitle: Senior Software Engineer with 20+ Years Building Production Systems
 description: "Senior software engineer and computer scientist with 20+ years building production systems in Elixir/Phoenix, Ruby on Rails, React and Java: from national government platforms to AI-powered SaaS products."
+share-title: "Maykell Sánchez Romero | Senior Software Engineer"
 ---
 
 **Based in Ecuador · Working remotely with distributed teams** · [kellsaro@gmail.com](mailto:kellsaro@gmail.com) · [LinkedIn](https://www.linkedin.com/in/kellsaro) · [GitHub](https://github.com/kellsaro)

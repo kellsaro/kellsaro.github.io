@@ -2,7 +2,7 @@
 layout: post
 title: Using getters to instantiate collections in Java
 date: 2018-1-19 13:32:20 +0500
-description: # Add post description (optional)
+description: "Instantiating collection fields lazily in their getters in Java, so the code never has to check them for null."
 #img: i-rest.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Java, Collections, Lazy initialization]

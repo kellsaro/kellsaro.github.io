@@ -2,6 +2,7 @@
 layout: page
 title: Professional Experience
 subtitle: 20+ Years of Software Development
+description: "Professional experience of Maykell Sánchez Romero: 20+ years as a software engineer, with the role, main stack and duration of each position."
 ---
 
 ### **Agonai** - Creator

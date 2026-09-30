@@ -8,6 +8,9 @@
 # Name of website
 title: Maykell Sánchez Romero
 
+# Full address of the site. Needed for absolute canonical URLs, social previews and the sitemap.
+url: "https://kellsaro.github.io"
+
 # Your name to show in the footer
 author: Maykell Sánchez Romero
 
@@ -44,7 +47,7 @@ round-avatar: true
 #title-img: /path/to/image
 
 # Website description for SEO and social media
-description: "Personal website and technical blog of Maykell Sánchez Romero, Senior Full Stack Software Developer with 10+ years of experience in Ruby on Rails, Java, System Architecture, and ETL processes."
+description: "Maykell Sánchez Romero, Senior Software Engineer with 20+ years building production systems in Elixir, Phoenix LiveView, Ruby on Rails, React and Java. Projects, experience and technical blog."
 
 
 # --- Footer social media links --- #
@@ -106,7 +109,7 @@ feed_show_tags: true
 post_search: true
 
 # The keywords to associate with your website, for SEO purposes
-keywords: "Maykell Sánchez Romero, Software Developer, Ruby on Rails, Full Stack, Java, Spring Boot, System Architecture, ETL, AWS, Technical Blog, Software Engineering, Web Development"
+keywords: "Maykell Sánchez Romero, Senior Software Engineer, Elixir, Phoenix LiveView, Ash Framework, Ruby on Rails, React, Java, Distributed Systems, Software Architecture, AI-assisted software engineering, Claude Code"
 
 # --- Colours / background image --- #
 
@@ -231,9 +234,18 @@ defaults:
       path: "" # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
+  -
+    scope:
+      path: "app" # experimental SPAs, not meant to be indexed
+    values:
+      sitemap: false
 
 # Exclude these files from production site
 exclude:
+  - CLAUDE.md
+  - SITE_IMPROVEMENTS.md
+  - beautiful-jekyll-theme.gemspec
+  - staticman.yml
   - CHANGELOG.md
   - CNAME
   - Gemfile

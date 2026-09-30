@@ -41,21 +41,23 @@ Structure for bilingual posts:
 ```markdown
 ---
 layout: post
-title: "Titulo en Espanol | English Title"
-description: "Descripcion | Description"
+title: "English Title | Titulo en Espanol"
+description: "Description | Descripcion"
 tags: [Topic, Bilingual, Tutorial]
 ---
 
 {% include bilingual_header.html %}
 
-<div class="lang-content" id="lang-es" markdown="1">
-Spanish content...
-</div>
-
-<div class="lang-content hidden" id="lang-en" markdown="1">
+<div class="lang-content" id="lang-en" markdown="1">
 English content...
 </div>
+
+<div class="lang-content hidden" id="lang-es" markdown="1">
+Spanish content...
+</div>
 ```
+
+English is the site's main language: it goes first in titles and descriptions, and its block is the one shown by default (the language switcher also defaults to English).
 
 The `markdown="1"` attribute on content divs is required for Jekyll to render Markdown inside HTML tags. Do not modify `_includes/bilingual_header.html` without understanding its impact on all bilingual posts.
 
