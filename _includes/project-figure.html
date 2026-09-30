@@ -1,0 +1,16 @@
+{%- comment -%}
+  Screenshot figure for project pages. Pass either src="/path/to/image"
+  or dir="/path/to/folder/" file="image.jpg", plus alt and an optional caption.
+{%- endcomment -%}
+{%- if include.src -%}
+  {%- assign path = include.src -%}
+{%- else -%}
+  {%- assign path = include.dir | append: include.file -%}
+{%- endif -%}
+{%- assign src = path | relative_url -%}
+<figure class="project-shot">
+  <a href="{{ src }}"><img src="{{ src }}" alt="{{ include.alt | escape }}" loading="lazy"></a>
+  {%- if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {%- endif %}
+</figure>

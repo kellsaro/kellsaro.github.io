@@ -1,0 +1,56 @@
+/* Site-wide overrides of the Beautiful Jekyll theme */
+
+/* Left-align the navbar dropdown items (the theme centers them on wide screens) */
+.navbar-custom .nav-item.dropdown .dropdown-menu {
+  text-align: left;
+}
+
+/*
+  On wide screens the theme makes the dropdown exactly as wide as its menu button
+  and breaks words anywhere, which splits longer project names mid-word. Let the
+  menu grow to fit its longest item instead (never narrower than the button).
+*/
+@media (min-width: 1200px) {
+  .navbar-custom .nav-item.dropdown .dropdown-menu {
+    width: auto;
+    min-width: 100%;
+    word-break: normal;
+  }
+
+  .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
+    white-space: nowrap;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/*
+  Page and post titles: the theme uses up to 80px (5rem) at weight 800, which is
+  hard to read next to 18px body text. Keep them clearly the largest text on the
+  page (above the 30px section headings) but at a comfortable reading size.
+*/
+.intro-header .page-heading h1,
+.intro-header .post-heading h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.intro-header .page-heading .page-subheading,
+.intro-header .post-heading .post-subheading {
+  font-size: 1.125rem;
+  line-height: 1.45;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .intro-header .page-heading h1,
+  .intro-header .post-heading h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-header .page-heading .page-subheading,
+  .intro-header .post-heading .post-subheading {
+    font-size: 1.25rem;
+  }
+}

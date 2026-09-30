@@ -1,0 +1,28 @@
+{%- comment -%}
+  Prints how long a role lasted, LinkedIn style (both months count), e.g. "2 yrs 11 mos".
+  start and end are "YYYY-MM" (or just "YYYY" when the months are unknown);
+  end="present" uses the date the site is built, so current roles stay up to date.
+{%- endcomment -%}
+{%- assign start_parts = include.start | split: "-" -%}
+{%- if include.end == "present" -%}
+  {%- assign end_year = site.time | date: "%Y" | plus: 0 -%}
+  {%- assign end_month = site.time | date: "%-m" | plus: 0 -%}
+{%- else -%}
+  {%- assign end_parts = include.end | split: "-" -%}
+  {%- assign end_year = end_parts[0] | plus: 0 -%}
+  {%- assign end_month = end_parts[1] | plus: 0 -%}
+{%- endif -%}
+{%- assign start_year = start_parts[0] | plus: 0 -%}
+{%- if start_parts.size < 2 -%}
+  {%- assign years = end_year | minus: start_year -%}
+  {%- assign months = 0 -%}
+{%- else -%}
+  {%- assign start_month = start_parts[1] | plus: 0 -%}
+  {%- assign start_total = start_year | times: 12 | plus: start_month -%}
+  {%- assign total = end_year | times: 12 | plus: end_month | minus: start_total | plus: 1 -%}
+  {%- assign years = total | divided_by: 12 -%}
+  {%- assign months = total | modulo: 12 -%}
+{%- endif -%}
+{%- if years > 0 -%}{{ years }} {% if years == 1 %}yr{% else %}yrs{% endif %}{%- endif -%}
+{%- if years > 0 and months > 0 -%}{{ " " }}{%- endif -%}
+{%- if months > 0 -%}{{ months }} {% if months == 1 %}mo{% else %}mos{% endif %}{%- endif -%}

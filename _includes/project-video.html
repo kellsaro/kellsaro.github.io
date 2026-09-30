@@ -1,0 +1,13 @@
+{%- comment -%}
+  Screen-recording figure for project pages. Pass src (an .mp4), an optional
+  poster image, a label describing the video for screen readers, and an optional caption.
+{%- endcomment -%}
+<figure class="project-shot">
+  <video controls muted playsinline preload="none"{% if include.poster %} poster="{{ include.poster | relative_url }}"{% endif %} aria-label="{{ include.label | escape }}">
+    <source src="{{ include.src | relative_url }}" type="video/mp4">
+    Your browser cannot play this video. <a href="{{ include.src | relative_url }}">Download it instead</a>.
+  </video>
+  {%- if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {%- endif %}
+</figure>

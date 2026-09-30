@@ -14,8 +14,16 @@ author: Maykell Sánchez Romero
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "aboutme"
-  Blog: "/"
+  Projects:
+    - Agonai: "/projects/agonai/"
+    - TechRepair: "/projects/techrepair/"
+    - Fundación Telefónica: "/projects/fundacion-telefonica/"
+    - SIMIEC: "/projects/simiec/"
+    - Text Tools for Workdocs: "/projects/text-tools/"
+    - SITRAN: "/projects/sitran/"
+    - alas-HIS: "/projects/alas-his/"
+    - LOTAIP: "/projects/lotaip/"
+  Blog: "/blog/"
   Contact: "mailto:kellsaro@gmail.com"
   #-- Resources: --#
   #--   - Beautiful Jekyll: "https://beautifuljekyll.com" --#
@@ -126,8 +134,8 @@ footer-link-col: "#404040"
 #mobile-theme-col: "#0085A1"
 
 # For any extra visual customization, you can include additional CSS files in every page on your site. List any custom CSS files here
-#site-css:
-#  - "/assets/css/custom-styles.css"
+site-css:
+  - "/assets/css/custom-styles.css"
 
 # If you have common JavaScript files that should be included in every page, list them here
 #site-js:
@@ -203,6 +211,7 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 5
+paginate_path: "/blog/page:num/"
 
 kramdown:
   input: GFM

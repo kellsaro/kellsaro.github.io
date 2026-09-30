@@ -9,7 +9,7 @@ subtitle: Skills, Tools & Domain Knowledge
 - **Java**: Spring Boot, Jakarta EE, enterprise applications, microservices
 - **Elixir**: Functional programming, OTP, concurrent systems
 - **JavaScript**: React, StimulusJS, BackboneJS, modern ES6+
-- **SQL**: PostgreSQL, MySQL, Oracle — complex queries and optimization
+- **SQL**: PostgreSQL, MySQL, Oracle - complex queries and optimization
 
 ## Backend & Architecture
 - **RESTful APIs**: Design, implementation, and documentation

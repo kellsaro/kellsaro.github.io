@@ -69,9 +69,9 @@ My blog covers various technical topics including:
 ├── _data/          # Site data files
 ├── assets/         # Images, CSS, JS
 ├── app/            # Single Page Applications (under construction)
-├── aboutme.md      # About page
-├── _config.yml     # Site configuration
-└── index.html      # Homepage
+├── index.md        # Home page (About me)
+├── blog/index.html # Blog post listing
+└── _config.yml     # Site configuration
 ```
 
 ## 🔧 Local Development

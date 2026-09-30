@@ -12,7 +12,7 @@
       {% endif %}
       <p class="copyright text-muted">
       {% if site.author %}
-        {{ site.author }}
+        <a href="{{ '/' | relative_url }}">{{ site.author }}</a>
         &nbsp;&bull;&nbsp;
       {% endif %}
       {{ site.time | date: '%Y' }}
@@ -20,7 +20,7 @@
       {% if site.url-pretty %}
         &nbsp;&bull;&nbsp;
         <span class="author-site">
-          <a href="{% if site.url-canonical %}{{ site.url-canonical }}{% else %}{{ '' | absolute_url }}{% endif %}">{{ site.url-pretty }}</a>
+          <a href="{% if site.url-canonical %}{{ site.url-canonical }}{% else %}{{ '/' | relative_url }}{% endif %}">{{ site.url-pretty }}</a>
         </span>
       {% endif %}
 
