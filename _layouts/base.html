@@ -33,6 +33,8 @@ common-js:
 
   {{ content }}
 
+  <p class="print-only print-footer">{{ site.author }}, {{ page.url | absolute_url | remove: "index.html" }}</p>
+
   {% include footer.html %}
 
   {% include footer-scripts.html %}

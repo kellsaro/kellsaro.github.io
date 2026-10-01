@@ -188,3 +188,74 @@ p, li, dd { text-wrap: pretty; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+
+/* ---------- Print (every page; the home page's CV adds its own rules in resume.css) ---------- */
+
+.print-only { display: none !important; }
+
+@media print {
+  /*
+    No page margin: browsers then have no room for their own header and footer
+    (date, title, URL). The margin moves to the body padding instead.
+  */
+  @page { margin: 0; }
+
+  html, body { background: #fff !important; }
+  body {
+    padding: 14mm 15mm !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-only { display: block !important; }
+
+  /* Site chrome that has no place on paper */
+  nav.navbar, footer, .skip-link, #beautifuljekyll-search-overlay,
+  .blog-pager, .pagination, .language-selector, .project-shot video,
+  .avatar-container { display: none !important; }
+
+  /* Full width, no space reserved for the fixed navbar */
+  .container-md, .container-fluid { max-width: 100% !important; padding: 0 !important; }
+  .row { margin: 0 !important; }
+  [class*="col-"] { flex: 0 0 100% !important; max-width: 100% !important; margin-left: 0 !important; padding: 0 !important; }
+  .intro-header { margin: 0 0 6mm !important; padding: 0 !important; }
+  .intro-header .page-heading h1,
+  .intro-header .post-heading h1 { font-size: 20pt; }
+  .intro-header .page-heading .page-subheading,
+  .intro-header .post-heading .post-subheading { font-size: 11.5pt; margin-top: 1.5mm; }
+
+  [role="main"] h2 { font-size: 14pt; margin-top: 7mm; }
+  [role="main"] h3 { font-size: 12pt; }
+  p { margin-bottom: 2.5mm; }
+
+  /* Keep things whole: no heading alone at the bottom, no split screenshot */
+  h1, h2, h3, h4, .step-label { break-after: avoid; }
+  figure, img, .project-tree, .project-flow li, table, pre, blockquote { break-inside: avoid; }
+  p, li { orphans: 3; widows: 3; }
+
+  /* On paper a link must say where it goes: external ones print their address */
+  a { color: var(--ink) !important; text-decoration: none !important; }
+  [role="main"] a[href^="http"]:not([href*="kellsaro.github.io"])::after {
+    content: " (" attr(href) ")";
+    font-size: .85em;
+    color: var(--slate);
+    word-break: break-all;
+  }
+  .project-shot a::after, .resume-page a::after { content: none !important; }
+
+  pre { white-space: pre-wrap; border: 1px solid var(--rule); }
+
+  .print-footer {
+    margin: 8mm 0 0;
+    padding-top: 2mm;
+    border-top: .5pt solid var(--rule);
+    font-family: var(--font-ui);
+    font-size: 8.5pt;
+    color: var(--slate);
+  }
+  /* The CV on the home page already carries the contact details */
+  .resume-page ~ .print-footer { display: none !important; }
+}
