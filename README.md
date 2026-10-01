@@ -5,7 +5,7 @@
 
 Source of **[kellsaro.github.io](https://kellsaro.github.io)**: the resume, project pages and technical writing of Maykell Sánchez Romero, Senior Software Engineer specialized in **Ruby on Rails** and **React**, backed by solid **Java** experience, working with a rigorous AI-assisted engineering workflow and moving toward **Elixir/Phoenix LiveView**.
 
-- **Resume:** [kellsaro.github.io](https://kellsaro.github.io), also as a [one-page PDF](https://kellsaro.github.io/assets/docs/Maykell-Sanchez-Romero-CV.pdf)
+- **Resume:** [kellsaro.github.io](https://kellsaro.github.io), also as a [one-page PDF](https://kellsaro.github.io/assets/docs/Maykell-Sanchez-Romero-CV.pdf) and as [Markdown for LLMs](https://kellsaro.github.io/assets/docs/Maykell-Sanchez-Romero-CV.md)
 - **Projects:** Agonai, TechRepair, Fundación Telefónica dashboards, SIMIEC, Text Tools for Workdocs and more, each with its own page
 - **How I build software with AI:** [kellsaro.github.io/how-i-work](https://kellsaro.github.io/how-i-work/)
 - **Contact:** [kellsaro@gmail.com](mailto:kellsaro@gmail.com)
@@ -22,6 +22,7 @@ A [Jekyll](https://jekyllrb.com/) site on the [Beautiful Jekyll](https://github.
 | `experience.md` | Detailed experience: role, stack and duration of each position |
 | `projects/` | One page per project |
 | `how-i-work.md` | The AI-assisted engineering workflow |
+| `assets/docs/cv-markdown.txt` | Template of the Markdown CV for LLMs, published as `Maykell-Sanchez-Romero-CV.md` |
 | `llms.txt` | Plain-text summary of the profile for AI assistants, generated from the resume data |
 | `_includes/structured-data.html` | Schema.org JSON-LD for the profile, projects and posts |
 | `_posts/` | Blog posts, including the bilingual Elixir lessons series |

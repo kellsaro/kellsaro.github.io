@@ -19,13 +19,17 @@ if [ -z "$CHROME" ]; then
 fi
 [ -n "$CHROME" ] || { echo "Chrome not found; set CHROME=/path/to/chrome" >&2; exit 1; }
 
-echo "Building the site..."
-bundle exec jekyll build --quiet
+# Build into a private folder: a running `jekyll serve` rewrites _site with
+# localhost URLs, which must never end up inside the published PDF.
+BUILD_DIR="$(mktemp -d)"
 
-echo "Serving _site on port $PORT..."
-python3 -m http.server "$PORT" --directory _site >/dev/null 2>&1 &
+echo "Building the site..."
+JEKYLL_ENV=production bundle exec jekyll build --quiet --destination "$BUILD_DIR"
+
+echo "Serving the build on port $PORT..."
+python3 -m http.server "$PORT" --directory "$BUILD_DIR" >/dev/null 2>&1 &
 SERVER_PID=$!
-trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+trap 'kill $SERVER_PID 2>/dev/null || true; rm -rf "$BUILD_DIR"' EXIT
 for _ in $(seq 1 30); do
   curl -s -o /dev/null "http://localhost:$PORT/" && break
   sleep 0.2

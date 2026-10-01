@@ -9,6 +9,36 @@ contact:
   linkedin: "linkedin.com/in/kellsaro"
   github: "github.com/kellsaro"
 
+# Opening paragraph (Markdown; site links start with /)
+summary: "Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in Ruby on Rails and React, backed by solid Java experience, and build products end to end with a rigorous [AI-assisted engineering workflow](/how-i-work/), which I am also using to move my stack toward Elixir and Phoenix LiveView."
+
+# Key facts (shown on screen as "At a glance"; values in Markdown)
+glance:
+  - label: Role
+    value: Senior Software Engineer
+  - label: Experience
+    value: 15+ years building production systems
+  - label: Core stack
+    value: Ruby on Rails, React and PostgreSQL, with solid Java (Spring Boot, Jakarta EE)
+  - label: Growing in
+    value: Elixir and Phoenix LiveView, with two products built in it
+  - label: Way of working
+    value: "[AI-assisted engineering](/how-i-work/) with specs, reviewed plans, cross-agent review and full test suites"
+  - label: Location
+    value: Ecuador, UTC-5 (within 1 hour of US Eastern time)
+  - label: Availability
+    value: Open to remote roles
+  - label: Languages
+    value: Spanish (native), English (professional)
+
+focus:
+  - title: AI-assisted software engineering
+    text: "Agentic development with LLMs (Claude Code, Codex and others) for fast system development with accountability: specs, reviewed plans with checkpoints, cross-review by two agents, full test suites and security checks."
+  - title: Distributed systems
+    text: Distributed systems architecture for fast, scalable, resilient, maintainable solutions.
+  - title: Elixir and Phoenix LiveView
+    text: Growing toward Elixir as my next main stack, with two products already built in it.
+
 # Grouped so recruiters (and parsers) can scan it. Curated for the target roles
 # (Ruby on Rails backend with React, moving toward Elixir); older or niche technologies stay
 # visible in the project pages and experience.md instead of here.

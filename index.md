@@ -29,10 +29,11 @@ css: ["/assets/css/resume.css"]
   <img class="resume-photo" src="{{ site.avatar | relative_url }}" alt="Portrait of {{ page.title }}" width="112" height="112">
 </header>
 
-<p class="resume-lead">Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in Ruby on Rails and React, backed by solid Java experience, and build products end to end with a rigorous <a href="{{ '/how-i-work/' | absolute_url }}">AI-assisted engineering workflow</a>, which I am also using to move my stack toward Elixir and Phoenix LiveView.</p>
+<p class="resume-lead">{{ resume.summary | replace: "](/", absolute_link | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
 
 <div class="resume-actions">
   <a class="resume-button resume-button-primary" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.pdf' | absolute_url }}" download>Download CV (PDF)</a>
+  <a class="resume-button" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.md' | absolute_url }}" download>Download CV (Markdown)</a>
   <button type="button" class="resume-button" onclick="window.print()">Print</button>
   <a class="resume-button" href="{{ '/experience/' | absolute_url }}">Full experience</a>
 </div>
@@ -40,23 +41,19 @@ css: ["/assets/css/resume.css"]
 <section class="resume-section resume-screen-only" aria-labelledby="at-a-glance">
   <h2 id="at-a-glance">At a glance</h2>
   <dl class="resume-pairs">
-    <dt>Role</dt><dd>Senior Software Engineer</dd>
-    <dt>Experience</dt><dd>15+ years building production systems</dd>
-    <dt>Core stack</dt><dd>Ruby on Rails, React and PostgreSQL, with solid Java (Spring Boot, Jakarta EE)</dd>
-    <dt>Growing in</dt><dd>Elixir and Phoenix LiveView, with two products built in it</dd>
-    <dt>Way of working</dt><dd><a href="{{ '/how-i-work/' | absolute_url }}">AI-assisted engineering</a> with specs, reviewed plans, cross-agent review and full test suites</dd>
-    <dt>Location</dt><dd>{{ contact.location }}</dd>
-    <dt>Availability</dt><dd>{{ contact.availability }}</dd>
-    <dt>Languages</dt><dd>Spanish (native), English (professional)</dd>
+  {%- for item in resume.glance %}
+    <dt>{{ item.label }}</dt>
+    <dd>{{ item.value | replace: "](/", absolute_link | markdownify | remove: "<p>" | remove: "</p>" | strip }}</dd>
+  {%- endfor %}
   </dl>
 </section>
 
 <section class="resume-section" aria-labelledby="current-focus">
   <h2 id="current-focus">Current focus</h2>
   <div class="resume-section-body">
-    <p><strong>AI-assisted software engineering.</strong> Agentic development with LLMs (Claude Code, Codex and others) for fast system development with accountability: specs, reviewed plans with checkpoints, cross-review by two agents, full test suites and security checks.</p>
-    <p><strong>Distributed systems.</strong> Distributed systems architecture for fast, scalable, resilient, maintainable solutions.</p>
-    <p><strong>Elixir and Phoenix LiveView.</strong> Growing toward Elixir as my next main stack, with two products already built in it.</p>
+  {%- for item in resume.focus %}
+    <p><strong>{{ item.title }}.</strong> {{ item.text }}</p>
+  {%- endfor %}
   </div>
 </section>
 
