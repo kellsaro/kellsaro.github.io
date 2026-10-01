@@ -8,6 +8,7 @@ contact:
   website: "kellsaro.github.io"
   linkedin: "linkedin.com/in/kellsaro"
   github: "github.com/kellsaro"
+  x: "x.com/kellsaro"
 
 # Opening paragraph (Markdown; site links start with /)
 summary: "Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in Ruby on Rails and React, backed by solid Java experience, and build products end to end with a rigorous [AI-assisted engineering workflow](/how-i-work/), which I am also using to move my stack toward Elixir and Phoenix LiveView."

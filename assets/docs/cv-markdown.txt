@@ -18,6 +18,7 @@ permalink: /assets/docs/Maykell-Sanchez-Romero-CV.md
 - Email: {{ contact.email }}
 - LinkedIn: https://www.{{ contact.linkedin }}
 - GitHub: https://{{ contact.github }}
+- X: https://{{ contact.x }}
 - Website: https://{{ contact.website }}
 - Location: {{ contact.location }}
 - Availability: {{ contact.availability }}

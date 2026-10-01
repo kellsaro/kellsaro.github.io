@@ -145,6 +145,12 @@ footer {
   border-top: 1px solid var(--rule);
   font-size: .9rem;
 }
+/* Font Awesome 5 has no X logo: draw the letter inside the round badge */
+footer .social-x {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: .95em;
+}
 
 /* ---------- Accessibility and polish (Web Interface Guidelines) ---------- */
 

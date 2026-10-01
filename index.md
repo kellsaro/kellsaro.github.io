@@ -22,6 +22,7 @@ css: ["/assets/css/resume.css"]
       <li><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
       <li><a href="https://www.{{ contact.linkedin }}">{{ contact.linkedin }}</a></li>
       <li><a href="https://{{ contact.github }}">{{ contact.github }}</a></li>
+      <li><a href="https://{{ contact.x }}">{{ contact.x }}</a></li>
       <li class="resume-print-only"><a href="https://{{ contact.website }}">{{ contact.website }}</a></li>
     </ul>
     <p class="resume-location">{{ contact.location }} |&gt; {{ contact.availability }}</p>

@@ -14,6 +14,7 @@ Maykell Sánchez Romero is a Senior Software Engineer based in Ecuador (UTC-5, w
 - Contact: {{ resume.contact.email }}
 - LinkedIn: https://www.{{ resume.contact.linkedin }}
 - GitHub: https://{{ resume.contact.github }}
+- X: https://{{ resume.contact.x }}
 - Resume: {{ site_root }} (printable as a one-page CV)
 - CV in Markdown, ready for LLMs: {{ '/assets/docs/Maykell-Sanchez-Romero-CV.md' | absolute_url }}
 - CV as PDF: {{ '/assets/docs/Maykell-Sanchez-Romero-CV.pdf' | absolute_url }}
