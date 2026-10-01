@@ -57,7 +57,23 @@
   font-weight: 600;
   cursor: pointer;
 }
-.resume-print-button:hover { background: #256a4e; }
+.resume-print-button:hover { background: #256a4e; color: #fff; text-decoration: none; }
+a.resume-print-button, a.resume-print-button:visited { color: #fff; }
+.resume-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 1rem;
+  border: 1px solid var(--resume-border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--resume-text);
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.resume-secondary-button:hover { border-color: var(--resume-accent); color: var(--resume-accent); }
 .resume-actions a { font-weight: 600; }
 
 main h2, [role="main"] h2 { margin-top: 2.5rem; }

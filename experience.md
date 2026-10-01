@@ -22,7 +22,7 @@ description: "Professional experience of Maykell Sánchez Romero: 15+ years as a
 - Created an API client and actively took part in defining other REST API endpoints
 - Added tests backing the development
 
-### **Kynsoft** - Software Developer (Java, Ruby, Elixir, Data Analyst)
+### **Kynsoft** - Software Developer and Data Analyst
 *September 2024 - October 2025 · {% include duration.html start="2024-09" end="2025-10" %} · Ecuador · Remote*<br>
 **Stack:** Java, Ruby, Elixir, Apache Hop, Looker Studio, PostgreSQL, DB2, SQL
 - Data Analyst for Fundación Telefónica Ecuador, creating ETLs and [Looker Studio Dashboards]({{ site.baseurl }}/projects/fundacion-telefonica/)

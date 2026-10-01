@@ -8,6 +8,11 @@ css: ["/assets/css/resume.css"]
 ---
 {%- assign resume = site.data.resume -%}
 {%- assign contact = resume.contact -%}
+{%- comment -%}
+  Links use absolute URLs so they keep pointing at the published site in the
+  printed / downloaded PDF, even when it is generated from a local build.
+{%- endcomment -%}
+{%- capture absolute_link -%}]({{ '/' | absolute_url }}{%- endcapture -%}
 
 <div class="resume-contact">
   <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ contact.location }}</span>
@@ -17,17 +22,18 @@ css: ["/assets/css/resume.css"]
   <a href="https://{{ contact.website }}" class="resume-print-only"><i class="fas fa-globe" aria-hidden="true"></i> {{ contact.website }}</a>
 </div>
 
-<p class="resume-lead">Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in <strong>Ruby on Rails</strong> and <strong>React</strong>, backed by solid <strong>Java</strong> experience, and build products end to end with a rigorous <a href="{{ '/how-i-work/' | relative_url }}">AI-assisted engineering workflow</a>, which I am also using to move my stack toward <strong>Elixir/Phoenix LiveView</strong>.</p>
+<p class="resume-lead">Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in <strong>Ruby on Rails</strong> and <strong>React</strong>, backed by solid <strong>Java</strong> experience, and build products end to end with a rigorous <a href="{{ '/how-i-work/' | absolute_url }}">AI-assisted engineering workflow</a>, which I am also using to move my stack toward <strong>Elixir/Phoenix LiveView</strong>.</p>
 
 <div class="resume-actions">
-  <button type="button" class="resume-print-button" onclick="window.print()"><i class="fas fa-print" aria-hidden="true"></i> Print or save as PDF</button>
-  <a href="{{ '/experience/' | relative_url }}">Full experience</a>
+  <a class="resume-print-button" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.pdf' | absolute_url }}" download><i class="fas fa-file-download" aria-hidden="true"></i> Download CV (PDF)</a>
+  <button type="button" class="resume-secondary-button" onclick="window.print()"><i class="fas fa-print" aria-hidden="true"></i> Print</button>
+  <a href="{{ '/experience/' | absolute_url }}">Full experience</a>
 </div>
 
 <h2 id="current-focus">Current Focus</h2>
 
 <ul class="resume-focus">
-  <li><strong>AI-assisted software engineering.</strong> Agentic development with LLMs (Claude Code, Codex, etc.) for fast system development with accountability: specs, reviewed plans, full test suites and security checks. <a href="{{ '/how-i-work/' | relative_url }}" class="resume-screen-only">How I work</a></li>
+  <li><strong>AI-assisted software engineering.</strong> Agentic development with LLMs (Claude Code, Codex, etc.) for fast system development with accountability: specs, reviewed plans with checkpoints, cross-review by two agents, full test suites and security checks. <a href="{{ '/how-i-work/' | absolute_url }}" class="resume-screen-only">How I work</a></li>
   <li><strong>Distributed systems.</strong> Distributed systems architecture for fast, scalable, resilient, maintainable solutions.</li>
   <li><strong>Elixir and Phoenix LiveView.</strong> Growing toward Elixir as my next main stack, with two products already built in it.</li>
 </ul>
@@ -46,13 +52,13 @@ css: ["/assets/css/resume.css"]
 <div class="resume-projects">
 {%- for project in resume.projects %}
   <article class="resume-project{% if project.web_only %} resume-web-only{% endif %}">
-    <h3><a href="{{ project.page | relative_url }}">{{ project.name }}</a></h3>
+    <h3><a href="{{ project.page | absolute_url }}">{{ project.name }}</a></h3>
     <p>{{ project.summary }}</p>
     <ul class="resume-chips" aria-label="Stack">
       {%- for tech in project.stack %}<li>{{ tech }}</li>{% endfor -%}
     </ul>
     <p class="resume-project-links">
-      <a href="{{ project.page | relative_url }}">Details <span aria-hidden="true">→</span></a>
+      <a href="{{ project.page | absolute_url }}">Details <span aria-hidden="true">→</span></a>
       {%- if project.site %}
       <a href="{{ project.site }}">{{ project.site | remove: "https://" }} <span aria-hidden="true">↗</span></a>
       {%- endif %}
@@ -73,7 +79,7 @@ css: ["/assets/css/resume.css"]
       <p class="resume-job-meta">{% include resume-date.html date=job.start %} - {% include resume-date.html date=job.end %} · {% include duration.html start=job.start end=job.end %}{% if job.location %} · {{ job.location }}{% endif %}</p>
     </div>
     {%- if job.highlight %}
-    <p class="resume-job-highlight">{{ job.highlight | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+    <p class="resume-job-highlight">{{ job.highlight | replace: "](/", absolute_link | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     {%- endif %}
   </li>
 {%- endfor %}
@@ -90,7 +96,7 @@ css: ["/assets/css/resume.css"]
   {%- endif %}
 </ol>
 
-<p class="resume-more">See the <a href="{{ '/experience/' | relative_url }}">complete experience</a> for the details and stack of each role.</p>
+<p class="resume-more">See the <a href="{{ '/experience/' | absolute_url }}">complete experience</a> for the details and stack of each role.</p>
 
 <div class="resume-columns">
   <section>
@@ -114,4 +120,4 @@ css: ["/assets/css/resume.css"]
   </section>
 </div>
 
-<p class="resume-more resume-screen-only">Want more? See my <a href="{{ '/technical-expertise/' | relative_url }}">technical profile</a>, or <a href="mailto:{{ contact.email }}">email me</a>.</p>
+<p class="resume-more resume-screen-only">Want more? See my <a href="{{ '/technical-expertise/' | absolute_url }}">technical profile</a>, or <a href="mailto:{{ contact.email }}">email me</a>.</p>

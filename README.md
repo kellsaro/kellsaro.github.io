@@ -1,144 +1,52 @@
-# Maykell Sánchez Romero - Personal Website
+# Maykell Sánchez Romero · Personal site and resume
 
-[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://kellsaro.github.io)
-[![GitHub](https://img.shields.io/badge/GitHub-kellsaro-blue)](https://github.com/kellsaro)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-kellsaro-blue)](https://linkedin.com/in/kellsaro)
+[![Website](https://img.shields.io/badge/Website-kellsaro.github.io-2f7d5d)](https://kellsaro.github.io)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-kellsaro-blue)](https://www.linkedin.com/in/kellsaro)
 
-> Personal website and technical blog of Maykell Sánchez Romero, Senior Full Stack Software Developer
+Source of **[kellsaro.github.io](https://kellsaro.github.io)**: the resume, project pages and technical writing of Maykell Sánchez Romero, Senior Software Engineer specialized in **Ruby on Rails** and **React**, backed by solid **Java** experience, working with a rigorous AI-assisted engineering workflow and moving toward **Elixir/Phoenix LiveView**.
 
-## 🌐 Live Site
+- **Resume:** [kellsaro.github.io](https://kellsaro.github.io), also as a [one-page PDF](https://kellsaro.github.io/assets/docs/Maykell-Sanchez-Romero-CV.pdf)
+- **Projects:** Agonai, TechRepair, Fundación Telefónica dashboards, SIMIEC, Text Tools for Workdocs and more, each with its own page
+- **How I build software with AI:** [kellsaro.github.io/how-i-work](https://kellsaro.github.io/how-i-work/)
+- **Contact:** [kellsaro@gmail.com](mailto:kellsaro@gmail.com)
 
-Visit my website at: **[kellsaro.github.io](https://kellsaro.github.io)**
+## How the site is built
 
-## 👨‍💻 About Me
+A [Jekyll](https://jekyllrb.com/) site on the [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll) theme, deployed by GitHub Pages on every push to `master`.
 
-Senior Software Developer with 15+ years of experience specializing in:
-- **Ruby on Rails** full-stack development (15+ years)
-- **Java** backend development (Spring Boot, Jakarta EE) (15+ years)
-- **System Architecture Design** and performance optimization
-- **ETL processes** and data pipeline development
-- **Team Leadership** and mentoring
-- **Government Systems** and healthcare platforms
-- **Hardware Integration** and specialized systems
+| Path | What it holds |
+| --- | --- |
+| `_data/resume.yml` | Resume content: contact, technologies, projects, experience, education, languages |
+| `index.md` | Home page, rendered as a resume from `_data/resume.yml` |
+| `assets/css/resume.css` | Resume design for screen and the print stylesheet (one-page CV) |
+| `experience.md` | Detailed experience: role, stack and duration of each position |
+| `projects/` | One page per project |
+| `how-i-work.md` | The AI-assisted engineering workflow |
+| `llms.txt` | Plain-text summary of the profile for AI assistants, generated from the resume data |
+| `_includes/structured-data.html` | Schema.org JSON-LD for the profile, projects and posts |
+| `_posts/` | Blog posts, including the bilingual Elixir lessons series |
+| `bin/` | Scripts that regenerate the CV PDF and the link-preview image |
 
-## 🛠️ Tech Stack
+## Local development
 
-### Primary Technologies
-- **Backend**: Ruby on Rails, Java (Spring Boot, Jakarta EE), Elixir (Phoenix)
-- **Frontend**: JavaScript (React, StimulusJS), HTML5, CSS3
-- **Mobile**: Dart (Flutter)
-- **Database**: PostgreSQL, MySQL, Oracle
-- **Cloud**: AWS (S3, EC2, RDS, Elastic Beanstalk)
-- **ETL & Analytics**: Apache Hop, Jasper Reports, Google Looker Studio
-- **DevOps**: Docker, Git, GitHub Actions
-- **Specialized**: Hardware integration, HL7 healthcare systems
+Requires Ruby (see `.ruby-version`) and Bundler.
 
-### Languages
-- **Spanish** (Native)
-- **English** (Professional)
-- **French** (Basic)
-- **Italian** (Basic)
-
-## 📝 Blog Topics
-
-My blog covers various technical topics including:
-- **Software Architecture**: Design patterns, system design, best practices
-- **Ruby on Rails**: Advanced techniques, performance optimization, HOTWIRE
-- **Java Development**: Spring Boot, Jakarta EE, enterprise applications
-- **Government Systems**: Immigration control, transparency platforms
-- **Healthcare Technology**: HL7 integrations, medical systems
-- **ETL & Data Engineering**: Pipeline development, reporting solutions
-- **System Integration**: Hardware integration, specialized devices
-- **Team Leadership**: Mentoring, code reviews, architectural decisions
-
-## 🚀 Features
-
-- **Responsive Design**: Mobile-first approach with Beautiful Jekyll theme
-- **Technical Blog**: In-depth articles on software development
-- **Multilingual Content**: Posts in both English and Spanish
-- **SEO Optimized**: Proper meta tags and structured data
-- **Fast Loading**: Optimized for performance
-- **Search Functionality**: Easy content discovery
-
-## 🏗️ Project Structure
-
-```
-├── _posts/          # Blog posts
-├── _layouts/        # Page templates
-├── _includes/       # Reusable components
-├── _data/          # Site data files
-├── assets/         # Images, CSS, JS
-├── app/            # Single Page Applications (under construction)
-├── index.md        # Home page (About me)
-├── blog/index.html # Blog post listing
-└── _config.yml     # Site configuration
-```
-
-## 🔧 Local Development
-
-### Prerequisites
-- Ruby 2.7+
-- Jekyll 4.0+
-- Bundler
-
-### Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kellsaro/kellsaro.github.io.git
-   cd kellsaro.github.io
-   ```
-
-2. Install dependencies:
-   ```bash
-   bundle install
-   ```
-
-3. Run the development server:
-   ```bash
-   bundle exec jekyll serve
-   ```
-
-4. Open your browser and navigate to `http://localhost:4000`
-
-### Building for Production
 ```bash
-bundle exec jekyll build
+bundle install
+bundle exec jekyll serve   # http://localhost:4000
 ```
 
-## 📊 Analytics & Performance
+## Regenerating assets
 
-- **Google Analytics**: Configured for visitor insights
-- **SEO Optimized**: Meta descriptions, Open Graph tags
-- **Performance**: Optimized images and lazy loading
-- **Accessibility**: WCAG compliant
+After changing the resume content or its design:
 
-## 🏆 Professional Highlights
+```bash
+bin/cv-pdf        # assets/docs/Maykell-Sanchez-Romero-CV.pdf, warns if it no longer fits on one page
+bin/social-card   # assets/img/social-card.png, the 1200x630 link-preview image (source: tools/social-card.html)
+```
 
-- **15+ years** of software development experience
-- **Master's Degree** in Software Development
-- **National-scale systems**: SIMIEC immigration control system
-- **Government platforms**: LOTAIP transparency system
-- **Healthcare systems**: HL7 integrations and medical platforms
-- **Custom ERP development**: SITRAN tourism transportation system
-- **Academic experience**: Teaching and institutional projects at university level
-- **Team leadership**: Mentoring and architectural decision-making
+Both use headless Chrome; set `CHROME=/path/to/chrome` if it is not found.
 
+## License
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🌟 Based On
-
-This site is built using the excellent [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll) theme by [Dean Attali](https://github.com/daattali).
-
-## 📞 Contact
-
-- **Email**: [kellsaro@gmail.com](mailto:kellsaro@gmail.com)
-- **LinkedIn**: [linkedin.com/in/kellsaro](https://linkedin.com/in/kellsaro)
-- **GitHub**: [github.com/kellsaro](https://github.com/kellsaro)
-- **Website**: [kellsaro.github.io](https://kellsaro.github.io)
-
----
-
-*Last updated: July 2025*
+MIT, see [LICENSE](LICENSE). Theme by [Dean Attali](https://github.com/daattali/beautiful-jekyll).

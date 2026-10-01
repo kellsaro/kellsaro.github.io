@@ -234,6 +234,7 @@ defaults:
       path: "" # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
+      share-img: "/assets/img/social-card.png" # link preview image; pages can override it (regenerate with bin/social-card)
   -
     scope:
       path: "app" # experimental SPAs, not meant to be indexed
@@ -242,6 +243,8 @@ defaults:
 
 # Exclude these files from production site
 exclude:
+  - bin/
+  - tools/
   - CLAUDE.md
   - SITE_IMPROVEMENTS.md
   - beautiful-jekyll-theme.gemspec

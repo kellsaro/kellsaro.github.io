@@ -19,7 +19,7 @@ My core is **Ruby on Rails** on the backend and **React** on the frontend, with 
 ## AI engineering
 
 - Daily **AI-assisted (agentic) software engineering** with **Claude Code**, **Codex** and **Windsurf**, for fast system development with accountability.
-- A defined workflow: I set the architecture, design principles and tools; specify each feature with expected results, examples and counterexamples; review and approve the agent's plan; and require new tests, the full test suite, linters, formatters and a security agent before staging and QA. See [how I work]({{ '/how-i-work/' | relative_url }}).
+- A defined workflow: I set the architecture, design principles and tools; specify each feature with expected results, examples and counterexamples; review and approve the agent's plan; implement with checkpoints and traceability; review the code myself plus a cross-review by a second agent; and require new tests, the full test suite, linters, formatters and a security agent before staging and QA. Repeated problems become rules and repeated tasks become agent skills. See [how I work]({{ '/how-i-work/' | relative_url }}).
 - Integrating **LLM APIs** (OpenAI, Claude, Gemini, Perplexity) into products, with multi-provider fallback and bring-your-own-keys, as in Agonai.
 
 ## Elixir (growing)

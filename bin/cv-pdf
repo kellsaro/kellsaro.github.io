@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Regenerates the downloadable CV (assets/docs/Maykell-Sanchez-Romero-CV.pdf)
+# from the home page's print stylesheet, using headless Chrome.
+# Run it after changing resume content (_data/resume.yml, index.md, resume.css).
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+OUTPUT="assets/docs/Maykell-Sanchez-Romero-CV.pdf"
+PORT="${PORT:-4199}"
+
+CHROME="${CHROME:-}"
+if [ -z "$CHROME" ]; then
+  for candidate in \
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+    "$(command -v google-chrome || true)" \
+    "$(command -v chromium || true)"; do
+    if [ -n "$candidate" ] && [ -x "$candidate" ]; then CHROME="$candidate"; break; fi
+  done
+fi
+[ -n "$CHROME" ] || { echo "Chrome not found; set CHROME=/path/to/chrome" >&2; exit 1; }
+
+echo "Building the site..."
+bundle exec jekyll build --quiet
+
+echo "Serving _site on port $PORT..."
+python3 -m http.server "$PORT" --directory _site >/dev/null 2>&1 &
+SERVER_PID=$!
+trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+for _ in $(seq 1 30); do
+  curl -s -o /dev/null "http://localhost:$PORT/" && break
+  sleep 0.2
+done
+
+echo "Printing the CV..."
+"$CHROME" --headless=new --disable-gpu --no-pdf-header-footer \
+  --print-to-pdf="$OUTPUT" "http://localhost:$PORT/" 2>/dev/null
+
+if command -v pdfinfo >/dev/null; then
+  PAGES=$(pdfinfo "$OUTPUT" | awk '/^Pages:/ {print $2}')
+  echo "Saved $OUTPUT ($PAGES page(s))"
+  [ "$PAGES" = "1" ] || echo "Warning: the CV no longer fits on one page; tighten the content or resume.css." >&2
+else
+  echo "Saved $OUTPUT"
+fi

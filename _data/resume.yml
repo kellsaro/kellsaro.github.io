@@ -17,7 +17,7 @@ technologies:
   - group: "Frontend"
     items: [React, JavaScript, "Hotwire (Turbo, Stimulus)", Tailwind CSS]
   - group: "AI engineering"
-    items: [Claude Code, Codex, Windsurf, "LLM APIs (OpenAI, Claude, Gemini)", Spec-driven development]
+    items: [Claude Code, Codex, Windsurf, "LLM APIs (OpenAI, Claude, Gemini)", Spec-driven development, Cross-agent code review, Agent rules and skills]
   - group: "Elixir (growing)"
     items: [Elixir, Phoenix LiveView, Ash Framework, Oban]
   - group: "Data & APIs"
