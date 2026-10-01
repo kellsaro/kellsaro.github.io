@@ -8,7 +8,7 @@ description: "TechRepair is a cloud operations platform for wind turbine blade a
 share-img: "/assets/img/projects/techrepair/00-landing.png"
 ---
 
-**[TechRepair](https://techrepair.site)** is a cloud platform built for companies that repair and maintain **wind turbine blades and towers**. It gives them one workspace for the whole job: dispatching work to the right blade, running inspections and repairs in the field, approving the work, and delivering reports to the client. Everything revolves around the **work order**, the main operational resource, where projects, teams, field activity and reports converge.
+**[TechRepair](https://techrepair.site)** is a cloud platform built for companies that repair and maintain **wind turbine blades**. It gives them one workspace for the whole job: dispatching work to the right blade, running inspections and repairs in the field, approving the work, and delivering reports to the client. Everything revolves around the **work order**, the main operational resource, where projects, teams, field activity and reports converge.
 
 It is built for this industry rather than adapted from a generic tool, or in its own words: *"Wind-native, not bent to fit."*
 
