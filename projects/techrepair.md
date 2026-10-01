@@ -5,6 +5,7 @@ subtitle: The operations backbone for wind turbine blade and tower maintenance t
 permalink: /projects/techrepair/
 css: ["/assets/css/projects.css"]
 description: "TechRepair is a cloud operations platform for wind turbine blade and tower maintenance teams, from dispatch and field work to approvals and reports."
+share-img: "/assets/img/projects/techrepair/00-landing.png"
 ---
 
 **[TechRepair](https://techrepair.site)** is a cloud platform built for companies that repair and maintain **wind turbine blades and towers**. It gives them one workspace for the whole job: dispatching work to the right blade, running inspections and repairs in the field, approving the work, and delivering reports to the client. Everything revolves around the **work order**, the main operational resource, where projects, teams, field activity and reports converge.
@@ -22,6 +23,11 @@ For **TechRepair LLC**, I am the developer of the **web system** and of the **Gr
   <li>GraphQL API</li>
   <li>Auto-generated client reports</li>
 </ul>
+
+<figure class="project-shot">
+  <a href="{{ '/assets/img/projects/techrepair/00-landing.png' | relative_url }}"><img src="{{ '/assets/img/projects/techrepair/00-landing.webp' | relative_url }}" alt="TechRepair landing page with the headline 'Deliver wind turbine repairs with real-time control. Operational excellence your clients sign off.' next to a wind turbine illustration" loading="lazy"></a>
+  <figcaption>The public site at techrepair.site, built for wind-turbine repair operations: real-time control of the field work, and results the client signs off.</figcaption>
+</figure>
 
 ## The problem
 
