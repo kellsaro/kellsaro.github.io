@@ -41,7 +41,7 @@ The home page (`index.md`) is a resume rendered from `_data/resume.yml`: contact
 
 ## Design system
 
-The site's look lives in `assets/css/custom-styles.css` (tokens and site-wide rules), `assets/css/resume.css` (home page and its print stylesheet) and `assets/css/projects.css` (project pages and How I Work). Direction: a well-kept engineering record. Public Sans for names, headings and interface; Source Serif 4 for reading text; one accent, forest green `#2F6B52`, on ink `#1E2A28`, slate `#5E6B67` and rules `#D5DEDA`. The home page uses the `resume` layout (no theme header). Avoid template tells: no all-caps tracked labels, no middle-dot meta strings, no arrows appended to links, no pill chips or identical shadowed cards. Numbers only where content is a real sequence.
+The site's look lives in `assets/css/custom-styles.css` (tokens and site-wide rules), `assets/css/resume.css` (home page and its print stylesheet) and `assets/css/projects.css` (project pages and How I Work). Direction: a well-kept engineering record. Public Sans for names, headings and interface; Source Serif 4 for reading text; one accent, forest green `#2F6B52`, on ink `#1E2A28`, slate `#5E6B67` and rules `#D5DEDA`. The home page uses the `resume` layout (no theme header). Avoid template tells: no all-caps tracked labels, no middle-dot meta strings, no arrows appended to links, no identical shadowed cards. Key facts on project pages and How I Work are shown as quiet badges (square-ish, mist background), by choice. Numbers only where content is a real sequence.
 
 ## Bilingual System
 
