@@ -25,12 +25,12 @@ css: ["/assets/css/resume.css"]
 <p class="resume-lead">Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in <strong>Ruby on Rails</strong> and <strong>React</strong>, backed by solid <strong>Java</strong> experience, and build products end to end with a rigorous <a href="{{ '/how-i-work/' | absolute_url }}">AI-assisted engineering workflow</a>, which I am also using to move my stack toward <strong>Elixir/Phoenix LiveView</strong>.</p>
 
 <div class="resume-actions">
-  <a class="resume-print-button" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.pdf' | absolute_url }}" download><i class="fas fa-file-download" aria-hidden="true"></i> Download CV (PDF)</a>
-  <button type="button" class="resume-secondary-button" onclick="window.print()"><i class="fas fa-print" aria-hidden="true"></i> Print</button>
-  <a href="{{ '/experience/' | absolute_url }}">Full experience</a>
+  <a class="resume-button resume-button-primary" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.pdf' | absolute_url }}" download><i class="fas fa-file-download" aria-hidden="true"></i> Download CV (PDF)</a>
+  <button type="button" class="resume-button" onclick="window.print()"><i class="fas fa-print" aria-hidden="true"></i> Print</button>
+  <a class="resume-button" href="{{ '/experience/' | absolute_url }}">Full Experience</a>
 </div>
 
-<h2 id="at-a-glance" class="resume-screen-only">At a glance</h2>
+<h2 id="at-a-glance" class="resume-screen-only">At a Glance</h2>
 
 <dl class="resume-facts resume-screen-only">
   <dt>Role</dt><dd>Senior Software Engineer</dd>

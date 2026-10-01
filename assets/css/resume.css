@@ -43,27 +43,13 @@
   gap: 1rem;
   margin: 1.25rem 0 2.25rem;
 }
-.resume-print-button {
+/* One button system: same size, border and type; the primary differs only in colour */
+.resume-button {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-  padding: .55rem 1.1rem;
-  border: 0;
-  border-radius: 6px;
-  background: var(--resume-accent);
-  color: #fff;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: .9rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-.resume-print-button:hover { background: #256a4e; color: #fff; text-decoration: none; }
-a.resume-print-button, a.resume-print-button:visited { color: #fff; }
-.resume-secondary-button {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .5rem 1rem;
+  min-height: 2.5rem;
+  padding: 0 1.1rem;
   border: 1px solid var(--resume-border);
   border-radius: 6px;
   background: #fff;
@@ -71,10 +57,15 @@ a.resume-print-button, a.resume-print-button:visited { color: #fff; }
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: .9rem;
   font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
   cursor: pointer;
+  transition: background-color .15s, border-color .15s, color .15s;
 }
-.resume-secondary-button:hover { border-color: var(--resume-accent); color: var(--resume-accent); }
-.resume-actions a { font-weight: 600; }
+.resume-button:hover, .resume-button:visited:hover { border-color: var(--resume-accent); color: var(--resume-accent); text-decoration: none; }
+.resume-button:visited { color: var(--resume-text); }
+.resume-button-primary, .resume-button-primary:visited { background: var(--resume-accent); border-color: var(--resume-accent); color: #fff; }
+.resume-button-primary:hover, .resume-button-primary:visited:hover { background: #256a4e; border-color: #256a4e; color: #fff; }
 
 main h2, [role="main"] h2 { margin-top: 2.5rem; }
 [role="main"] h2 {
@@ -169,7 +160,7 @@ main h2, [role="main"] h2 { margin-top: 2.5rem; }
 .resume-job-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 1rem; }
 .resume-job h3 { margin: 0; font-size: 1.05rem; }
 .resume-company { font-weight: 600; color: var(--resume-muted); }
-.resume-job-meta { margin: 0; font-size: .85rem; color: var(--resume-muted); white-space: nowrap; }
+.resume-job-meta { margin: 0; font-size: .85rem; color: var(--resume-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .resume-job-highlight { margin: .2rem 0 0; font-size: .95rem; }
 .resume-more { margin-top: .5rem; font-size: .95rem; }
 
