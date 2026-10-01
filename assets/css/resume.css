@@ -41,6 +41,12 @@
   font-size: .92rem;
   color: var(--slate);
 }
+.resume-location {
+  margin: .35rem 0 0;
+  font-family: var(--font-ui);
+  font-size: .92rem;
+  color: var(--slate);
+}
 .resume-photo {
   flex: none;
   width: 112px;
@@ -223,6 +229,7 @@
   .resume-header h1 { font-size: 21pt; }
   .resume-role { margin: .8mm 0 1.6mm; font-size: 11pt; }
   .resume-contact { gap: .6mm 4.5mm; font-size: 8.6pt; }
+  .resume-location { margin-top: .6mm; font-size: 8.6pt; }
 
   .resume-lead { max-width: none; margin: 1.5mm 0 2.5mm; font-size: 9.8pt; line-height: 1.42; }
 

@@ -19,13 +19,12 @@ css: ["/assets/css/resume.css"]
     <h1>{{ page.title }}</h1>
     <p class="resume-role">{{ page.subtitle }}</p>
     <ul class="resume-contact">
-      <li>{{ contact.location }}</li>
-      <li>{{ contact.availability }}</li>
       <li><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
       <li><a href="https://www.{{ contact.linkedin }}">{{ contact.linkedin }}</a></li>
       <li><a href="https://{{ contact.github }}">{{ contact.github }}</a></li>
       <li class="resume-print-only"><a href="https://{{ contact.website }}">{{ contact.website }}</a></li>
     </ul>
+    <p class="resume-location">{{ contact.location }} |&gt; {{ contact.availability }}</p>
   </div>
   <img class="resume-photo" src="{{ site.avatar | relative_url }}" alt="Portrait of {{ page.title }}" width="112" height="112">
 </header>
