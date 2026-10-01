@@ -203,10 +203,16 @@
 /* ---------- Print: a one-page CV ---------- */
 
 @media print {
-  @page { margin: 12mm 13mm; }
+  /*
+    No page margin: browsers then have no room for their own header and footer
+    (date, title, URL), so a manual Ctrl+P prints as clean as bin/cv-pdf.
+    The margin moves to the body padding instead.
+  */
+  @page { margin: 0; }
 
   html, body { background: #fff !important; }
   body {
+    padding: 12mm 13mm !important;
     font-size: 9.4pt;
     line-height: 1.36;
     color: #1E2A28;
