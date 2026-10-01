@@ -30,7 +30,7 @@ Most CI tools stop at "here is what changed". Agonai goes two steps further: it 
 Agonai follows the same path a good analyst would: define the market, collect what changes, interpret it, turn it into guidance, and measure where you stand. The screenshots below walk through that path using a real workspace, where Agonai tracks its own competitors.
 
 <section class="project-step" markdown="1">
-<span class="step-label">Step 1 · Define the market</span>
+<span class="step-label">Step 1: Define the market</span>
 
 ## Portfolios
 
@@ -45,7 +45,7 @@ Each card already gives a quick read of your **position** across five dimensions
 </section>
 
 <section class="project-step" markdown="1">
-<span class="step-label">Step 2 · Collect the signals</span>
+<span class="step-label">Step 2: Collect the signals</span>
 
 ## Changes
 
@@ -60,7 +60,7 @@ In this example, the feed caught the co-founder of a competitor launching a sepa
 </section>
 
 <section class="project-step" markdown="1">
-<span class="step-label">Step 3 · Interpret</span>
+<span class="step-label">Step 3: Interpret</span>
 
 ## Insights
 
@@ -75,7 +75,7 @@ Every insight carries a **confidence score** (the dots and percentage next to th
 </section>
 
 <section class="project-step" markdown="1">
-<span class="step-label">Step 4 · Act</span>
+<span class="step-label">Step 4: Act</span>
 
 ## Battlecards
 
@@ -90,7 +90,7 @@ Battlecards come in different views for **Sales, Product and Executive** audienc
 </section>
 
 <section class="project-step" markdown="1">
-<span class="step-label">Step 5 · Measure</span>
+<span class="step-label">Step 5: Measure</span>
 
 ## Briefings
 

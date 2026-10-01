@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: resume
 title: Maykell Sánchez Romero
-subtitle: Senior Software Engineer · Ruby on Rails & React · 15+ Years of Experience
+subtitle: Senior Software Engineer, Ruby on Rails & React
 description: "Senior Software Engineer in Ruby on Rails and React, with solid Java and 15+ years building production systems through rigorous AI-assisted engineering."
 share-title: "Maykell Sánchez Romero | Senior Software Engineer, Rails & React"
 css: ["/assets/css/resume.css"]
@@ -14,124 +14,121 @@ css: ["/assets/css/resume.css"]
 {%- endcomment -%}
 {%- capture absolute_link -%}]({{ '/' | absolute_url }}{%- endcapture -%}
 
-<div class="resume-contact">
-  <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ contact.location }}</span>
-  <a href="mailto:{{ contact.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> {{ contact.email }}</a>
-  <a href="https://www.{{ contact.linkedin }}"><i class="fab fa-linkedin" aria-hidden="true"></i> {{ contact.linkedin }}</a>
-  <a href="https://{{ contact.github }}"><i class="fab fa-github" aria-hidden="true"></i> {{ contact.github }}</a>
-  <a href="https://{{ contact.website }}" class="resume-print-only"><i class="fas fa-globe" aria-hidden="true"></i> {{ contact.website }}</a>
-</div>
+<header class="resume-header">
+  <div class="resume-header-text">
+    <h1>{{ page.title }}</h1>
+    <p class="resume-role">{{ page.subtitle }}</p>
+    <ul class="resume-contact">
+      <li>{{ contact.location }}</li>
+      <li>{{ contact.availability }}</li>
+      <li><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
+      <li><a href="https://www.{{ contact.linkedin }}">{{ contact.linkedin }}</a></li>
+      <li><a href="https://{{ contact.github }}">{{ contact.github }}</a></li>
+      <li class="resume-print-only"><a href="https://{{ contact.website }}">{{ contact.website }}</a></li>
+    </ul>
+  </div>
+  <img class="resume-photo" src="{{ site.avatar | relative_url }}" alt="Portrait of {{ page.title }}" width="112" height="112">
+</header>
 
-<p class="resume-lead">Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in <strong>Ruby on Rails</strong> and <strong>React</strong>, backed by solid <strong>Java</strong> experience, and build products end to end with a rigorous <a href="{{ '/how-i-work/' | absolute_url }}">AI-assisted engineering workflow</a>, which I am also using to move my stack toward <strong>Elixir/Phoenix LiveView</strong>.</p>
+<p class="resume-lead">Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in Ruby on Rails and React, backed by solid Java experience, and build products end to end with a rigorous <a href="{{ '/how-i-work/' | absolute_url }}">AI-assisted engineering workflow</a>, which I am also using to move my stack toward Elixir and Phoenix LiveView.</p>
 
 <div class="resume-actions">
-  <a class="resume-button resume-button-primary" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.pdf' | absolute_url }}" download><i class="fas fa-file-download" aria-hidden="true"></i> Download CV (PDF)</a>
-  <button type="button" class="resume-button" onclick="window.print()"><i class="fas fa-print" aria-hidden="true"></i> Print</button>
-  <a class="resume-button" href="{{ '/experience/' | absolute_url }}">Full Experience</a>
+  <a class="resume-button resume-button-primary" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.pdf' | absolute_url }}" download>Download CV (PDF)</a>
+  <button type="button" class="resume-button" onclick="window.print()">Print</button>
+  <a class="resume-button" href="{{ '/experience/' | absolute_url }}">Full experience</a>
 </div>
 
-<h2 id="at-a-glance" class="resume-screen-only">At a Glance</h2>
+<section class="resume-section resume-screen-only" aria-labelledby="at-a-glance">
+  <h2 id="at-a-glance">At a glance</h2>
+  <dl class="resume-pairs">
+    <dt>Role</dt><dd>Senior Software Engineer</dd>
+    <dt>Experience</dt><dd>15+ years building production systems</dd>
+    <dt>Core stack</dt><dd>Ruby on Rails, React and PostgreSQL, with solid Java (Spring Boot, Jakarta EE)</dd>
+    <dt>Growing in</dt><dd>Elixir and Phoenix LiveView, with two products built in it</dd>
+    <dt>Way of working</dt><dd><a href="{{ '/how-i-work/' | absolute_url }}">AI-assisted engineering</a> with specs, reviewed plans, cross-agent review and full test suites</dd>
+    <dt>Location</dt><dd>{{ contact.location }}</dd>
+    <dt>Availability</dt><dd>{{ contact.availability }}</dd>
+    <dt>Languages</dt><dd>Spanish (native), English (professional)</dd>
+  </dl>
+</section>
 
-<dl class="resume-facts resume-screen-only">
-  <dt>Role</dt><dd>Senior Software Engineer</dd>
-  <dt>Experience</dt><dd>15+ years building production systems</dd>
-  <dt>Core stack</dt><dd>Ruby on Rails, React, PostgreSQL; solid Java (Spring Boot, Jakarta EE)</dd>
-  <dt>Growing in</dt><dd>Elixir and Phoenix LiveView, with two products built in it</dd>
-  <dt>Way of working</dt><dd><a href="{{ '/how-i-work/' | absolute_url }}">AI-assisted engineering</a> with specs, reviewed plans, cross-agent review and full test suites</dd>
-  <dt>Location</dt><dd>Ecuador, UTC-5 (within 1 hour of US Eastern time)</dd>
-  <dt>Availability</dt><dd>Open to remote roles</dd>
-  <dt>Languages</dt><dd>Spanish (native), English (professional)</dd>
-  <dt>Contact</dt><dd><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></dd>
-</dl>
+<section class="resume-section" aria-labelledby="current-focus">
+  <h2 id="current-focus">Current focus</h2>
+  <div class="resume-section-body">
+    <p><strong>AI-assisted software engineering.</strong> Agentic development with LLMs (Claude Code, Codex and others) for fast system development with accountability: specs, reviewed plans with checkpoints, cross-review by two agents, full test suites and security checks.</p>
+    <p><strong>Distributed systems.</strong> Distributed systems architecture for fast, scalable, resilient, maintainable solutions.</p>
+    <p><strong>Elixir and Phoenix LiveView.</strong> Growing toward Elixir as my next main stack, with two products already built in it.</p>
+  </div>
+</section>
 
-<h2 id="current-focus">Current Focus</h2>
+<section class="resume-section" aria-labelledby="technologies">
+  <h2 id="technologies">Technologies</h2>
+  <dl class="resume-pairs resume-tech">
+  {%- for group in resume.technologies %}
+    <dt>{{ group.group }}</dt>
+    <dd>{{ group.items | join: ", " }}</dd>
+  {%- endfor %}
+  </dl>
+</section>
 
-<ul class="resume-focus">
-  <li><strong>AI-assisted software engineering.</strong> Agentic development with LLMs (Claude Code, Codex, etc.) for fast system development with accountability: specs, reviewed plans with checkpoints, cross-review by two agents, full test suites and security checks. <a href="{{ '/how-i-work/' | absolute_url }}" class="resume-screen-only">How I work</a></li>
-  <li><strong>Distributed systems.</strong> Distributed systems architecture for fast, scalable, resilient, maintainable solutions.</li>
-  <li><strong>Elixir and Phoenix LiveView.</strong> Growing toward Elixir as my next main stack, with two products already built in it.</li>
-</ul>
+<section class="resume-section" aria-labelledby="notable-projects">
+  <h2 id="notable-projects">Projects</h2>
+  <ul class="resume-projects">
+  {%- for project in resume.projects %}
+    <li class="resume-project{% if project.web_only %} resume-web-only{% endif %}">
+      <h3><a href="{{ project.page | absolute_url }}">{{ project.name }}</a></h3>
+      <p>{{ project.summary }}</p>
+      <p class="resume-project-meta">{{ project.stack | join: ", " }}{% if project.site %}<span class="resume-project-site">, <a href="{{ project.site }}">{{ project.site | remove: "https://" }}</a></span>{% endif %}</p>
+    </li>
+  {%- endfor %}
+  </ul>
+</section>
 
-<h2 id="technologies">Technologies</h2>
-
-<dl class="resume-tech">
-{%- for group in resume.technologies %}
-  <dt>{{ group.group }}</dt>
-  <dd>{{ group.items | join: ", " }}</dd>
-{%- endfor %}
-</dl>
-
-<h2 id="notable-projects">Notable Projects</h2>
-
-<div class="resume-projects">
-{%- for project in resume.projects %}
-  <article class="resume-project{% if project.web_only %} resume-web-only{% endif %}">
-    <h3><a href="{{ project.page | absolute_url }}">{{ project.name }}</a></h3>
-    <p>{{ project.summary }}</p>
-    <ul class="resume-chips" aria-label="Stack">
-      {%- for tech in project.stack %}<li>{{ tech }}</li>{% endfor -%}
-    </ul>
-    <p class="resume-project-links">
-      <a href="{{ project.page | absolute_url }}">Details <span aria-hidden="true">→</span></a>
-      {%- if project.site %}
-      <a href="{{ project.site }}">{{ project.site | remove: "https://" }} <span aria-hidden="true">↗</span></a>
-      {%- endif %}
-    </p>
-  </article>
-{%- endfor %}
-</div>
-
-<h2 id="experience">Experience</h2>
-
-<ol class="resume-jobs">
-{%- assign earlier_jobs = resume.experience | where: "earlier", true -%}
-{%- for job in resume.experience %}
-  {%- if job.earlier %}{% continue %}{% endif %}
-  <li class="resume-job">
-    <div class="resume-job-head">
-      <h3>{{ job.role }} <span class="resume-company">· {{ job.company }}</span></h3>
-      <p class="resume-job-meta">{% include resume-date.html date=job.start %} - {% include resume-date.html date=job.end %} · {% include duration.html start=job.start end=job.end %}{% if job.location %} · {{ job.location }}{% endif %}</p>
-    </div>
-    {%- if job.highlight %}
-    <p class="resume-job-highlight">{{ job.highlight | replace: "](/", absolute_link | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
-    {%- endif %}
-  </li>
-{%- endfor %}
+<section class="resume-section" aria-labelledby="experience">
+  <h2 id="experience">Experience</h2>
+  <ol class="resume-jobs">
+  {%- assign earlier_jobs = resume.experience | where: "earlier", true -%}
+  {%- for job in resume.experience %}
+    {%- if job.earlier %}{% continue %}{% endif %}
+    <li class="resume-job">
+      <p class="resume-job-when"><span>{% include resume-date.html date=job.start %} - {% include resume-date.html date=job.end %}</span><span class="resume-job-length">{% include duration.html start=job.start end=job.end %}{% if job.location %}, {{ job.location }}{% endif %}</span></p>
+      <div class="resume-job-what">
+        <h3>{{ job.role }}, <span class="resume-company">{{ job.company }}</span></h3>
+        {%- if job.highlight %}
+        <p>{{ job.highlight | replace: "](/", absolute_link | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+        {%- endif %}
+      </div>
+    </li>
+  {%- endfor %}
   {%- if earlier_jobs.size > 0 %}
-  {%- assign first_earlier = earlier_jobs | last -%}
-  {%- assign last_earlier = earlier_jobs | first %}
-  <li class="resume-job">
-    <div class="resume-job-head">
-      <h3>Earlier experience</h3>
-      <p class="resume-job-meta">{{ first_earlier.start | slice: 0, 4 }} - {{ last_earlier.end | slice: 0, 4 }}</p>
-    </div>
-    <p class="resume-job-highlight">{{ resume.earlier_summary }}</p>
-  </li>
+    {%- assign first_earlier = earlier_jobs | last -%}
+    {%- assign last_earlier = earlier_jobs | first %}
+    <li class="resume-job">
+      <p class="resume-job-when"><span>{{ first_earlier.start | slice: 0, 4 }} - {{ last_earlier.end | slice: 0, 4 }}</span></p>
+      <div class="resume-job-what">
+        <h3>Earlier experience</h3>
+        <p>{{ resume.earlier_summary }}</p>
+      </div>
+    </li>
   {%- endif %}
-</ol>
+  </ol>
+</section>
 
-<p class="resume-more">See the <a href="{{ '/experience/' | absolute_url }}">complete experience</a> for the details and stack of each role.</p>
+<section class="resume-section" aria-labelledby="education">
+  <h2 id="education">Education</h2>
+  <ul class="resume-plain">
+  {%- for item in resume.education %}
+    <li><strong>{{ item.degree }}</strong>, {{ item.school }}</li>
+  {%- endfor %}
+  {%- for item in resume.certifications %}
+    <li><strong>{{ item.name }}</strong>{% if item.detail %}, {{ item.detail }}{% endif %}</li>
+  {%- endfor %}
+  </ul>
+</section>
 
-<div class="resume-columns">
-  <section>
-    <h2 id="education">Education & Certifications</h2>
-    <ul class="resume-plain">
-    {%- for item in resume.education %}
-      <li><strong>{{ item.degree }}</strong><br><span>{{ item.school }}</span></li>
-    {%- endfor %}
-    {%- for item in resume.certifications %}
-      <li><strong>{{ item.name }}</strong>{% if item.detail %}<br><span>{{ item.detail }}</span>{% endif %}</li>
-    {%- endfor %}
-    </ul>
-  </section>
-  <section>
-    <h2 id="languages">Languages</h2>
-    <ul class="resume-plain">
-    {%- for lang in resume.languages %}
-      <li><strong>{{ lang.name }}</strong> <span>· {{ lang.level }}</span></li>
-    {%- endfor %}
-    </ul>
-  </section>
-</div>
+<section class="resume-section" aria-labelledby="languages">
+  <h2 id="languages">Languages</h2>
+  <p class="resume-plain-line">{% for lang in resume.languages %}{{ lang.name }} ({{ lang.level | downcase }}){% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+</section>
 
-<p class="resume-more resume-screen-only">Last updated {{ site.time | date: "%B %Y" }}. Want more? See my <a href="{{ '/technical-expertise/' | absolute_url }}">technical profile</a>, or <a href="mailto:{{ contact.email }}">email me</a>.</p>
+<p class="resume-footnote resume-screen-only">Last updated {{ site.time | date: "%B %Y" }}. See the <a href="{{ '/experience/' | absolute_url }}">full experience</a> and the <a href="{{ '/technical-expertise/' | absolute_url }}">technical profile</a> for more detail.</p>

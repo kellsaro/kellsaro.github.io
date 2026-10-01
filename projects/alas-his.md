@@ -11,7 +11,9 @@ description: "alas-HIS is a hospital management system with HL7 integrations, wi
   <li>Universidad de las Ciencias Informáticas, Cuba</li>
   <li>2004 - 2010</li>
   <li>Developer</li>
-  <li>Java · HL7 · Linux</li>
+  <li>Java</li>
+  <li>HL7</li>
+  <li>Linux</li>
 </ul>
 
 **alas-HIS** is a hospital management system used across healthcare institutions in Cuba. A hospital system rarely works alone: it has to exchange data with laboratories, equipment and other clinical systems.

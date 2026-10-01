@@ -18,7 +18,7 @@ I built it with **React** as part of [montools](https://montools.github.io), a s
   <li>monday.com app</li>
   <li>React</li>
   <li>Runs inside Workdocs</li>
-  <li>Review · Transform · Replace</li>
+  <li>Review, transform and replace tabs</li>
   <li>Works only on the selected text</li>
   <li>No data leaves monday.com</li>
 </ul>

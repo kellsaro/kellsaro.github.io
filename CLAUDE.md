@@ -39,6 +39,10 @@ The home page (`index.md`) is a resume rendered from `_data/resume.yml`: contact
 
 `assets/css/resume.css` holds both the screen design and the print stylesheet: printing the home page (Ctrl+P / "Save as PDF") produces a one-page CV. After changing resume content, run `bin/cv-pdf`: it regenerates the downloadable `assets/docs/Maykell-Sanchez-Romero-CV.pdf` and warns if the CV no longer fits on one page. The home page uses absolute URLs (`absolute_url`) on purpose, so the PDF's links point to the published site even when generated locally. `bin/social-card` regenerates the 1200x630 link-preview image (`assets/img/social-card.png`) from `tools/social-card.html`; it is the default `share-img` for every page.
 
+## Design system
+
+The site's look lives in `assets/css/custom-styles.css` (tokens and site-wide rules), `assets/css/resume.css` (home page and its print stylesheet) and `assets/css/projects.css` (project pages and How I Work). Direction: a well-kept engineering record. Public Sans for names, headings and interface; Source Serif 4 for reading text; one accent, forest green `#2F6B52`, on ink `#1E2A28`, slate `#5E6B67` and rules `#D5DEDA`. The home page uses the `resume` layout (no theme header). Avoid template tells: no all-caps tracked labels, no middle-dot meta strings, no arrows appended to links, no pill chips or identical shadowed cards. Numbers only where content is a real sequence.
+
 ## Bilingual System
 
 All new articles use the bilingual infrastructure. The system is self-contained in `_includes/bilingual_header.html` (embedded CSS+JS) with standalone reference files in `assets/`.

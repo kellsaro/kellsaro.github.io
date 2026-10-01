@@ -11,7 +11,8 @@ description: "SITRAN is a custom ERP for tourism transportation built with Ruby 
   <li>Transtur Varadero, Cuba</li>
   <li>2011 - 2013</li>
   <li>Ruby on Rails Engineer</li>
-  <li>Ruby on Rails · PostgreSQL</li>
+  <li>Ruby on Rails</li>
+  <li>PostgreSQL</li>
 </ul>
 
 **SITRAN** is a custom ERP for **Transtur Varadero**, a tourism transportation company. It runs the core of the business: the vehicle fleet and the bookings made on it.

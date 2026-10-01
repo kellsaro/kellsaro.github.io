@@ -1,0 +1,14 @@
+---
+layout: base
+---
+{%- comment -%}
+  Resume layout (home page): no theme header, the page draws its own,
+  and a wider column for the label / content grid.
+{%- endcomment -%}
+<div class="container-md resume-page" role="main" id="main-content">
+  <div class="row">
+    <div class="col-xl-10 offset-xl-1 col-lg-12">
+      {{ content }}
+    </div>
+  </div>
+</div>

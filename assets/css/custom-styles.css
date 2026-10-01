@@ -1,9 +1,70 @@
-/* Site-wide overrides of the Beautiful Jekyll theme */
-
-/* Left-align the navbar dropdown items (the theme centers them on wide screens) */
-.navbar-custom .nav-item.dropdown .dropdown-menu {
-  text-align: left;
+/*
+  Site design layer over the Beautiful Jekyll theme.
+  Direction: the site reads like a well-kept engineering record. Public Sans for
+  names, headings and interface; Source Serif 4 for reading; a deep forest green
+  as the only accent. Colours for the theme's own rules come from _config.yml.
+*/
+:root {
+  --ink: #1E2A28;
+  --forest: #2F6B52;
+  --forest-dark: #24533F;
+  --slate: #5E6B67;
+  --rule: #D5DEDA;
+  --mist: #EEF3F0;
+  --paper: #FFFFFF;
+  --font-ui: 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-text: 'Source Serif 4', Georgia, 'Times New Roman', serif;
 }
+
+/* ---------- Type ---------- */
+
+body {
+  font-family: var(--font-text);
+  font-size: 1.075rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-custom, .intro-header, .post-meta, .post-preview, footer,
+.blog-tags, .tag-btn, .pagination, .pager, .btn, .dropdown-menu,
+figcaption, .resume-button {
+  font-family: var(--font-ui);
+}
+
+h1, h2, h3, h4, h5, h6 { color: var(--ink); letter-spacing: -0.01em; }
+[role="main"] h2 { font-size: 1.4rem; font-weight: 700; margin-top: 2.75rem; }
+[role="main"] h3 { font-size: 1.15rem; font-weight: 600; }
+[role="main"] h4 { font-size: 1.02rem; font-weight: 600; }
+
+p { margin: 0 0 1.1rem; }
+
+a { color: var(--forest); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover, a:focus { color: var(--forest-dark); }
+
+hr { border-color: var(--rule); }
+
+/* ---------- Navbar ---------- */
+
+.navbar-custom {
+  border-bottom: 1px solid var(--rule);
+  box-shadow: none;
+}
+.navbar-custom .navbar-brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+.navbar-custom .nav-link {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+/* Left-align the dropdown items (the theme centers them on wide screens) */
+.navbar-custom .nav-item.dropdown .dropdown-menu { text-align: left; }
 
 /*
   On wide screens the theme makes the dropdown exactly as wide as its menu button
@@ -15,71 +76,106 @@
     width: auto;
     min-width: 100%;
     word-break: normal;
+    border: 1px solid var(--rule);
   }
 
   .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
     white-space: nowrap;
     padding-left: 1rem;
     padding-right: 1.5rem;
+    border: 0;
+    background: var(--paper);
   }
 }
 
-/*
-  Headings: the theme uses up to 80px page titles and 30px extra-bold section
-  headings, which feel heavy next to 18px body text. Keep a clear hierarchy
-  (page title > section heading > subsection > body) at comfortable sizes.
-*/
+/* ---------- Page and post headings ---------- */
+
+/* Left-aligned like a document title, in the same column as the content */
+.intro-header .page-heading,
+.intro-header .post-heading { text-align: left; }
+.intro-header { margin-top: 5.5rem; }
+.intro-header hr.small { display: none; }
+
 .intro-header .page-heading h1,
 .intro-header .post-heading h1 {
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
 }
 
 .intro-header .page-heading .page-subheading,
 .intro-header .post-heading .post-subheading {
-  font-size: 1.05rem;
-  line-height: 1.45;
-  margin-top: 0.6rem;
+  font-family: var(--font-text);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--slate);
+  margin-top: .6rem;
 }
 
-[role="main"] h2 { font-size: 1.45rem; font-weight: 700; }
-[role="main"] h3 { font-size: 1.2rem; font-weight: 700; }
-[role="main"] h4 { font-size: 1.05rem; font-weight: 700; }
+.intro-header .post-heading .post-meta { font-size: .95rem; color: var(--slate); }
 
 @media (min-width: 768px) {
   .intro-header .page-heading h1,
-  .intro-header .post-heading h1 {
-    font-size: 2.125rem;
-  }
-
-  .intro-header .page-heading .page-subheading,
-  .intro-header .post-heading .post-subheading {
-    font-size: 1.15rem;
-  }
-
-  [role="main"] h2 { font-size: 1.6rem; }
+  .intro-header .post-heading h1 { font-size: 2.35rem; }
+  [role="main"] h2 { font-size: 1.5rem; }
 }
 
-/* Accessibility and polish (Web Interface Guidelines) */
+@media (min-width: 1200px) {
+  .intro-header { margin-top: 7rem; }
+}
+
+/* ---------- Blog list and posts ---------- */
+
+.post-preview .post-title { font-size: 1.45rem; font-weight: 700; line-height: 1.25; color: var(--ink); }
+.post-preview .post-subtitle { font-family: var(--font-text); font-weight: 400; color: var(--slate); }
+.post-preview .post-meta { color: var(--slate); }
+.blog-tags a, .tag-btn { text-transform: none; letter-spacing: 0; }
+
+/* ---------- Code ---------- */
+
+code { font-size: .88em; color: var(--ink); background: var(--mist); padding: .1em .3em; border-radius: 3px; }
+pre code { background: none; padding: 0; }
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--rule);
+  font-size: .9rem;
+}
+
+/* ---------- Accessibility and polish (Web Interface Guidelines) ---------- */
+
+/* Visible only when reached with the keyboard */
 .skip-link {
   position: absolute;
   left: 1rem;
-  top: -3rem;
+  top: 1rem;
   z-index: 2000;
   padding: .5rem 1rem;
   border-radius: 6px;
-  background: #2f7d5d;
+  background: var(--forest);
   color: #fff;
+  font-family: var(--font-ui);
   font-weight: 600;
 }
-.skip-link:focus { top: 1rem; color: #fff; }
+.skip-link:not(:focus) {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.skip-link:focus { color: #fff; }
 
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
 video:focus-visible {
-  outline: 2px solid #2f7d5d;
+  outline: 2px solid var(--forest);
   outline-offset: 2px;
 }
 
