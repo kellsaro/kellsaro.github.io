@@ -5,6 +5,7 @@ subtitle: Fast development with accountability. I set the direction, AI agents w
 permalink: /how-i-work/
 css: ["/assets/css/projects.css"]
 description: "How Maykell Sánchez Romero builds software with AI agents: specs, reviewed plans, checkpoints, cross-agent review, full test suites and security checks."
+share-img: "/assets/img/how-i-wok/igor-omilaev-FHgWFzDDAOs-unsplash.jpg"
 ---
 
 I use AI coding agents (mainly **Claude Code**, also **Codex** and **Windsurf**) to build software much faster, without giving up control of the result. The agents write most of the code; **I own the decisions and the quality**. My 15+ years of engineering experience go into what the agents cannot decide on their own: the architecture, the design, what "done" means, and whether a change is good enough to ship.
@@ -21,6 +22,11 @@ I use AI coding agents (mainly **Claude Code**, also **Codex** and **Windsurf**)
   <li>Rules and skills that improve the process</li>
 </ul>
 
+
+<figure class="project-shot" style="white-space: nowrap;">
+  <a href="{{ '/assets/img/how-i-work/igor-omilaev-FHgWFzDDAOs-unsplash.jpg' | relative_url }}"><img src="{{ '/assets/img/how-i-work/igor-omilaev-FHgWFzDDAOs-unsplash.webp' | relative_url }}" alt="Circuit with and AI processor" loading="lazy"></a>
+  <figcaption>Photo by <a style="display: inline;" href="https://unsplash.com/@omilaev?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Igor Omilaev</a> on <a style="display: inline;" href="https://unsplash.com/photos/robot-and-human-hands-reaching-toward-ai-text-FHgWFzDDAOs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+</figure>
 ## The workflow
 
 <ol class="project-flow project-flow-wide">
