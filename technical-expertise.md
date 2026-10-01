@@ -2,7 +2,7 @@
 layout: page
 title: Technical Expertise
 subtitle: Ruby on Rails & React, backed by solid Java experience, moving toward Elixir
-description: "Technical profile of Maykell Sánchez Romero: Ruby on Rails and React, solid Java experience, a rigorous AI-assisted engineering workflow, and a growing Elixir/Phoenix LiveView stack."
+description: "Technical profile of Maykell Sánchez Romero: Ruby on Rails, React and Java, AI-assisted engineering, data, APIs, DevOps and a growing Elixir stack."
 ---
 
 My core is **Ruby on Rails** on the backend and **React** on the frontend, with **Java** as a solid second stack. I am moving my stack toward **Elixir/Phoenix LiveView**, where I have already built two products with my AI-assisted workflow. This page details each area; for where I applied them, see the [projects]({{ '/' | relative_url }}#notable-projects) and the [experience]({{ '/experience/' | relative_url }}).

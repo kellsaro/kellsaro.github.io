@@ -2,8 +2,8 @@
 layout: page
 title: Maykell Sánchez Romero
 subtitle: Senior Software Engineer · Ruby on Rails & React · 15+ Years of Experience
-description: "Senior software engineer specialized in Ruby on Rails and React, backed by solid Java experience, with 15+ years building production systems and a rigorous AI-assisted engineering workflow."
-share-title: "Maykell Sánchez Romero | Senior Software Engineer (Ruby on Rails, React)"
+description: "Senior Software Engineer in Ruby on Rails and React, with solid Java and 15+ years building production systems through rigorous AI-assisted engineering."
+share-title: "Maykell Sánchez Romero | Senior Software Engineer, Rails & React"
 css: ["/assets/css/resume.css"]
 ---
 {%- assign resume = site.data.resume -%}
@@ -29,6 +29,20 @@ css: ["/assets/css/resume.css"]
   <button type="button" class="resume-secondary-button" onclick="window.print()"><i class="fas fa-print" aria-hidden="true"></i> Print</button>
   <a href="{{ '/experience/' | absolute_url }}">Full experience</a>
 </div>
+
+<h2 id="at-a-glance" class="resume-screen-only">At a glance</h2>
+
+<dl class="resume-facts resume-screen-only">
+  <dt>Role</dt><dd>Senior Software Engineer</dd>
+  <dt>Experience</dt><dd>15+ years building production systems</dd>
+  <dt>Core stack</dt><dd>Ruby on Rails, React, PostgreSQL; solid Java (Spring Boot, Jakarta EE)</dd>
+  <dt>Growing in</dt><dd>Elixir and Phoenix LiveView, with two products built in it</dd>
+  <dt>Way of working</dt><dd><a href="{{ '/how-i-work/' | absolute_url }}">AI-assisted engineering</a> with specs, reviewed plans, cross-agent review and full test suites</dd>
+  <dt>Location</dt><dd>Ecuador, UTC-5 (within 1 hour of US Eastern time)</dd>
+  <dt>Availability</dt><dd>Open to remote roles</dd>
+  <dt>Languages</dt><dd>Spanish (native), English (professional)</dd>
+  <dt>Contact</dt><dd><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></dd>
+</dl>
 
 <h2 id="current-focus">Current Focus</h2>
 
@@ -120,4 +134,4 @@ css: ["/assets/css/resume.css"]
   </section>
 </div>
 
-<p class="resume-more resume-screen-only">Want more? See my <a href="{{ '/technical-expertise/' | absolute_url }}">technical profile</a>, or <a href="mailto:{{ contact.email }}">email me</a>.</p>
+<p class="resume-more resume-screen-only">Last updated {{ site.time | date: "%B %Y" }}. Want more? See my <a href="{{ '/technical-expertise/' | absolute_url }}">technical profile</a>, or <a href="mailto:{{ contact.email }}">email me</a>.</p>

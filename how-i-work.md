@@ -4,7 +4,7 @@ title: How I build software with AI
 subtitle: Fast development with accountability. I set the direction, AI agents write the code, and nothing ships without review and quality gates.
 permalink: /how-i-work/
 css: ["/assets/css/projects.css"]
-description: "How Maykell Sánchez Romero builds software with AI coding agents: architecture and specs first, reviewed plans, step-by-step checkpoints, cross-review by two agents, full test suites and security checks, then staging and QA."
+description: "How Maykell Sánchez Romero builds software with AI agents: specs, reviewed plans, checkpoints, cross-agent review, full test suites and security checks."
 ---
 
 I use AI coding agents (mainly **Claude Code**, also **Codex** and **Windsurf**) to build software much faster, without giving up control of the result. The agents write most of the code; **I own the decisions and the quality**. My 15+ years of engineering experience go into what the agents cannot decide on their own: the architecture, the design, what "done" means, and whether a change is good enough to ship.

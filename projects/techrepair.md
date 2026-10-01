@@ -4,7 +4,7 @@ title: "TechRepair: operations for wind turbine repair"
 subtitle: The operations backbone for wind turbine blade and tower maintenance teams.
 permalink: /projects/techrepair/
 css: ["/assets/css/projects.css"]
-description: "TechRepair is a cloud operations platform for wind turbine blade and tower maintenance teams: dispatch, field execution, approvals and client reports in one place."
+description: "TechRepair is a cloud operations platform for wind turbine blade and tower maintenance teams, from dispatch and field work to approvals and reports."
 ---
 
 **[TechRepair](https://techrepair.site)** is a cloud platform built for companies that repair and maintain **wind turbine blades and towers**. It gives them one workspace for the whole job: dispatching work to the right blade, running inspections and repairs in the field, approving the work, and delivering reports to the client. Everything revolves around the **work order**, the main operational resource, where projects, teams, field activity and reports converge.

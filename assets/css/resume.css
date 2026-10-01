@@ -82,6 +82,22 @@ main h2, [role="main"] h2 { margin-top: 2.5rem; }
   border-bottom: 2px solid var(--resume-accent-soft);
 }
 
+.resume-facts {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: .45rem 1.25rem;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--resume-border);
+  border-radius: 8px;
+}
+.resume-facts dt { font-weight: 700; }
+.resume-facts dd { margin: 0; }
+@media (max-width: 767px) {
+  .resume-facts { grid-template-columns: 1fr; gap: 0; }
+  .resume-facts dd { margin-bottom: .5rem; }
+}
+
 .resume-focus { list-style: none; padding: 0; display: grid; gap: .75rem; }
 .resume-focus li {
   padding: .9rem 1.1rem;
@@ -184,7 +200,7 @@ main h2, [role="main"] h2 { margin-top: 2.5rem; }
   }
 
   /* Site chrome that has no place on a CV */
-  nav.navbar, footer, .resume-actions, .resume-screen-only, .resume-project-links,
+  nav.navbar, footer, .resume-actions, .resume-screen-only, .resume-facts, .resume-project-links,
   .intro-header hr, .avatar-container, #nav-search-link { display: none !important; }
   .resume-print-only { display: inline-flex !important; }
   .resume-web-only { display: none !important; }

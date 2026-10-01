@@ -3,6 +3,7 @@
   - Home page: ProfilePage + WebSite describing the person behind the site.
   - Project pages: CreativeWork created by that person (data from _data/resume.yml).
   - Blog posts: BlogPosting.
+  - Other pages (experience, how I work, technical expertise...): WebPage about that person.
 {%- endcomment -%}
 {%- capture person_id -%}{{ '/' | absolute_url }}#person{%- endcapture -%}
 {%- if page.url == "/" %}
@@ -52,6 +53,7 @@
         "url": {{ '/' | absolute_url | jsonify }},
         "name": {{ site.title | jsonify }},
         "mainEntity": { "@id": {{ person_id | jsonify }} },
+        "dateModified": {{ site.time | date_to_xmlschema | jsonify }},
         "isPartOf": { "@id": "{{ '/' | absolute_url }}#website" }
       }
     ]
@@ -113,6 +115,21 @@
       "name": {{ site.author | jsonify }},
       "url": {{ '/' | absolute_url | jsonify }}
     }
+  }
+  </script>
+{%- elsif page.layout == "page" and page.sitemap != false %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": {{ page.title | strip_html | jsonify }},
+    {%- if page.description %}
+    "description": {{ page.description | strip_html | jsonify }},
+    {%- endif %}
+    "url": {{ page.url | absolute_url | strip_index | jsonify }},
+    "about": { "@id": {{ person_id | jsonify }} },
+    "author": { "@type": "Person", "@id": {{ person_id | jsonify }}, "name": {{ site.author | jsonify }}, "url": {{ '/' | absolute_url | jsonify }} },
+    "isPartOf": { "@id": "{{ '/' | absolute_url }}#website" }
   }
   </script>
 {%- endif %}

@@ -27,9 +27,12 @@
 
   {%- comment -%}
     Browser/search title: the page title followed by the site name, unless the page
-    sets share-title or its title already is the site name.
+    sets share-title, its title already is the site name, or the result would be
+    longer than ~65 characters (search engines cut long titles; the site name is
+    also known to them from the WebSite structured data).
   {%- endcomment -%}
-  {%- if page.share-title or page.title == nil or page.title == site.title -%}
+  {%- assign suffixed_size = title | size | plus: 3 | plus: site.title.size -%}
+  {%- if page.share-title or page.title == nil or page.title == site.title or suffixed_size > 65 -%}
     {%- assign full_title = title -%}
   {%- else -%}
     {%- capture full_title -%}{{ title }} | {{ site.title | strip_html | xml_escape }}{%- endcapture -%}
