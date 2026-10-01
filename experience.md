@@ -11,7 +11,8 @@ description: "Professional experience of Maykell Sánchez Romero: 15+ years as a
 - Created [Agonai]({{ site.baseurl }}/projects/agonai/) ([agonai.io](https://agonai.io)), a competitive intelligence and AI Visibility platform for small and mid-sized businesses
 - Companies set up their products and competitors; Agonai monitors competitor pricing, product, hiring, reviews and messaging, and turns changes into confidence-scored insights, battlecards and reports
 - Built AI Visibility tracking, measuring how a brand appears in answers from ChatGPT, Perplexity and Gemini so companies can improve their presence in LLM results
-- Designed and built the whole product: Ash domain model, Oban background pipeline, multi-provider LLM integration with fallback and bring-your-own-keys, LiveView interface and Typst PDF reports
+- Designed the product and directed its development with AI coding agents, following my [AI-assisted workflow]({{ site.baseurl }}/how-i-work/): architecture, domain model, reviewed plans, tests and quality gates
+- The system includes an Ash domain model, an Oban background pipeline, multi-provider LLM integration with fallback and bring-your-own-keys, a LiveView interface and Typst PDF reports
 
 ### **Globant** - Ruby Developer
 *October 2025 - March 2026 · {% include duration.html start="2025-10" end="2026-03" %} · Remote*<br>

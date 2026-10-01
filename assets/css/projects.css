@@ -25,6 +25,7 @@
 .project-tree { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 1.5rem 0; font-size: .95rem; }
 .project-tree span { background: #f1f5f3; border: 1px solid #dce7e1; border-radius: 6px; padding: .3rem .8rem; }
 .project-tree .arrow { background: none; border: 0; padding: 0; color: #3c8a6a; font-weight: 700; }
+.project-flow-wide { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 767px) {
-  .project-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-flow, .project-flow-wide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

@@ -9,21 +9,23 @@ contact:
   github: "github.com/kellsaro"
 
 # Grouped so recruiters (and parsers) can scan it. Curated for the target roles
-# (Ruby on Rails / Elixir backend with React); older or niche technologies stay
+# (Ruby on Rails backend with React, moving toward Elixir); older or niche technologies stay
 # visible in the project pages and experience.md instead of here.
 technologies:
   - group: "Backend"
-    items: [Ruby, Ruby on Rails, Sidekiq, Elixir, Phoenix LiveView, Ash Framework, Oban, OTP]
+    items: [Ruby, Ruby on Rails, Sidekiq, RSpec]
   - group: "Frontend"
     items: [React, JavaScript, "Hotwire (Turbo, Stimulus)", Tailwind CSS]
   - group: "AI engineering"
-    items: [Claude Code, Codex, Windsurf, "LLM APIs (OpenAI, Claude, Gemini)"]
+    items: [Claude Code, Codex, Windsurf, "LLM APIs (OpenAI, Claude, Gemini)", Spec-driven development]
+  - group: "Elixir (growing)"
+    items: [Elixir, Phoenix LiveView, Ash Framework, Oban]
   - group: "Data & APIs"
     items: [PostgreSQL, Redis, MySQL, DB2, REST APIs, GraphQL, "Payments (Stripe)", "ETL (Apache Hop, Looker Studio)"]
   - group: "Also strong in"
     items: [Java, Spring Boot, Jakarta EE]
   - group: "DevOps & quality"
-    items: [Docker, "AWS (S3, EC2, RDS)", Fly.io, Heroku, "GitHub Actions (CI/CD)", RSpec, Git, Linux, Agile]
+    items: [Docker, "AWS (S3, EC2, RDS)", Fly.io, Heroku, "GitHub Actions (CI/CD)", Git, Linux, Agile]
 
 # owner: organization the project belongs to (used in the structured data).
 # web_only: true keeps the project on the website but out of the printed CV.
@@ -83,7 +85,7 @@ experience:
     start: "2026-03"
     end: present
     location: Remote
-    highlight: "Created [Agonai](/projects/agonai/), a competitive intelligence and AI Visibility platform built with Elixir, Phoenix LiveView and Ash Framework."
+    highlight: "Created [Agonai](/projects/agonai/), a competitive intelligence and AI Visibility platform, directing its development with AI coding agents in Elixir, Phoenix LiveView and Ash."
   - company: Globant
     role: Ruby Developer
     start: "2025-10"

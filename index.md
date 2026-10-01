@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Maykell Sánchez Romero
-subtitle: Senior Software Engineer · Ruby on Rails, Elixir & React · 15+ Years of Experience
-description: "Senior software engineer specialized in Ruby on Rails, Elixir/Phoenix LiveView and React, with 15+ years building production systems: from national government platforms to AI-powered SaaS products."
-share-title: "Maykell Sánchez Romero | Senior Software Engineer (Ruby on Rails, Elixir, React)"
+subtitle: Senior Software Engineer · Ruby on Rails & React · 15+ Years of Experience
+description: "Senior software engineer specialized in Ruby on Rails and React, backed by solid Java experience, with 15+ years building production systems and a rigorous AI-assisted engineering workflow."
+share-title: "Maykell Sánchez Romero | Senior Software Engineer (Ruby on Rails, React)"
 css: ["/assets/css/resume.css"]
 ---
 {%- assign resume = site.data.resume -%}
@@ -17,7 +17,7 @@ css: ["/assets/css/resume.css"]
   <a href="https://{{ contact.website }}" class="resume-print-only"><i class="fas fa-globe" aria-hidden="true"></i> {{ contact.website }}</a>
 </div>
 
-<p class="resume-lead">Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in <strong>Ruby on Rails</strong>, <strong>Elixir/Phoenix LiveView</strong> and <strong>React</strong>, backed by solid <strong>Java</strong> experience, and build products end to end with <strong>AI-assisted engineering (Claude Code)</strong>.</p>
+<p class="resume-lead">Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in <strong>Ruby on Rails</strong> and <strong>React</strong>, backed by solid <strong>Java</strong> experience, and build products end to end with a rigorous <a href="{{ '/how-i-work/' | relative_url }}">AI-assisted engineering workflow</a>, which I am also using to move my stack toward <strong>Elixir/Phoenix LiveView</strong>.</p>
 
 <div class="resume-actions">
   <button type="button" class="resume-print-button" onclick="window.print()"><i class="fas fa-print" aria-hidden="true"></i> Print or save as PDF</button>
@@ -27,8 +27,9 @@ css: ["/assets/css/resume.css"]
 <h2 id="current-focus">Current Focus</h2>
 
 <ul class="resume-focus">
-  <li><strong>AI-assisted software engineering.</strong> Agentic development with LLMs (Claude Code, Codex, etc.) for fast system development with accountability.</li>
+  <li><strong>AI-assisted software engineering.</strong> Agentic development with LLMs (Claude Code, Codex, etc.) for fast system development with accountability: specs, reviewed plans, full test suites and security checks. <a href="{{ '/how-i-work/' | relative_url }}" class="resume-screen-only">How I work</a></li>
   <li><strong>Distributed systems.</strong> Distributed systems architecture for fast, scalable, resilient, maintainable solutions.</li>
+  <li><strong>Elixir and Phoenix LiveView.</strong> Growing toward Elixir as my next main stack, with two products already built in it.</li>
 </ul>
 
 <h2 id="technologies">Technologies</h2>

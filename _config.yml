@@ -26,6 +26,7 @@ navbar-links:
     - SITRAN: "/projects/sitran/"
     - alas-HIS: "/projects/alas-his/"
     - LOTAIP: "/projects/lotaip/"
+  How I Work: "/how-i-work/"
   Contact: "mailto:kellsaro@gmail.com"
   #-- Resources: --#
   #--   - Beautiful Jekyll: "https://beautifuljekyll.com" --#
@@ -46,7 +47,7 @@ round-avatar: true
 #title-img: /path/to/image
 
 # Website description for SEO and social media
-description: "Maykell Sánchez Romero, Senior Software Engineer specialized in Ruby on Rails, Elixir/Phoenix LiveView and React, with 15+ years building production systems. Projects, experience and technical blog."
+description: "Maykell Sánchez Romero, Senior Software Engineer specialized in Ruby on Rails and React, backed by solid Java experience, with 15+ years building production systems and a rigorous AI-assisted engineering workflow."
 
 
 # --- Footer social media links --- #
@@ -108,7 +109,7 @@ feed_show_tags: true
 post_search: true
 
 # The keywords to associate with your website, for SEO purposes
-keywords: "Maykell Sánchez Romero, Senior Software Engineer, Ruby on Rails, Elixir, Phoenix LiveView, Ash Framework, React, Sidekiq, PostgreSQL, Java, Distributed Systems, Software Architecture, AI-assisted software engineering, Claude Code"
+keywords: "Maykell Sánchez Romero, Senior Software Engineer, Ruby on Rails, React, Sidekiq, PostgreSQL, Java, AI-assisted software engineering, Claude Code, Elixir, Phoenix LiveView, Distributed Systems, Software Architecture"
 
 # --- Colours / background image --- #
 

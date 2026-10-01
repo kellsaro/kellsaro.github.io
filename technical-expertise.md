@@ -1,16 +1,15 @@
 ---
 layout: page
 title: Technical Expertise
-subtitle: Ruby on Rails, Elixir & React, backed by solid Java experience
-description: "Technical profile of Maykell Sánchez Romero: Ruby on Rails, Elixir/Phoenix LiveView and React, with AI-assisted engineering, data, APIs, DevOps and solid Java experience."
+subtitle: Ruby on Rails & React, backed by solid Java experience, moving toward Elixir
+description: "Technical profile of Maykell Sánchez Romero: Ruby on Rails and React, solid Java experience, a rigorous AI-assisted engineering workflow, and a growing Elixir/Phoenix LiveView stack."
 ---
 
-My core is **Ruby on Rails** and **Elixir/Phoenix LiveView** on the backend and **React** on the frontend, with **Java** as a solid second stack. This page details each area; for where I applied them, see the [projects]({{ '/' | relative_url }}#notable-projects) and the [experience]({{ '/experience/' | relative_url }}).
+My core is **Ruby on Rails** on the backend and **React** on the frontend, with **Java** as a solid second stack. I am moving my stack toward **Elixir/Phoenix LiveView**, where I have already built two products with my AI-assisted workflow. This page details each area; for where I applied them, see the [projects]({{ '/' | relative_url }}#notable-projects) and the [experience]({{ '/experience/' | relative_url }}).
 
 ## Backend
 
 - **Ruby on Rails** (15+ years): full-stack Rails applications, background jobs with **Sidekiq**, testing with **RSpec**, payments with **Stripe**, external integrations and refactoring of legacy systems.
-- **Elixir**: functional programming and **OTP** for concurrent, fault-tolerant systems. In production with **Phoenix LiveView**, **Ash Framework** (multi-tenancy, authorization policies, state machines) and **Oban** for background pipelines, in [Agonai]({{ '/projects/agonai/' | relative_url }}) and [TechRepair]({{ '/projects/techrepair/' | relative_url }}).
 
 ## Frontend
 
@@ -20,7 +19,12 @@ My core is **Ruby on Rails** and **Elixir/Phoenix LiveView** on the backend and 
 ## AI engineering
 
 - Daily **AI-assisted (agentic) software engineering** with **Claude Code**, **Codex** and **Windsurf**, for fast system development with accountability.
+- A defined workflow: I set the architecture, design principles and tools; specify each feature with expected results, examples and counterexamples; review and approve the agent's plan; and require new tests, the full test suite, linters, formatters and a security agent before staging and QA. See [how I work]({{ '/how-i-work/' | relative_url }}).
 - Integrating **LLM APIs** (OpenAI, Claude, Gemini, Perplexity) into products, with multi-provider fallback and bring-your-own-keys, as in Agonai.
+
+## Elixir (growing)
+
+Elixir and Phoenix LiveView are the stack I am moving toward. I have built two products in it by directing AI coding agents with my workflow: [Agonai]({{ '/projects/agonai/' | relative_url }}) and [TechRepair]({{ '/projects/techrepair/' | relative_url }}), using **Phoenix LiveView**, **Ash Framework** and **Oban**. My hands-on Elixir level is still developing, and I am deepening it, including the fundamentals of the language and OTP.
 
 ## Data & APIs
 
@@ -54,7 +58,7 @@ Government systems (immigration control, transparency), healthcare (hospital inf
 - **SIMIEC**: architected Ecuador's national immigration control system, serving millions of users with 99.9% uptime.
 - **Data migration**: around 7 million records moved from DB2 to PostgreSQL, ETL included, with no data loss.
 - **Productivity**: improved team productivity by 20% at Admios through automation tools.
-- **Products built end to end**: Agonai and TechRepair, in Elixir, Phoenix LiveView and Ash.
+- **Products built with AI-assisted engineering**: Agonai and TechRepair, in Elixir, Phoenix LiveView and Ash, a stack I was new to.
 
 ## Earlier technologies
 
