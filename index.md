@@ -1,68 +1,116 @@
 ---
 layout: page
 title: Maykell Sánchez Romero
-subtitle: Senior Software Engineer with 20+ Years Building Production Systems
-description: "Senior software engineer and computer scientist with 20+ years building production systems in Elixir/Phoenix, Ruby on Rails, React and Java: from national government platforms to AI-powered SaaS products."
-share-title: "Maykell Sánchez Romero | Senior Software Engineer"
+subtitle: Senior Software Engineer · Ruby on Rails, Elixir & React · 15+ Years of Experience
+description: "Senior software engineer specialized in Ruby on Rails, Elixir/Phoenix LiveView and React, with 15+ years building production systems: from national government platforms to AI-powered SaaS products."
+share-title: "Maykell Sánchez Romero | Senior Software Engineer (Ruby on Rails, Elixir, React)"
+css: ["/assets/css/resume.css"]
 ---
+{%- assign resume = site.data.resume -%}
+{%- assign contact = resume.contact -%}
 
-**Based in Ecuador · Working remotely with distributed teams** · [kellsaro@gmail.com](mailto:kellsaro@gmail.com) · [LinkedIn](https://www.linkedin.com/in/kellsaro) · [GitHub](https://github.com/kellsaro)
+<div class="resume-contact">
+  <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ contact.location }}</span>
+  <a href="mailto:{{ contact.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> {{ contact.email }}</a>
+  <a href="https://www.{{ contact.linkedin }}"><i class="fab fa-linkedin" aria-hidden="true"></i> {{ contact.linkedin }}</a>
+  <a href="https://{{ contact.github }}"><i class="fab fa-github" aria-hidden="true"></i> {{ contact.github }}</a>
+  <a href="https://{{ contact.website }}" class="resume-print-only"><i class="fas fa-globe" aria-hidden="true"></i> {{ contact.website }}</a>
+</div>
 
-Senior software engineer and computer scientist with 20+ years of experience designing, building and running systems that matter: a national immigration control platform, hospital information systems, government transparency tools, enterprise ERPs and, today, AI-powered SaaS products. I work across the stack with **Elixir/Phoenix LiveView**, **Ruby on Rails**, **React** and **Java**, with a strong focus on backend architecture, complex integrations and turning legacy systems into scalable, maintainable solutions. I build products end to end, from the data model to the interface, and use **AI-assisted engineering with Claude Code** as part of my daily workflow.
+<p class="resume-lead">Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in <strong>Ruby on Rails</strong>, <strong>Elixir/Phoenix LiveView</strong> and <strong>React</strong>, backed by solid <strong>Java</strong> experience, and build products end to end with <strong>AI-assisted engineering (Claude Code)</strong>.</p>
 
-## Current Focus
+<div class="resume-actions">
+  <button type="button" class="resume-print-button" onclick="window.print()"><i class="fas fa-print" aria-hidden="true"></i> Print or save as PDF</button>
+  <a href="{{ '/experience/' | relative_url }}">Full experience</a>
+</div>
 
-- AI-assisted (agentic) software engineering with LLMs (Claude Code, Codex, etc.) for fast system development with accountability.
-- Distributed systems architecture for fast, scalable, resilient, maintainable solutions.
+<h2 id="current-focus">Current Focus</h2>
 
-## Technologies
+<ul class="resume-focus">
+  <li><strong>AI-assisted software engineering.</strong> Agentic development with LLMs (Claude Code, Codex, etc.) for fast system development with accountability.</li>
+  <li><strong>Distributed systems.</strong> Distributed systems architecture for fast, scalable, resilient, maintainable solutions.</li>
+</ul>
 
-React, Ruby on Rails, Claude Code, Codex, Elixir, Phoenix LiveView, Ash Framework, Oban, PostgreSQL, Hotwire (Turbo, Stimulus), JavaScript, Tailwind CSS, LLM APIs (Claude, OpenAI, Gemini, Perplexity), Typst, Java, Spring Boot, Java EE / Jakarta EE (EJB, JPA, JSF, JMS), C#, .NET, C++, SQL, MySQL, Oracle, RESTful APIs, Microservices, HL7, Apache Hop, Looker Studio, Jasper Reports, R, AWS (S3, EC2, RDS), Docker, GitHub Actions, Git, Linux, Slack SDK, monday.com apps, Backbone.js, Openbravo ERP, Scrum, Kanban, Jira, Confluence
+<h2 id="technologies">Technologies</h2>
 
-## Notable Projects
+<dl class="resume-tech">
+{%- for group in resume.technologies %}
+  <dt>{{ group.group }}</dt>
+  <dd>{{ group.items | join: ", " }}</dd>
+{%- endfor %}
+</dl>
 
-**[Agonai](https://agonai.io)** - Competitive intelligence system for the AI era. [See how it works]({{ site.baseurl }}/projects/agonai/).
+<h2 id="notable-projects">Notable Projects</h2>
 
-**[TechRepair](https://techrepair.site)** - Operations platform for wind turbine blade and tower maintenance teams, built around the work order lifecycle, where projects, teams, field activity and client reports converge. [See details]({{ site.baseurl }}/projects/techrepair/).
+<div class="resume-projects">
+{%- for project in resume.projects %}
+  <article class="resume-project{% if project.web_only %} resume-web-only{% endif %}">
+    <h3><a href="{{ project.page | relative_url }}">{{ project.name }}</a></h3>
+    <p>{{ project.summary }}</p>
+    <ul class="resume-chips" aria-label="Stack">
+      {%- for tech in project.stack %}<li>{{ tech }}</li>{% endfor -%}
+    </ul>
+    <p class="resume-project-links">
+      <a href="{{ project.page | relative_url }}">Details <span aria-hidden="true">→</span></a>
+      {%- if project.site %}
+      <a href="{{ project.site }}">{{ project.site | remove: "https://" }} <span aria-hidden="true">↗</span></a>
+      {%- endif %}
+    </p>
+  </article>
+{%- endfor %}
+</div>
 
-**Fundación Telefónica Dashboards** - KPIs on the effectiveness of educational programs for Fundación Telefónica Ecuador. [See the dashboards]({{ site.baseurl }}/projects/fundacion-telefonica/).
+<h2 id="experience">Experience</h2>
 
-**SIMIEC** - National immigration control system for Ecuador. [See details]({{ site.baseurl }}/projects/simiec/).
+<ol class="resume-jobs">
+{%- assign earlier_jobs = resume.experience | where: "earlier", true -%}
+{%- for job in resume.experience %}
+  {%- if job.earlier %}{% continue %}{% endif %}
+  <li class="resume-job">
+    <div class="resume-job-head">
+      <h3>{{ job.role }} <span class="resume-company">· {{ job.company }}</span></h3>
+      <p class="resume-job-meta">{% include resume-date.html date=job.start %} - {% include resume-date.html date=job.end %} · {% include duration.html start=job.start end=job.end %}{% if job.location %} · {{ job.location }}{% endif %}</p>
+    </div>
+    {%- if job.highlight %}
+    <p class="resume-job-highlight">{{ job.highlight | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+    {%- endif %}
+  </li>
+{%- endfor %}
+  {%- if earlier_jobs.size > 0 %}
+  {%- assign first_earlier = earlier_jobs | last -%}
+  {%- assign last_earlier = earlier_jobs | first %}
+  <li class="resume-job">
+    <div class="resume-job-head">
+      <h3>Earlier experience</h3>
+      <p class="resume-job-meta">{{ first_earlier.start | slice: 0, 4 }} - {{ last_earlier.end | slice: 0, 4 }}</p>
+    </div>
+    <p class="resume-job-highlight">{{ resume.earlier_summary }}</p>
+  </li>
+  {%- endif %}
+</ol>
 
-**Text Tools for Workdocs** - A monday.com app to review, transform and find-and-replace selected text without leaving the document. [See details]({{ site.baseurl }}/projects/text-tools/).
+<p class="resume-more">See the <a href="{{ '/experience/' | relative_url }}">complete experience</a> for the details and stack of each role.</p>
 
-**SITRAN** - Custom ERP for tourism transportation at Transtur Varadero. [See details]({{ site.baseurl }}/projects/sitran/).
+<div class="resume-columns">
+  <section>
+    <h2 id="education">Education & Certifications</h2>
+    <ul class="resume-plain">
+    {%- for item in resume.education %}
+      <li><strong>{{ item.degree }}</strong><br><span>{{ item.school }}</span></li>
+    {%- endfor %}
+    {%- for item in resume.certifications %}
+      <li><strong>{{ item.name }}</strong>{% if item.detail %}<br><span>{{ item.detail }}</span>{% endif %}</li>
+    {%- endfor %}
+    </ul>
+  </section>
+  <section>
+    <h2 id="languages">Languages</h2>
+    <ul class="resume-plain">
+    {%- for lang in resume.languages %}
+      <li><strong>{{ lang.name }}</strong> <span>· {{ lang.level }}</span></li>
+    {%- endfor %}
+    </ul>
+  </section>
+</div>
 
-**LOTAIP** - Government transparency platform for public institutions in Ecuador. [See details]({{ site.baseurl }}/projects/lotaip/).
-
-**alas-HIS** - Hospital information system for healthcare institutions in Cuba. [See details]({{ site.baseurl }}/projects/alas-his/).
-
-## Experience
-
-- **Agonai** - Creator · *2026 - Present* · AI-powered competitive intelligence platform built with Elixir, Phoenix LiveView and Ash Framework
-- **Kynsoft** - Software Developer and Data Analyst (Java, Ruby, Elixir) · *2024 - Present · Remote*
-- **Dominion Global** - Senior Ruby on Rails Developer · *2022 - 2024 · Remote*
-- **Admios** - Senior Ruby on Rails Developer · *2019 - 2022 · Remote* · Improved team productivity by 20% through automation tools
-- **Ministerio del Interior, Ecuador** - IT Analyst / Backend Java Developer · *2015 - 2019* · Architected SIMIEC
-- **AEC Inter S.A.** - Software Developer (Java) · *2015* · Architected LOTAIP
-- **Gmixon** - Ruby on Rails Developer (Freelance) · *2013 - 2015 · Remote*
-- **Transtur Varadero** - Ruby on Rails Engineer · *2011 - 2013* · Built the SITRAN ERP
-- **Peoplewalking** - Java Developer (Freelance) · *2010 - 2012*
-- **Universidad de las Ciencias Informáticas** - Developer / Assistant Professor · *2004 - 2010* · alas-HIS backend and HL7 integrations
-
-See the [complete experience]({{ site.baseurl }}/experience/) for the details of each role.
-
-## Education & Certifications
-
-- **Master in Software Development** - University of Informatics Sciences, Cuba
-- **Bachelor in Computer Science** - University of Havana, Cuba
-- **Triplebyte Certified Generalist Software Engineer**
-- **EF SET Certificate** - Professional English
-
-## Languages
-
-- **Spanish** (Native) · **English** (Professional) · **French** (Basic) · **Italian** (Basic)
-
----
-
-Want the full details? See my [complete experience]({{ site.baseurl }}/experience/) and [technical profile]({{ site.baseurl }}/technical-expertise/), or [email me](mailto:kellsaro@gmail.com).
+<p class="resume-more resume-screen-only">Want more? See my <a href="{{ '/technical-expertise/' | relative_url }}">technical profile</a>, or <a href="mailto:{{ contact.email }}">email me</a>.</p>

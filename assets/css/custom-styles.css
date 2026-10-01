@@ -25,32 +25,38 @@
 }
 
 /*
-  Page and post titles: the theme uses up to 80px (5rem) at weight 800, which is
-  hard to read next to 18px body text. Keep them clearly the largest text on the
-  page (above the 30px section headings) but at a comfortable reading size.
+  Headings: the theme uses up to 80px page titles and 30px extra-bold section
+  headings, which feel heavy next to 18px body text. Keep a clear hierarchy
+  (page title > section heading > subsection > body) at comfortable sizes.
 */
 .intro-header .page-heading h1,
 .intro-header .post-heading h1 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.25;
 }
 
 .intro-header .page-heading .page-subheading,
 .intro-header .post-heading .post-subheading {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   line-height: 1.45;
-  margin-top: 0.75rem;
+  margin-top: 0.6rem;
 }
+
+[role="main"] h2 { font-size: 1.45rem; font-weight: 700; }
+[role="main"] h3 { font-size: 1.2rem; font-weight: 700; }
+[role="main"] h4 { font-size: 1.05rem; font-weight: 700; }
 
 @media (min-width: 768px) {
   .intro-header .page-heading h1,
   .intro-header .post-heading h1 {
-    font-size: 2.5rem;
+    font-size: 2.125rem;
   }
 
   .intro-header .page-heading .page-subheading,
   .intro-header .post-heading .post-subheading {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
+
+  [role="main"] h2 { font-size: 1.6rem; }
 }

@@ -12,9 +12,9 @@ Visit my website at: **[kellsaro.github.io](https://kellsaro.github.io)**
 
 ## 👨‍💻 About Me
 
-Senior Software Developer with 20+ years of experience specializing in:
+Senior Software Developer with 15+ years of experience specializing in:
 - **Ruby on Rails** full-stack development (15+ years)
-- **Java** backend development (Spring Boot, Jakarta EE) (20+ years)
+- **Java** backend development (Spring Boot, Jakarta EE) (15+ years)
 - **System Architecture Design** and performance optimization
 - **ETL processes** and data pipeline development
 - **Team Leadership** and mentoring
@@ -114,7 +114,7 @@ bundle exec jekyll build
 
 ## 🏆 Professional Highlights
 
-- **20+ years** of software development experience
+- **15+ years** of software development experience
 - **Master's Degree** in Software Development
 - **National-scale systems**: SIMIEC immigration control system
 - **Government platforms**: LOTAIP transparency system

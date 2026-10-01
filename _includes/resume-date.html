@@ -1,0 +1,10 @@
+{%- comment -%}
+  Formats a resume date: "2024-09" -> "Sep 2024", "2010" -> "2010", "present" -> "Present".
+{%- endcomment -%}
+{%- if include.date == "present" -%}
+Present
+{%- elsif include.date contains "-" -%}
+{{ include.date | append: "-01" | date: "%b %Y" }}
+{%- else -%}
+{{ include.date }}
+{%- endif -%}

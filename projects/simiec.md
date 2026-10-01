@@ -51,7 +51,7 @@ Every action in an immigration system has to be recorded, but writing those reco
 ### Availability, reporting and practices
 
 - **Critical availability.** SIMIEC serves millions of users, and the infrastructure I managed kept **99.9% uptime**.
-- **Reporting and analysis.** I produced reports and dashboards from the system's data with **Jasper Reports**, **R** and Excel.
+- **Reporting and analysis.** I produced reports and dashboards from the system's data with **Jasper Reports** and Excel.
 - **Engineering practices.** I set up internal Git repositories for the team.
 
 [Back to all projects]({{ '/' | relative_url }}#notable-projects)

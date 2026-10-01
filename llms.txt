@@ -2,22 +2,46 @@
 layout: null
 sitemap: false
 ---
+{%- assign resume = site.data.resume -%}
+{%- capture site_root -%}{{ '/' | absolute_url }}{%- endcapture -%}
+{%- capture absolute_link -%}]({{ site_root }}{%- endcapture -%}
 # {{ site.title }}
 
-> {{ site.description }}
+> Senior Software Engineer specialized in Ruby on Rails, Elixir/Phoenix LiveView and React, backed by solid Java experience, with 15+ years building production systems: from national government platforms to AI-powered SaaS products.
 
-Maykell Sánchez Romero is a Senior Software Engineer and computer scientist based in Ecuador, working remotely with distributed teams, who builds production systems end to end with Elixir, Phoenix LiveView, Ash Framework, Ruby on Rails, React and Java, and practices AI-assisted software engineering with LLMs (Claude Code, Codex). Contact: {{ site.social-network-links.email }}.
+Maykell Sánchez Romero is a Senior Software Engineer based in Ecuador (UTC-5, within 1 hour of US Eastern time), open to remote roles, who builds products end to end (data model, backend, interface, background processing and reports) and practices AI-assisted software engineering with LLMs (Claude Code, Codex). Current focus: agentic software engineering for fast system development with accountability, and distributed systems architecture for fast, scalable, resilient, maintainable solutions.
 
-## Profile
+- Contact: {{ resume.contact.email }}
+- LinkedIn: https://www.{{ resume.contact.linkedin }}
+- GitHub: https://{{ resume.contact.github }}
+- Resume: {{ site_root }} (printable as a one-page CV)
 
-- [Resume and overview]({{ '/' | absolute_url }}): summary, current focus, technologies, notable projects, experience and education
-- [Professional experience]({{ '/experience/' | absolute_url }}): each role with its main stack and duration
-- [Technical expertise]({{ '/technical-expertise/' | absolute_url }}): skills, tools and domain knowledge
+## Technologies
+{% for group in resume.technologies %}
+- {{ group.group }}: {{ group.items | join: ", " }}{% endfor %}
+
+## Experience
+{% for job in resume.experience %}
+- {{ job.role }}, {{ job.company }} ({% include resume-date.html date=job.start %} - {% include resume-date.html date=job.end %}{% if job.location %}, {{ job.location }}{% endif %}){% if job.highlight %}: {{ job.highlight | replace: "](/", absolute_link }}{% endif %}{% endfor %}
+
+Details of each role, with its main stack: {{ '/experience/' | absolute_url }}
 
 ## Projects
-{% for link in site.navbar-links.Projects %}{% for item in link %}
-- [{{ item[0] }}]({{ item[1] | absolute_url }}){% endfor %}{% endfor %}
+{% for project in resume.projects %}
+- [{{ project.name }}]({{ project.page | absolute_url }}){% if project.owner %} (for {{ project.owner }}){% endif %}: {{ project.summary }} Stack: {{ project.stack | join: ", " }}.{% if project.site %} Website: {{ project.site }}{% endif %}{% endfor %}
+
+## Education and certifications
+{% for item in resume.education %}
+- {{ item.degree }}, {{ item.school }}{% endfor %}{% for item in resume.certifications %}
+- {{ item.name }}{% if item.detail %} ({{ item.detail }}){% endif %}{% endfor %}
+
+## Languages
+{% for lang in resume.languages %}
+- {{ lang.name }}: {{ lang.level }}{% endfor %}
 
 ## Blog
 {% for post in site.posts %}
 - [{{ post.title }}]({{ post.url | absolute_url }}){% if post.description %}: {{ post.description }}{% endif %}{% endfor %}
+
+## More
+- Technical profile: {{ '/technical-expertise/' | absolute_url }}

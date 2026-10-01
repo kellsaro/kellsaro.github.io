@@ -33,6 +33,12 @@ Key directories:
 - `app/` - Experimental SPAs (placeholder, not actively developed).
 - `assets/css/`, `assets/js/` - Static assets including `bilingual.css` and `bilingual.js`.
 
+## Resume (home page)
+
+The home page (`index.md`) is a resume rendered from `_data/resume.yml`: contact, grouped technologies, notable projects, experience summary, education and languages. The same data feeds `llms.txt` and the project pages' structured data (`_includes/structured-data.html`), so edit the YAML rather than the pages. The detailed role descriptions live in `experience.md`, and each project has its own page under `projects/`.
+
+`assets/css/resume.css` holds both the screen design and the print stylesheet: printing the home page (Ctrl+P / "Save as PDF") produces a one-page CV. After changing resume content, check the print preview still fits on one page.
+
 ## Bilingual System
 
 All new articles use the bilingual infrastructure. The system is self-contained in `_includes/bilingual_header.html` (embedded CSS+JS) with standalone reference files in `assets/`.

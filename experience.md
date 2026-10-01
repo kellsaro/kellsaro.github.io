@@ -1,23 +1,34 @@
 ---
 layout: page
 title: Professional Experience
-subtitle: 20+ Years of Software Development
-description: "Professional experience of Maykell Sánchez Romero: 20+ years as a software engineer, with the role, main stack and duration of each position."
+subtitle: 15+ Years of Software Development
+description: "Professional experience of Maykell Sánchez Romero: 15+ years as a software engineer, with the role, main stack and duration of each position."
 ---
 
-### **Agonai** - Creator
+### **ECEELI LLC** - Founder & Software Engineer
 *March 2026 - Present · {% include duration.html start="2026-03" end="present" %} · Remote*<br>
-**Stack:** Elixir, Phoenix LiveView, Ash Framework, PostgreSQL, Oban, Typst, LLM APIs
-- Created [Agonai]({{ site.baseurl }}/projects/agonai/), an AI-powered competitive intelligence platform for small and mid-sized businesses
-- Designed and built the whole product: domain model, background processing pipeline, LLM integrations, live interface and PDF reports
+**Stack:** Elixir, Phoenix LiveView, Ash Framework, PostgreSQL, Oban, Typst, LLM APIs (Claude, OpenAI, Gemini, Perplexity)
+- Created [Agonai]({{ site.baseurl }}/projects/agonai/) ([agonai.io](https://agonai.io)), a competitive intelligence and AI Visibility platform for small and mid-sized businesses
+- Companies set up their products and competitors; Agonai monitors competitor pricing, product, hiring, reviews and messaging, and turns changes into confidence-scored insights, battlecards and reports
+- Built AI Visibility tracking, measuring how a brand appears in answers from ChatGPT, Perplexity and Gemini so companies can improve their presence in LLM results
+- Designed and built the whole product: Ash domain model, Oban background pipeline, multi-provider LLM integration with fallback and bring-your-own-keys, LiveView interface and Typst PDF reports
+
+### **Globant** - Ruby Developer
+*October 2025 - March 2026 · {% include duration.html start="2025-10" end="2026-03" %} · Remote*<br>
+**Stack:** Ruby on Rails, Stripe, Adyen, Faraday, RSpec, REST APIs, Windsurf IDE
+- Worked on the migration of **Postmark**'s billing system from Stripe to the ActiveCampaign billing system, backed by Adyen
+- Refactored part of the code to apply the **Adapter design pattern**, enabling a smooth transition to the new billing system
+- Created an API client and actively took part in defining other REST API endpoints
+- Added tests backing the development
 
 ### **Kynsoft** - Software Developer (Java, Ruby, Elixir, Data Analyst)
-*September 2024 - Present · {% include duration.html start="2024-09" end="present" %} · Ecuador · Remote*<br>
-**Stack:** Java, Ruby, Elixir, Apache Hop, Looker Studio, SQL
+*September 2024 - October 2025 · {% include duration.html start="2024-09" end="2025-10" %} · Ecuador · Remote*<br>
+**Stack:** Java, Ruby, Elixir, Apache Hop, Looker Studio, PostgreSQL, DB2, SQL
 - Data Analyst for Fundación Telefónica Ecuador, creating ETLs and [Looker Studio Dashboards]({{ site.baseurl }}/projects/fundacion-telefonica/)
 - Leading the engineering team, defining backend architectural standards
 - Designing and implementing Java solutions and scalable microservices
 - Developing RESTful APIs aligned with business objectives
+- **Migrated around 7 million records from DB2 to PostgreSQL**, including the ETL processes, with no data loss
 - Relational database modeling and migration
 - Implementing ETL processes and performance improvements
 
@@ -39,11 +50,11 @@ description: "Professional experience of Maykell Sánchez Romero: 20+ years as a
 
 ### **Ministerio del Interior (Ecuador)** - IT Analyst / Backend Java Developer
 *April 2015 - March 2019 · {% include duration.html start="2015-04" end="2019-03" %} · Ecuador*<br>
-**Stack:** Java EE (EJB, JPA, JSF, JMS), C# / .NET, C++, JavaScript, Jasper Reports, R
-- **Architected [SIMIEC]({{ site.baseurl }}/projects/simiec/)**, the national immigration control system in Java
+**Stack:** Java EE (EJB, JPA, JSF, JMS), C# / .NET, C++, JavaScript, Jasper Reports
+- **Architected [SIMIEC]({{ site.baseurl }}/projects/simiec/)**, the national immigration control system in Java, serving millions of users with 99.9% uptime
 - Integrated with specialized hardware (passport scanners, fingerprint readers)
 - Implemented internal Git repositories and generated reports/dashboards
-- Used analysis tools like Jasper Reports, R, and Excel for data insights
+- Used analysis tools like Jasper Reports and Excel for data insights
 - Managed critical government infrastructure with 99.9% uptime
 
 ### **AEC Inter S.A.** - Software Developer (Java)

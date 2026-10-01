@@ -11,12 +11,15 @@ description: "TechRepair is a cloud operations platform for wind turbine blade a
 
 It is built for this industry rather than adapted from a generic tool, or in its own words: *"Wind-native, not bent to fit."*
 
+For **TechRepair LLC**, I am the developer of the **web system** and of the **GraphQL API** that the mobile field app uses. It is an ongoing side project that I keep working on.
+
 <ul class="project-meta">
   <li>Wind turbine maintenance</li>
   <li>Work order lifecycle</li>
   <li>Multi-tenant SaaS</li>
   <li>Field app for technicians</li>
   <li>Approvals with audit trail</li>
+  <li>GraphQL API</li>
   <li>Auto-generated client reports</li>
 </ul>
 
@@ -104,6 +107,7 @@ TechRepair shares its foundations with [Agonai]({{ site.baseurl }}/projects/agon
   <li>Phoenix LiveView</li>
   <li>Ash Framework</li>
   <li>PostgreSQL</li>
+  <li>GraphQL (Absinthe)</li>
   <li>Typst (Imprintor)</li>
   <li>Tailwind CSS</li>
   <li>S3-compatible storage</li>
@@ -111,6 +115,7 @@ TechRepair shares its foundations with [Agonai]({{ site.baseurl }}/projects/agon
 
 - **Elixir and Phoenix LiveView.** Many people work on the same project at once, from the office and the field. LiveView keeps every screen up to date as work orders, checks and approvals change, without a separate JavaScript frontend.
 - **Ash Framework.** The domain (customers, towers, blades, projects, work orders, reports) is described as declarative resources. Ash also provides the **multi-tenancy** that keeps each customer's data isolated, the **authorization policies** behind the role-based permissions, and the **state machines** behind the two work order lifecycles (the work and its paperwork), so a work order can only move through valid steps and a sealed record can never be reopened.
+- **GraphQL API with Absinthe.** The mobile field app works through GraphQL endpoints that cover signing in, the technician's active projects and their work orders, work order details, tasks and attachments. The API uses token (JWT) authentication and rate limiting.
 - **PostgreSQL** stores all the operational data and the audit history.
 - **Typst, through the Imprintor library,** turns field data into polished PDF reports, such as job safety analyses and daily rigging inspection reports, including the approver's signature.
 - **S3-compatible object storage** holds the photos and files captured as evidence.

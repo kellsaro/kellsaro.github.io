@@ -1,0 +1,167 @@
+# Single source for the resume content shown on the home page, its printed
+# version and llms.txt. The detailed role descriptions live in experience.md.
+
+contact:
+  location: "Based in Ecuador · UTC-5, within 1 hour of US Eastern time · Open to remote roles"
+  email: "kellsaro@gmail.com"
+  website: "kellsaro.github.io"
+  linkedin: "linkedin.com/in/kellsaro"
+  github: "github.com/kellsaro"
+
+# Grouped so recruiters (and parsers) can scan it. Curated for the target roles
+# (Ruby on Rails / Elixir backend with React); older or niche technologies stay
+# visible in the project pages and experience.md instead of here.
+technologies:
+  - group: "Backend"
+    items: [Ruby, Ruby on Rails, Sidekiq, Elixir, Phoenix LiveView, Ash Framework, Oban, OTP]
+  - group: "Frontend"
+    items: [React, JavaScript, "Hotwire (Turbo, Stimulus)", Tailwind CSS]
+  - group: "AI engineering"
+    items: [Claude Code, Codex, Windsurf, "LLM APIs (OpenAI, Claude, Gemini)"]
+  - group: "Data & APIs"
+    items: [PostgreSQL, Redis, MySQL, DB2, REST APIs, GraphQL, "Payments (Stripe)", "ETL (Apache Hop, Looker Studio)"]
+  - group: "Also strong in"
+    items: [Java, Spring Boot, Jakarta EE]
+  - group: "DevOps & quality"
+    items: [Docker, "AWS (S3, EC2, RDS)", Fly.io, Heroku, "GitHub Actions (CI/CD)", RSpec, Git, Linux, Agile]
+
+# owner: organization the project belongs to (used in the structured data).
+# web_only: true keeps the project on the website but out of the printed CV.
+projects:
+  - name: Agonai
+    owner: "ECEELI LLC"
+    page: /projects/agonai/
+    site: https://agonai.io
+    summary: "Competitive intelligence system for the AI era."
+    stack: [Elixir, Phoenix LiveView, Ash, LLMs]
+  - name: TechRepair
+    owner: "TechRepair LLC"
+    page: /projects/techrepair/
+    site: https://techrepair.site
+    summary: "Operations platform for wind turbine blade and tower maintenance teams, built around the work order lifecycle, where projects, teams, field activity and client reports converge."
+    stack: [Elixir, Phoenix LiveView, Ash, GraphQL]
+  - name: Fundación Telefónica Dashboards
+    owner: "Fundación Telefónica Ecuador"
+    page: /projects/fundacion-telefonica/
+    summary: "KPIs on the effectiveness of educational programs for Fundación Telefónica Ecuador."
+    stack: [Apache Hop, Looker Studio]
+  - name: SIMIEC
+    owner: "Ministerio del Interior, Ecuador"
+    page: /projects/simiec/
+    summary: "National immigration control system for Ecuador."
+    stack: [Java EE, "C# / .NET", C++]
+  - name: Text Tools for Workdocs
+    owner: "montools"
+    page: /projects/text-tools/
+    summary: "A monday.com app to review, transform and find-and-replace selected text without leaving the document."
+    stack: [React, monday.com]
+  - name: SITRAN
+    web_only: true
+    owner: "Transtur Varadero"
+    page: /projects/sitran/
+    summary: "Custom ERP for tourism transportation at Transtur Varadero."
+    stack: [Ruby on Rails, PostgreSQL]
+  - name: LOTAIP
+    web_only: true
+    page: /projects/lotaip/
+    summary: "Government transparency platform for public institutions in Ecuador."
+    stack: [Java]
+  - name: alas-HIS
+    web_only: true
+    owner: "Universidad de las Ciencias Informáticas"
+    page: /projects/alas-his/
+    summary: "Hospital information system for healthcare institutions in Cuba."
+    stack: [Java, HL7]
+
+# dates: "YYYY-MM" (or "YYYY"); end: present for current roles.
+# earlier: true groups the role into the one-line "Earlier experience" summary on the resume.
+earlier_summary: "Ruby on Rails and Java roles, including the SITRAN ERP at Transtur Varadero and alas-HIS backend modules with HL7 integrations at Universidad de las Ciencias Informáticas."
+
+experience:
+  - company: ECEELI LLC
+    role: Founder & Software Engineer
+    start: "2026-03"
+    end: present
+    location: Remote
+    highlight: "Created [Agonai](/projects/agonai/), a competitive intelligence and AI Visibility platform built with Elixir, Phoenix LiveView and Ash Framework."
+  - company: Globant
+    role: Ruby Developer
+    start: "2025-10"
+    end: "2026-03"
+    location: Remote
+    highlight: "Billing system migration for Postmark, from Stripe to Adyen, applying the Adapter pattern."
+  - company: Kynsoft
+    role: Software Developer and Data Analyst
+    start: "2024-09"
+    end: "2025-10"
+    location: Remote
+    highlight: "Migrated around 7 million records from DB2 to PostgreSQL, including the ETL processes, with no data loss; Looker Studio dashboards for Fundación Telefónica Ecuador."
+  - company: Dominion Global
+    role: Senior Ruby on Rails Developer
+    start: "2022-08"
+    end: "2024-07"
+    location: Remote
+    highlight: "Rails systems for global clients, external integrations and ETL pipelines."
+  - company: Admios
+    role: Senior Ruby on Rails Developer
+    start: "2019-08"
+    end: "2022-07"
+    location: Remote
+    highlight: "Improved team productivity by 20% through automation tools."
+  - company: "Ministerio del Interior, Ecuador"
+    role: IT Analyst / Backend Java Developer
+    start: "2015-04"
+    end: "2019-03"
+    location: Ecuador
+    highlight: "Architected [SIMIEC](/projects/simiec/), the national immigration control system, serving millions of users with 99.9% uptime."
+  - company: AEC Inter S.A.
+    role: Software Developer (Java)
+    start: "2015-01"
+    end: "2015-12"
+    location: Ecuador
+    highlight: "Architected the [LOTAIP](/projects/lotaip/) government transparency system."
+  - company: Gmixon
+    role: Ruby on Rails Developer (Freelance)
+    start: "2013-04"
+    end: "2015-03"
+    location: Remote
+  - company: Transtur Varadero
+    earlier: true
+    role: Ruby on Rails Engineer
+    start: "2011-03"
+    end: "2013-02"
+    location: Cuba
+    highlight: "Built the [SITRAN](/projects/sitran/) ERP."
+  - company: Peoplewalking
+    earlier: true
+    role: Java Developer (Freelance)
+    start: "2010"
+    end: "2012"
+  - company: Universidad de las Ciencias Informáticas
+    earlier: true
+    role: Developer / Assistant Professor
+    start: "2004-09"
+    end: "2010-08"
+    location: Cuba
+    highlight: "Backend modules and HL7 integrations for [alas-HIS](/projects/alas-his/)."
+
+education:
+  - degree: Master in Software Development
+    school: University of Informatics Sciences, Cuba
+  - degree: Bachelor in Computer Science
+    school: University of Havana, Cuba
+
+certifications:
+  - name: Triplebyte Certified Generalist Software Engineer
+  - name: EF SET Certificate
+    detail: Professional English
+
+languages:
+  - name: Spanish
+    level: Native
+  - name: English
+    level: Professional
+  - name: French
+    level: Basic
+  - name: Italian
+    level: Basic
