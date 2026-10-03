@@ -42,7 +42,7 @@ echo "Printing the CV..."
 if command -v pdfinfo >/dev/null; then
   PAGES=$(pdfinfo "$OUTPUT" | awk '/^Pages:/ {print $2}')
   echo "Saved $OUTPUT ($PAGES page(s))"
-  [ "$PAGES" = "1" ] || echo "Warning: the CV no longer fits on one page; tighten the content or resume.css." >&2
+  [ "$PAGES" -le 2 ] || echo "Warning: the CV no longer fits on two pages; tighten the content or resume.css." >&2
 else
   echo "Saved $OUTPUT"
 fi

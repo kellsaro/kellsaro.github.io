@@ -1,6 +1,6 @@
 /*
   Resume (home page): screen design plus a print stylesheet, so Ctrl+P / "Save as
-  PDF" (and bin/cv-pdf) produce a one-page CV. Uses the tokens defined in
+  PDF" (and bin/cv-pdf) produce a CV of up to two pages. Uses the tokens defined in
   custom-styles.css. Layout: each section is a row with its name in a narrow
   left column and its content on the right, like a well-kept engineering record.
 */
@@ -170,6 +170,9 @@
 .resume-job-what h3 { margin: 0; font-size: 1.02rem; font-weight: 600; }
 .resume-company { font-weight: 500; color: var(--slate); }
 .resume-job-what p { margin: .2rem 0 0; }
+.resume-job-highlights { margin: .2rem 0 0; padding-left: 1.1em; list-style: disc; }
+.resume-job-highlights li { margin: 0 0 .15rem; padding-left: .15em; }
+.resume-job-highlights li::marker { color: var(--slate); }
 
 .resume-plain { margin: 0; padding: 0; list-style: none; }
 .resume-plain li { margin-bottom: .35rem; }
@@ -200,19 +203,22 @@
   .resume-job-when .resume-job-length::before { content: ", "; }
 }
 
-/* ---------- Print: a one-page CV ---------- */
+/* ---------- Print: a CV of up to two pages ---------- */
 
 @media print {
   /*
     No page margin: browsers then have no room for their own header and footer
     (date, title, URL), so a manual Ctrl+P prints as clean as bin/cv-pdf.
-    The margin moves to the body padding instead.
+    The margin moves to the body padding instead, cloned on every page so the
+    second page keeps its top and bottom margin.
   */
   @page { margin: 0; }
 
   html, body { background: #fff !important; }
   body {
     padding: 12mm 13mm !important;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
     font-size: 9.4pt;
     line-height: 1.36;
     color: #1E2A28;
@@ -247,7 +253,8 @@
   .resume-pairs dt { font-size: 8.5pt; padding-top: 0; }
   .resume-pairs dd { font-size: 9pt; }
 
-  .resume-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6mm 6mm; }
+  /* One column on paper: parsers (ATS) read two-column grids out of order */
+  .resume-projects { grid-template-columns: 1fr; gap: 1.6mm; }
   .resume-project { break-inside: avoid; }
   .resume-project h3 { font-size: 9.6pt; margin: 0; }
   .resume-project p { font-size: 8.9pt; }
@@ -260,6 +267,9 @@
   .resume-job-when .resume-job-length::before { content: none; }
   .resume-job-what h3 { font-size: 9.4pt; }
   .resume-job-what p { font-size: 8.9pt; margin-top: .2mm; }
+  .resume-job-highlights { margin-top: .2mm; font-size: 8.9pt; }
+  .resume-job-highlights li { margin-bottom: .2mm; }
+  .resume-section > h2 { break-after: avoid; }
 
   .resume-plain li { margin-bottom: .6mm; font-size: 8.9pt; }
   .resume-plain-line { font-size: 8.9pt; }

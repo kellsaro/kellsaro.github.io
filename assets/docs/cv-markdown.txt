@@ -55,8 +55,8 @@ permalink: /assets/docs/Maykell-Sanchez-Romero-CV.md
 ### {{ job.role }}, {{ job.company }}
 
 {% include resume-date.html date=job.start %} - {% include resume-date.html date=job.end %} ({% include duration.html start=job.start end=job.end %}){% if job.location %}, {{ job.location }}{% endif %}
-{% if job.highlight %}
-{{ job.highlight | replace: "](/", absolute_link }}
+{% if job.highlights %}{% for item in job.highlights %}
+- {{ item | replace: "](/", absolute_link }}{% endfor %}
 {% endif %}{% endfor %}
 Full details of each role, with its stack: {{ '/experience/' | absolute_url }}
 

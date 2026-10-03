@@ -57,7 +57,7 @@ Government systems (immigration control, transparency), healthcare (hospital inf
 
 - **SIMIEC**: architected Ecuador's national immigration control system, serving millions of users with 99.9% uptime.
 - **Data migration**: around 7 million records moved from DB2 to PostgreSQL, ETL included, with no data loss.
-- **Productivity**: improved team productivity by 20% at Admios through automation tools.
+- **Real-time notifications**: introduced Turbo Streams push notifications at Dominion Global, so users are told when heavy, long-running reports are ready.
 - **Products built with AI-assisted engineering**: Agonai and TechRepair, in Elixir, Phoenix LiveView and Ash, a stack I was new to.
 
 ## Earlier technologies

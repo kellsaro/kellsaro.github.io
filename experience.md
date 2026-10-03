@@ -35,8 +35,11 @@ description: "Professional experience of Maykell Sánchez Romero: 15+ years as a
 
 ### **Dominion Global** - Senior Ruby on Rails Developer
 *August 2022 - July 2024 ({% include duration.html start="2022-08" end="2024-07" %}), Remote*<br>
-**Stack:** Ruby on Rails, SQL, ETL pipelines
+**Stack:** Ruby on Rails, Hotwire (Turbo, Stimulus), SQL, ETL pipelines
 - Developed and maintained Ruby on Rails systems for global clients
+- Built new features for a client's Ruby on Rails application for creating reviews
+- Introduced **Turbo Streams push notifications** for report processing, a heavy, long-running task, so users are told when their reports are ready
+- Improved the UX with Stimulus
 - Created external integrations and robust ETL pipelines
 - Refactored legacy systems to improve performance and scalability
 - Worked with distributed teams across multiple time zones
@@ -44,8 +47,9 @@ description: "Professional experience of Maykell Sánchez Romero: 15+ years as a
 ### **Admios** - Senior Ruby on Rails Developer
 *August 2019 - July 2022 ({% include duration.html start="2019-08" end="2022-07" %}), Remote*<br>
 **Stack:** Ruby on Rails, Slack SDK
-- Developed Ruby on Rails features and internal tools using Slack SDK
-- **Improved team productivity and reduced inefficiencies by 20%**
+- Developed new features for a client's Ruby on Rails SaaS for auto repair shops
+- Built the **webhooks mechanism** that notifies other users asynchronously when certain events happen
+- Developed internal tools using Slack SDK
 - Built automation tools that streamlined development workflows
 - Mentored junior developers and conducted code reviews
 
@@ -62,14 +66,15 @@ description: "Professional experience of Maykell Sánchez Romero: 15+ years as a
 *January 2015 - December 2015 ({% include duration.html start="2015-01" end="2015-12" %}), Ecuador*<br>
 **Stack:** Java
 - **Architected [LOTAIP]({{ site.baseurl }}/projects/lotaip/) system** for government transparency
-- Developed electronic billing system for Correos del Ecuador
+- Developed the **electronic invoicing** solution for Correos del Ecuador: generated the XML invoices, signed them with private keys and sent them to the tax authority (SRI) for validation
+- Built the user portal for viewing the electronic invoices
 - Implemented backend integrations with ERP systems
 - Worked with regulatory compliance requirements
 
 ### **Gmixon** - Ruby on Rails Developer (Freelance)
 *April 2013 - March 2015 ({% include duration.html start="2013-04" end="2015-03" %}), Remote*<br>
 **Stack:** Ruby on Rails
-- Developed and maintained the company's project management system
+- Developed and maintained the company's project management system, especially the payments to team members
 - Worked remotely, delivering in agile environments
 - Collaborated with distributed teams across different time zones
 

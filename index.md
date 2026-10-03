@@ -25,7 +25,7 @@ css: ["/assets/css/resume.css"]
       <li><a href="https://{{ contact.x }}">{{ contact.x }}</a></li>
       <li class="resume-print-only"><a href="https://{{ contact.website }}">{{ contact.website }}</a></li>
     </ul>
-    <p class="resume-location">{{ contact.location }} |&gt; {{ contact.availability }}</p>
+    <p class="resume-location">{{ contact.location }}. {{ contact.availability }}.</p>
   </div>
   <img class="resume-photo" src="{{ site.avatar | relative_url }}" alt="Portrait of {{ page.title }}" width="112" height="112">
 </header>
@@ -49,7 +49,7 @@ css: ["/assets/css/resume.css"]
   </dl>
 </section>
 
-<section class="resume-section" aria-labelledby="current-focus">
+<section class="resume-section resume-screen-only" aria-labelledby="current-focus">
   <h2 id="current-focus">Current focus</h2>
   <div class="resume-section-body">
   {%- for item in resume.focus %}
@@ -91,8 +91,14 @@ css: ["/assets/css/resume.css"]
       <p class="resume-job-when"><span>{% include resume-date.html date=job.start %} - {% include resume-date.html date=job.end %}</span><span class="resume-job-length">{% include duration.html start=job.start end=job.end %}{% if job.location %}, {{ job.location }}{% endif %}</span></p>
       <div class="resume-job-what">
         <h3>{{ job.role }}, <span class="resume-company">{{ job.company }}</span></h3>
-        {%- if job.highlight %}
-        <p>{{ job.highlight | replace: "](/", absolute_link | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+        {%- if job.highlights.size == 1 %}
+        <p>{{ job.highlights.first | replace: "](/", absolute_link | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+        {%- elsif job.highlights %}
+        <ul class="resume-job-highlights">
+        {%- for item in job.highlights %}
+          <li>{{ item | replace: "](/", absolute_link | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
+        {%- endfor %}
+        </ul>
         {%- endif %}
       </div>
     </li>
@@ -117,6 +123,12 @@ css: ["/assets/css/resume.css"]
   {%- for item in resume.education %}
     <li><strong>{{ item.degree }}</strong>, {{ item.school }}</li>
   {%- endfor %}
+  </ul>
+</section>
+
+<section class="resume-section" aria-labelledby="certifications">
+  <h2 id="certifications">Certifications</h2>
+  <ul class="resume-plain">
   {%- for item in resume.certifications %}
     <li><strong>{{ item.name }}</strong>{% if item.detail %}, {{ item.detail }}{% endif %}</li>
   {%- endfor %}

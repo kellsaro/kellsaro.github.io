@@ -2,7 +2,7 @@
 # version and llms.txt. The detailed role descriptions live in experience.md.
 
 contact:
-  location: "Ecuador, UTC-5 (within 1 hour of US Eastern time)"
+  location: "Ecuador, UTC-5 (available during US business hours, Eastern to Pacific)"
   availability: "Open to remote roles"
   email: "kellsaro@gmail.com"
   website: "kellsaro.github.io"
@@ -26,7 +26,7 @@ glance:
   - label: Way of working
     value: "[AI-assisted engineering](/how-i-work/) with specs, reviewed plans, cross-agent review and full test suites"
   - label: Location
-    value: Ecuador, UTC-5 (within 1 hour of US Eastern time)
+    value: Ecuador, UTC-5 (available during US business hours, Eastern to Pacific)
   - label: Availability
     value: Open to remote roles
   - label: Languages
@@ -41,23 +41,23 @@ focus:
     text: Growing toward Elixir as my next main stack, with two products already built in it.
 
 # Grouped so recruiters (and parsers) can scan it. Curated for the target roles
-# (Ruby on Rails backend with React, moving toward Elixir); older or niche technologies stay
+# (Ruby on Rails backend with React, moving toward Elixir), core Rails stack first; older or niche technologies stay
 # visible in the project pages and experience.md instead of here.
 technologies:
   - group: "Backend"
     items: [Ruby, Ruby on Rails, Sidekiq, RSpec]
+  - group: "Data & APIs"
+    items: [PostgreSQL, Redis, MySQL, DB2, REST APIs, GraphQL, "Payments (Stripe)", "ETL (Apache Hop, Looker Studio)"]
   - group: "Frontend"
     items: [React, JavaScript, "Hotwire (Turbo, Stimulus)", Tailwind CSS]
+  - group: "DevOps & quality"
+    items: [Docker, "AWS (S3, EC2, RDS)", Fly.io, Heroku, "GitHub Actions (CI/CD)", Git, Linux, Agile]
+  - group: "Also strong in"
+    items: [Java, Spring Boot, Jakarta EE]
   - group: "AI engineering"
     items: [Claude Code, Codex, Windsurf, "LLM APIs (OpenAI, Claude, Gemini)", Spec-driven development, Cross-agent code review, Agent rules and skills]
   - group: "Elixir (growing)"
     items: [Elixir, Phoenix LiveView, Ash Framework, Oban]
-  - group: "Data & APIs"
-    items: [PostgreSQL, Redis, MySQL, DB2, REST APIs, GraphQL, "Payments (Stripe)", "ETL (Apache Hop, Looker Studio)"]
-  - group: "Also strong in"
-    items: [Java, Spring Boot, Jakarta EE]
-  - group: "DevOps & quality"
-    items: [Docker, "AWS (S3, EC2, RDS)", Fly.io, Heroku, "GitHub Actions (CI/CD)", Git, Linux, Agile]
 
 # owner: organization the project belongs to (used in the structured data).
 # web_only: true keeps the project on the website but out of the printed CV.
@@ -108,8 +108,9 @@ projects:
     stack: [Java, HL7]
 
 # dates: "YYYY-MM" (or "YYYY"); end: present for current roles.
+# highlights: one line each, most important first (Markdown; site links start with /).
 # earlier: true groups the role into the one-line "Earlier experience" summary on the resume.
-earlier_summary: "Ruby on Rails and Java roles, including the SITRAN ERP at Transtur Varadero and alas-HIS backend modules with HL7 integrations at Universidad de las Ciencias Informáticas."
+earlier_summary: "Ruby on Rails and Java roles, including team member payments for a project management system at Gmixon, the SITRAN ERP at Transtur Varadero and alas-HIS backend modules with HL7 integrations at Universidad de las Ciencias Informáticas."
 
 experience:
   - company: ECEELI LLC
@@ -117,55 +118,72 @@ experience:
     start: "2026-03"
     end: present
     location: Remote
-    highlight: "Created [Agonai](/projects/agonai/), a competitive intelligence and AI Visibility platform, directing its development with AI coding agents in Elixir, Phoenix LiveView and Ash."
+    highlights:
+      - "Created [Agonai](/projects/agonai/), a competitive intelligence and AI Visibility platform, directing its development with AI coding agents in Elixir, Phoenix LiveView and Ash."
   - company: Globant
     role: Ruby Developer
     start: "2025-10"
     end: "2026-03"
     location: Remote
-    highlight: "Billing system migration for Postmark, from Stripe to Adyen, applying the Adapter pattern."
+    highlights:
+      - "Worked on Postmark's billing migration from Stripe to Adyen, following its acquisition by ActiveCampaign."
+      - "Refactored the billing code with the Adapter pattern to decouple it from the payment provider, built a REST API client and added tests."
   - company: Kynsoft
     role: Software Developer and Data Analyst
     start: "2024-09"
     end: "2025-10"
     location: Remote
-    highlight: "Migrated around 7 million records from DB2 to PostgreSQL, including the ETL processes, with no data loss; Looker Studio dashboards for Fundación Telefónica Ecuador."
+    highlights:
+      - "Migrated around 7 million records from DB2 to PostgreSQL, including the ETL processes, with no data loss."
+      - "Built Looker Studio dashboards for Fundación Telefónica Ecuador."
   - company: Dominion Global
     role: Senior Ruby on Rails Developer
     start: "2022-08"
     end: "2024-07"
     location: Remote
-    highlight: "Rails systems for global clients, external integrations and ETL pipelines."
+    highlights:
+      - "Built new features for a client's Ruby on Rails application for creating reviews."
+      - "Introduced Turbo Streams push notifications for report processing, a heavy, long-running task, so users are told when their reports are ready."
+      - "Improved the UX with Stimulus."
   - company: Admios
     role: Senior Ruby on Rails Developer
     start: "2019-08"
     end: "2022-07"
     location: Remote
-    highlight: "Improved team productivity by 20% through automation tools."
+    highlights:
+      - "Developed new features for a client's Ruby on Rails SaaS for auto repair shops."
+      - "Built the webhooks mechanism that notifies other users asynchronously when certain events happen."
   - company: "Ministerio del Interior, Ecuador"
     role: IT Analyst / Backend Java Developer
     start: "2015-04"
     end: "2019-03"
     location: Ecuador
-    highlight: "Architected [SIMIEC](/projects/simiec/), the national immigration control system, serving millions of users with 99.9% uptime."
+    highlights:
+      - "Architected [SIMIEC](/projects/simiec/), the national immigration control system, serving millions of users with 99.9% uptime."
   - company: AEC Inter S.A.
     role: Software Developer (Java)
     start: "2015-01"
     end: "2015-12"
     location: Ecuador
-    highlight: "Architected the [LOTAIP](/projects/lotaip/) government transparency system."
+    highlights:
+      - "Architected the [LOTAIP](/projects/lotaip/) government transparency system."
+      - "Built the electronic invoicing integration for Correos del Ecuador in Java: XML invoices signed with private keys and sent to the tax authority (SRI) for validation, plus a portal where users view their invoices."
   - company: Gmixon
+    earlier: true
     role: Ruby on Rails Developer (Freelance)
     start: "2013-04"
     end: "2015-03"
     location: Remote
+    highlights:
+      - "Developed part of a project management system, especially the payments to team members."
   - company: Transtur Varadero
     earlier: true
     role: Ruby on Rails Engineer
     start: "2011-03"
     end: "2013-02"
     location: Cuba
-    highlight: "Built the [SITRAN](/projects/sitran/) ERP."
+    highlights:
+      - "Built the [SITRAN](/projects/sitran/) ERP."
   - company: Peoplewalking
     earlier: true
     role: Java Developer (Freelance)
@@ -177,7 +195,8 @@ experience:
     start: "2004-09"
     end: "2010-08"
     location: Cuba
-    highlight: "Backend modules and HL7 integrations for [alas-HIS](/projects/alas-his/)."
+    highlights:
+      - "Backend modules and HL7 integrations for [alas-HIS](/projects/alas-his/)."
 
 education:
   - degree: Master in Software Development
