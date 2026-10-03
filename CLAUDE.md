@@ -30,7 +30,6 @@ Key directories:
 - `_includes/` - Jekyll partials. `bilingual_header.html` is the bilingual system entry point.
 - `_templates/` - Templates for new content. Copy `bilingual_article_template.md` for new bilingual posts.
 - `_ideas/` - Planning files. `todo_lecciones_elixir.md` tracks Elixir lesson progress.
-- `app/` - Experimental SPAs (placeholder, not actively developed).
 - `assets/css/`, `assets/js/` - Static assets including `bilingual.css` and `bilingual.js`.
 
 ## Resume (home page)

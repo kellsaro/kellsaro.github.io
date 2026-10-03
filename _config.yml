@@ -236,11 +236,6 @@ defaults:
       layout: "page"
       show-avatar: false # the photo lives in the home page header, not in the navbar
       share-img: "/assets/img/social-card.png" # link preview image; pages can override it (regenerate with bin/social-card)
-  -
-    scope:
-      path: "app" # experimental SPAs, not meant to be indexed
-    values:
-      sitemap: false
 
 # Exclude these files from production site
 exclude:
