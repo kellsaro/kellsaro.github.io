@@ -1,9 +1,9 @@
 ---
 layout: resume
 title: Maykell Sánchez Romero
-subtitle: Senior Software Engineer, Ruby on Rails & React
-description: "Senior Software Engineer in Ruby on Rails and React, with solid Java and 15+ years building production systems through rigorous AI-assisted engineering."
-share-title: "Maykell Sánchez Romero | Senior Software Engineer, Rails & React"
+subtitle: Senior Software Engineer
+description: "Senior Software Engineer in Ruby on Rails and Java (Spring Boot), with 15+ years building production systems through rigorous AI-assisted engineering."
+share-title: "Maykell Sánchez Romero | Senior Software Engineer"
 css: ["/assets/css/resume.css"]
 ---
 {%- assign resume = site.data.resume -%}
@@ -32,11 +32,43 @@ css: ["/assets/css/resume.css"]
 
 <p class="resume-lead">{{ resume.summary | replace: "](/", absolute_link | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
 
+<p class="resume-lead-more resume-screen-only"><a href="{{ '/experience/' | absolute_url }}">See full experience</a></p>
+
+{%- assign cover_projects = resume.projects | where_exp: "p", "p.cover" -%}
+{%- if cover_projects.size > 0 %}
+<div id="systemsCarousel" class="carousel slide resume-carousel resume-screen-only" data-ride="carousel" data-interval="5000" aria-label="Systems I have built">
+  <ol class="carousel-indicators">
+    {%- for p in cover_projects %}
+    <li data-target="#systemsCarousel" data-slide-to="{{ forloop.index0 }}"{% if forloop.first %} class="active"{% endif %} aria-label="{{ p.name | escape }}"></li>
+    {%- endfor %}
+  </ol>
+  <div class="carousel-inner">
+    {%- for p in cover_projects %}
+    <div class="carousel-item{% if forloop.first %} active{% endif %}">
+      <a href="{{ p.page | absolute_url }}" class="resume-carousel-link">
+        <img src="{{ p.cover | relative_url }}" alt="{{ p.name | escape }}" loading="lazy">
+        <span class="resume-carousel-name">{{ p.name }}</span>
+      </a>
+    </div>
+    {%- endfor %}
+  </div>
+  <a class="carousel-control-prev" href="#systemsCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#systemsCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+{%- endif %}
+
 <div class="resume-actions">
-  <a class="resume-button resume-button-primary" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.pdf' | absolute_url }}" download>Download CV (PDF)</a>
-  <a class="resume-button" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.md' | absolute_url }}" download>Download CV (Markdown)</a>
-  <button type="button" class="resume-button" onclick="window.print()">Print</button>
-  <a class="resume-button" href="{{ '/experience/' | absolute_url }}">Full experience</a>
+  <span class="resume-actions-label">Download CV:</span>
+  <a class="resume-button resume-button-primary" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.pdf' | absolute_url }}" download>PDF (EN)</a>
+  <a class="resume-button" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV-ES.pdf' | absolute_url }}" download>PDF (ES)</a>
+  <a class="resume-button" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.md' | absolute_url }}" download>MD (EN)</a>
+  <a class="resume-button" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV-ES.md' | absolute_url }}" download>MD (ES)</a>
 </div>
 
 <section class="resume-section resume-screen-only" aria-labelledby="at-a-glance">
@@ -140,4 +172,4 @@ css: ["/assets/css/resume.css"]
   <p class="resume-plain-line">{% for lang in resume.languages %}{{ lang.name }} ({{ lang.level | downcase }}){% unless forloop.last %}, {% endunless %}{% endfor %}</p>
 </section>
 
-<p class="resume-footnote resume-screen-only">Last updated {{ site.time | date: "%B %Y" }}. See the <a href="{{ '/experience/' | absolute_url }}">full experience</a> and the <a href="{{ '/technical-expertise/' | absolute_url }}">technical profile</a> for more detail.</p>
+<p class="resume-footnote resume-screen-only">Last updated {{ site.time | date: "%B %Y" }}. See the <a href="{{ '/experience/' | absolute_url }}">full experience</a> and the <a href="{{ '/technical-expertise/' | absolute_url }}">technical profile</a> for more detail. A Spanish CV is available above as PDF (ES) and MD (ES).</p>

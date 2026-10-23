@@ -6,6 +6,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 OUTPUT="assets/docs/Maykell-Sanchez-Romero-CV.pdf"
+OUTPUT_ES="assets/docs/Maykell-Sanchez-Romero-CV-ES.pdf"
 PORT="${PORT:-4199}"
 
 CHROME="${CHROME:-}"
@@ -24,7 +25,9 @@ fi
 BUILD_DIR="$(mktemp -d)"
 
 echo "Building the site..."
-JEKYLL_ENV=production bundle exec jekyll build --quiet --destination "$BUILD_DIR"
+# --unpublished renders the Spanish CV source (cv-es.md, published: false) so it can
+# be printed to PDF. It is not published to the live site (GitHub Pages omits it).
+JEKYLL_ENV=production bundle exec jekyll build --quiet --unpublished --destination "$BUILD_DIR"
 
 echo "Serving the build on port $PORT..."
 python3 -m http.server "$PORT" --directory "$BUILD_DIR" >/dev/null 2>&1 &
@@ -35,14 +38,21 @@ for _ in $(seq 1 30); do
   sleep 0.2
 done
 
-echo "Printing the CV..."
-"$CHROME" --headless=new --disable-gpu --no-pdf-header-footer \
-  --print-to-pdf="$OUTPUT" "http://localhost:$PORT/" 2>/dev/null
+# Prints one CV page to a PDF and warns if it spills past two pages.
+print_cv() {
+  local url="$1" out="$2" label="$3"
+  echo "Printing the $label CV..."
+  "$CHROME" --headless=new --disable-gpu --no-pdf-header-footer \
+    --print-to-pdf="$out" "$url" 2>/dev/null
+  if command -v pdfinfo >/dev/null; then
+    local pages
+    pages=$(pdfinfo "$out" | awk '/^Pages:/ {print $2}')
+    echo "Saved $out ($pages page(s))"
+    [ "$pages" -le 2 ] || echo "Warning: the $label CV no longer fits on two pages; tighten the content or resume.css." >&2
+  else
+    echo "Saved $out"
+  fi
+}
 
-if command -v pdfinfo >/dev/null; then
-  PAGES=$(pdfinfo "$OUTPUT" | awk '/^Pages:/ {print $2}')
-  echo "Saved $OUTPUT ($PAGES page(s))"
-  [ "$PAGES" -le 2 ] || echo "Warning: the CV no longer fits on two pages; tighten the content or resume.css." >&2
-else
-  echo "Saved $OUTPUT"
-fi
+print_cv "http://localhost:$PORT/" "$OUTPUT" "English"
+print_cv "http://localhost:$PORT/cv-es/" "$OUTPUT_ES" "Spanish"

@@ -1,0 +1,220 @@
+# Fuente única del contenido en español del CV: alimenta la página /cv-es/ y su
+# versión imprimible (PDF) y la versión Markdown. Es la traducción de
+# _data/resume.yml. En esta versión Java aparece al mismo nivel que Ruby on Rails.
+
+contact:
+  location: "Ecuador, UTC-5 (disponible en horario laboral de EE. UU., de la costa este a la costa oeste)"
+  availability: "Abierto a trabajo remoto"
+  email: "kellsaro@gmail.com"
+  website: "kellsaro.github.io"
+  linkedin: "linkedin.com/in/kellsaro"
+  github: "github.com/kellsaro"
+  x: "x.com/kellsaro"
+
+# Párrafo de apertura (Markdown; los enlaces del sitio empiezan con /)
+summary: "Ingeniero de software y científico de la computación con más de 15 años construyendo sistemas en producción, desde una plataforma nacional de migración al servicio de millones de usuarios hasta productos SaaS impulsados por IA. Me especializo en Ruby on Rails y Java, y construyo productos de principio a fin con un riguroso [flujo de ingeniería asistida por IA](/how-i-work/), que además estoy usando para incorporar Elixir y Phoenix LiveView a mi stack."
+
+# Datos clave (en pantalla como "De un vistazo"; valores en Markdown)
+glance:
+  - label: Rol
+    value: Ingeniero de Software Senior
+  - label: Experiencia
+    value: Más de 15 años construyendo sistemas en producción
+  - label: Stack principal
+    value: Ruby on Rails y Java, con PostgreSQL
+  - label: Creciendo en
+    value: Elixir y Phoenix LiveView, con dos productos construidos en este stack
+  - label: Forma de trabajo
+    value: "[Ingeniería asistida por IA](/how-i-work/) con especificaciones, planes revisados, revisión cruzada entre agentes y suites de pruebas completas"
+  - label: Ubicación
+    value: Ecuador, UTC-5 (disponible en horario laboral de EE. UU., de la costa este a la costa oeste)
+  - label: Disponibilidad
+    value: Abierto a trabajo remoto
+  - label: Idiomas
+    value: Español (nativo), Inglés (profesional)
+
+focus:
+  - title: Ingeniería de software asistida por IA
+    text: "Desarrollo con agentes y LLMs (Claude Code, Codex y otros) para construir sistemas rápido y con responsabilidad: especificaciones, planes revisados con puntos de control, revisión cruzada por dos agentes, suites de pruebas completas y verificaciones de seguridad."
+  - title: Sistemas distribuidos
+    text: Arquitectura de sistemas distribuidos para soluciones rápidas, escalables, resilientes y mantenibles.
+  - title: Elixir y Phoenix LiveView
+    text: Incorporando Elixir como mi próximo stack principal, con dos productos ya construidos en él.
+
+# Agrupado para que reclutadores (y parsers) lo puedan escanear. En esta versión
+# Java y Ruby on Rails aparecen como stacks de backend al mismo nivel, uno junto al otro.
+technologies:
+  - group: "Backend (Ruby)"
+    items: [Ruby, Ruby on Rails, Sidekiq, RSpec]
+  - group: "Backend (Java)"
+    items: [Java, Spring Boot, Jakarta EE]
+  - group: "Datos y APIs"
+    items: [PostgreSQL, Redis, MySQL, DB2, "APIs REST", GraphQL, "Pagos (Stripe)", "ETL (Apache Hop, Looker Studio)"]
+  - group: "Frontend"
+    items: [React, JavaScript, "Hotwire (Turbo, Stimulus)", Tailwind CSS]
+  - group: "DevOps y calidad"
+    items: [Docker, "AWS (S3, EC2, RDS)", Fly.io, Heroku, "GitHub Actions (CI/CD)", Git, Linux, "Metodologías ágiles"]
+  - group: "Ingeniería con IA"
+    items: [Claude Code, Codex, Windsurf, "APIs de LLMs (OpenAI, Claude, Gemini)", "Desarrollo guiado por especificaciones", "Revisión de código entre agentes", "Reglas y skills para agentes"]
+  - group: "Elixir (creciendo)"
+    items: [Elixir, Phoenix LiveView, Ash Framework, Oban]
+
+# owner: organización a la que pertenece el proyecto (usado en los datos estructurados).
+# web_only: true mantiene el proyecto en el sitio pero fuera del CV imprimible.
+projects:
+  - name: Agonai
+    owner: "ECEELI LLC"
+    page: /projects/agonai/
+    site: https://agonai.io
+    summary: "Sistema de inteligencia competitiva para la era de la IA."
+    stack: [Elixir, Phoenix LiveView, Ash, LLMs]
+  - name: TechRepair
+    owner: "TechRepair LLC"
+    page: /projects/techrepair/
+    site: https://techrepair.site
+    summary: "Plataforma de operaciones para equipos de mantenimiento de palas y torres de aerogeneradores, construida en torno al ciclo de vida de las órdenes de trabajo, donde convergen proyectos, equipos, actividad en campo e informes para clientes."
+    stack: [Elixir, Phoenix LiveView, Ash, GraphQL]
+  - name: Tableros de Fundación Telefónica
+    owner: "Fundación Telefónica Ecuador"
+    page: /projects/fundacion-telefonica/
+    summary: "KPIs sobre la efectividad de los programas educativos de Fundación Telefónica Ecuador."
+    stack: [Apache Hop, Looker Studio]
+  - name: SIMIEC
+    owner: "Ministerio del Interior, Ecuador"
+    page: /projects/simiec/
+    summary: "Sistema nacional de control migratorio de Ecuador."
+    stack: [Java EE, "C# / .NET", C++]
+  - name: Text Tools for Workdocs
+    owner: "montools"
+    page: /projects/text-tools/
+    summary: "Una app de monday.com para revisar, transformar y buscar-y-reemplazar el texto seleccionado sin salir del documento."
+    stack: [React, monday.com]
+  - name: SITRAN
+    web_only: true
+    owner: "Transtur Varadero"
+    page: /projects/sitran/
+    summary: "ERP a medida para el transporte turístico en Transtur Varadero."
+    stack: [Ruby on Rails, PostgreSQL]
+  - name: LOTAIP
+    web_only: true
+    page: /projects/lotaip/
+    summary: "Plataforma de transparencia gubernamental para instituciones públicas en Ecuador."
+    stack: [Java]
+  - name: alas-HIS
+    web_only: true
+    owner: "Universidad de las Ciencias Informáticas"
+    page: /projects/alas-his/
+    summary: "Sistema de información hospitalaria para instituciones de salud en Cuba."
+    stack: [Java, HL7]
+
+# dates: "YYYY-MM" (o "YYYY"); end: present para los roles actuales.
+# highlights: una línea cada uno, lo más importante primero (Markdown; los enlaces del sitio empiezan con /).
+# earlier: true agrupa el rol en el resumen de una línea "Experiencia anterior".
+earlier_summary: "Roles en Ruby on Rails y Java, incluyendo los pagos a los miembros del equipo de un sistema de gestión de proyectos en Gmixon, el ERP SITRAN en Transtur Varadero y los módulos backend de alas-HIS con integraciones HL7 en la Universidad de las Ciencias Informáticas."
+
+experience:
+  - company: ECEELI LLC
+    role: Ingeniero de Software
+    start: "2026-03"
+    end: present
+    location: Remoto
+    highlights:
+      - "Creé [Agonai](/projects/agonai/), una plataforma de inteligencia competitiva y de AI Visibility, dirigiendo su desarrollo con agentes de IA en Elixir, Phoenix LiveView y Ash."
+  - company: Globant
+    role: Desarrollador Ruby
+    start: "2025-10"
+    end: "2026-03"
+    location: Remoto
+    highlights:
+      - "Trabajé en la migración de la facturación de Postmark de Stripe a Adyen, tras su adquisición por ActiveCampaign."
+      - "Refactoricé el código de facturación con el patrón Adapter para desacoplarlo del proveedor de pagos, construí un cliente de API REST y añadí pruebas."
+  - company: Kynsoft
+    role: Desarrollador de Software y Analista de Datos
+    start: "2024-09"
+    end: "2025-10"
+    location: Remoto
+    highlights:
+      - "Migré alrededor de 7 millones de registros de DB2 a PostgreSQL, incluidos los procesos ETL, sin pérdida de datos."
+      - "Construí tableros en Looker Studio para Fundación Telefónica Ecuador."
+  - company: Dominion Global
+    role: Desarrollador Senior de Ruby on Rails
+    start: "2022-08"
+    end: "2024-07"
+    location: Remoto
+    highlights:
+      - "Desarrollé nuevas funcionalidades para la aplicación Ruby on Rails de un cliente para la creación de reseñas."
+      - "Introduje notificaciones push con Turbo Streams para el procesamiento de informes, una tarea pesada y de larga duración, para avisar a los usuarios cuando sus informes están listos."
+      - "Mejoré la experiencia de usuario con Stimulus."
+  - company: Admios
+    role: Desarrollador Senior de Ruby on Rails
+    start: "2019-08"
+    end: "2022-07"
+    location: Remoto
+    highlights:
+      - "Desarrollé nuevas funcionalidades para el SaaS en Ruby on Rails de un cliente para talleres de reparación de autos."
+      - "Construí el mecanismo de webhooks que notifica de forma asíncrona a otros usuarios cuando ocurren ciertos eventos."
+  - company: "Ministerio del Interior, Ecuador"
+    role: Analista de TI / Desarrollador Backend Java
+    start: "2015-04"
+    end: "2019-03"
+    location: Ecuador
+    highlights:
+      - "Diseñé la arquitectura de [SIMIEC](/projects/simiec/), el sistema nacional de control migratorio, al servicio de millones de usuarios con un 99,9 % de disponibilidad."
+  - company: AEC Inter S.A.
+    role: Desarrollador de Software (Java)
+    start: "2015-01"
+    end: "2015-12"
+    location: Ecuador
+    highlights:
+      - "Diseñé la arquitectura del sistema de transparencia gubernamental [LOTAIP](/projects/lotaip/)."
+      - "Construí en Java la integración de facturación electrónica para Correos del Ecuador: facturas XML firmadas con claves privadas y enviadas al SRI para su validación, además de un portal donde los usuarios consultan sus facturas."
+  - company: Gmixon
+    earlier: true
+    role: Desarrollador Ruby on Rails (Freelance)
+    start: "2013-04"
+    end: "2015-03"
+    location: Remoto
+    highlights:
+      - "Desarrollé parte de un sistema de gestión de proyectos, en especial los pagos a los miembros del equipo."
+  - company: Transtur Varadero
+    earlier: true
+    role: Ingeniero Ruby on Rails
+    start: "2011-03"
+    end: "2013-02"
+    location: Cuba
+    highlights:
+      - "Construí el ERP [SITRAN](/projects/sitran/)."
+  - company: Peoplewalking
+    earlier: true
+    role: Desarrollador Java (Freelance)
+    start: "2010"
+    end: "2012"
+  - company: Universidad de las Ciencias Informáticas
+    earlier: true
+    role: Desarrollador / Profesor Asistente
+    start: "2004-09"
+    end: "2010-08"
+    location: Cuba
+    highlights:
+      - "Módulos backend e integraciones HL7 para [alas-HIS](/projects/alas-his/)."
+
+education:
+  - degree: Máster en Desarrollo de Software
+    school: Universidad de las Ciencias Informáticas, Cuba
+  - degree: Licenciatura en Ciencia de la Computación
+    school: Universidad de La Habana, Cuba
+
+certifications:
+  - name: Triplebyte Certified Generalist Software Engineer
+  - name: EF SET Certificate
+    detail: Inglés profesional
+
+languages:
+  - name: Español
+    level: Nativo
+  - name: Inglés
+    level: Profesional
+  - name: Francés
+    level: Básico
+  - name: Italiano
+    level: Básico

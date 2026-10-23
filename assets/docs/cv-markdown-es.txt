@@ -1,0 +1,81 @@
+---
+layout: null
+sitemap: false
+permalink: /assets/docs/Maykell-Sanchez-Romero-CV-ES.md
+---
+{%- comment -%}
+  CV en Markdown para LLMs y herramientas ATS, generado desde _data/resume_es.yml
+  (la misma fuente que el PDF del CV en español). Se mantiene como .txt para que
+  Jekyll no lo convierta a HTML; se publica como Maykell-Sanchez-Romero-CV-ES.md.
+{%- endcomment -%}
+{%- assign resume = site.data.resume_es -%}
+{%- assign contact = resume.contact -%}
+{%- capture absolute_link -%}]({{ '/' | absolute_url }}{%- endcapture -%}
+# {{ site.author }}
+
+**Ingeniero de Software Senior**
+
+- Correo: {{ contact.email }}
+- LinkedIn: https://www.{{ contact.linkedin }}
+- GitHub: https://{{ contact.github }}
+- X: https://{{ contact.x }}
+- Sitio web: https://{{ contact.website }}
+- Ubicación: {{ contact.location }}
+- Disponibilidad: {{ contact.availability }}
+
+## Resumen
+
+{{ resume.summary | replace: "](/", absolute_link }}
+
+## De un vistazo
+{% for item in resume.glance %}
+- **{{ item.label }}:** {{ item.value | replace: "](/", absolute_link }}{% endfor %}
+
+## Foco actual
+{% for item in resume.focus %}
+- **{{ item.title }}:** {{ item.text }}{% endfor %}
+
+## Tecnologías
+{% for group in resume.technologies %}
+- **{{ group.group }}:** {{ group.items | join: ", " }}{% endfor %}
+
+## Proyectos
+{% for project in resume.projects %}
+### {{ project.name }}
+
+{{ project.summary }}
+
+- Stack: {{ project.stack | join: ", " }}{% if project.owner %}
+- Construido para: {{ project.owner }}{% endif %}
+- Detalles: {{ project.page | absolute_url }}{% if project.site %}
+- Sitio web: {{ project.site }}{% endif %}
+{% endfor %}
+## Experiencia
+{% for job in resume.experience %}
+### {{ job.role }}, {{ job.company }}
+
+{% include resume-date-es.html date=job.start %} - {% include resume-date-es.html date=job.end %} ({% include duration-es.html start=job.start end=job.end %}){% if job.location %}, {{ job.location }}{% endif %}
+{% if job.highlights %}{% for item in job.highlights %}
+- {{ item | replace: "](/", absolute_link }}{% endfor %}
+{% endif %}{% endfor %}
+Detalle completo de cada rol, con su stack: {{ '/experience/' | absolute_url }}
+
+## Formación
+{% for item in resume.education %}
+- {{ item.degree }}, {{ item.school }}{% endfor %}
+
+## Certificaciones
+{% for item in resume.certifications %}
+- {{ item.name }}{% if item.detail %} ({{ item.detail }}){% endif %}{% endfor %}
+
+## Idiomas
+{% for lang in resume.languages %}
+- {{ lang.name }}: {{ lang.level }}{% endfor %}
+
+## Cómo trabajo con IA
+
+Defino la arquitectura, los principios de diseño y las herramientas; especifico cada funcionalidad con resultados esperados, ejemplos y contraejemplos; reviso y guardo el plan del agente antes de escribir código; implemento punto por punto con trazabilidad y una revisión en cada punto de control; reviso el código yo mismo más una revisión cruzada por un segundo agente distinto; y exijo nuevas pruebas, la suite de pruebas completa, linters, formateadores y un agente de seguridad antes de pasar a staging y QA. Los problemas recurrentes se convierten en reglas del proyecto y las tareas repetidas en skills de agentes. Detalles: {{ '/how-i-work/' | absolute_url }}
+
+---
+
+Fuente: {{ '/' | absolute_url }} (actualizado {{ site.time | date: "%Y-%m" }})

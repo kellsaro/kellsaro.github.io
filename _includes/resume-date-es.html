@@ -1,0 +1,15 @@
+{%- comment -%}
+  Formatea una fecha del CV en español: "2024-09" -> "sep 2024", "2010" -> "2010",
+  "present" -> "Presente". El filtro date de Liquid solo da meses en inglés, así que
+  el mes se mapea a su abreviatura en español.
+{%- endcomment -%}
+{%- assign months_es = "ene,feb,mar,abr,may,jun,jul,ago,sep,oct,nov,dic" | split: "," -%}
+{%- if include.date == "present" -%}
+Presente
+{%- elsif include.date contains "-" -%}
+{%- assign parts = include.date | split: "-" -%}
+{%- assign month_index = parts[1] | plus: 0 | minus: 1 -%}
+{{ months_es[month_index] }} {{ parts[0] }}
+{%- else -%}
+{{ include.date }}
+{%- endif -%}

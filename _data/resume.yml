@@ -11,7 +11,7 @@ contact:
   x: "x.com/kellsaro"
 
 # Opening paragraph (Markdown; site links start with /)
-summary: "Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in Ruby on Rails and React, backed by solid Java experience, and build products end to end with a rigorous [AI-assisted engineering workflow](/how-i-work/), which I am also using to move my stack toward Elixir and Phoenix LiveView."
+summary: "Senior software engineer and computer scientist with 15+ years building production systems, from a national immigration platform serving millions of users to AI-powered SaaS products. I specialize in Ruby on Rails and Java with Spring Boot, and build products end to end with a rigorous [AI-assisted engineering workflow](/how-i-work/), which I am also using to move my stack toward Elixir and Phoenix LiveView."
 
 # Key facts (shown on screen as "At a glance"; values in Markdown)
 glance:
@@ -20,7 +20,7 @@ glance:
   - label: Experience
     value: 15+ years building production systems
   - label: Core stack
-    value: Ruby on Rails, React and PostgreSQL, with solid Java (Spring Boot, Jakarta EE)
+    value: Ruby on Rails and Java (Spring Boot), with PostgreSQL
   - label: Growing in
     value: Elixir and Phoenix LiveView, with two products built in it
   - label: Way of working
@@ -44,16 +44,16 @@ focus:
 # (Ruby on Rails backend with React, moving toward Elixir), core Rails stack first; older or niche technologies stay
 # visible in the project pages and experience.md instead of here.
 technologies:
-  - group: "Backend"
+  - group: "Backend (Ruby)"
     items: [Ruby, Ruby on Rails, Sidekiq, RSpec]
+  - group: "Backend (Java)"
+    items: [Java, Spring Boot, Jakarta EE]
   - group: "Data & APIs"
     items: [PostgreSQL, Redis, MySQL, DB2, REST APIs, GraphQL, "Payments (Stripe)", "ETL (Apache Hop, Looker Studio)"]
   - group: "Frontend"
     items: [React, JavaScript, "Hotwire (Turbo, Stimulus)", Tailwind CSS]
   - group: "DevOps & quality"
     items: [Docker, "AWS (S3, EC2, RDS)", Fly.io, Heroku, "GitHub Actions (CI/CD)", Git, Linux, Agile]
-  - group: "Also strong in"
-    items: [Java, Spring Boot, Jakarta EE]
   - group: "AI engineering"
     items: [Claude Code, Codex, Windsurf, "LLM APIs (OpenAI, Claude, Gemini)", Spec-driven development, Cross-agent code review, Agent rules and skills]
   - group: "Elixir (growing)"
@@ -65,18 +65,21 @@ projects:
   - name: Agonai
     owner: "ECEELI LLC"
     page: /projects/agonai/
+    cover: /assets/img/projects/agonai/00-landing.webp
     site: https://agonai.io
     summary: "Competitive intelligence system for the AI era."
     stack: [Elixir, Phoenix LiveView, Ash, LLMs]
   - name: TechRepair
     owner: "TechRepair LLC"
     page: /projects/techrepair/
+    cover: /assets/img/projects/techrepair/00-landing.webp
     site: https://techrepair.site
     summary: "Operations platform for wind turbine blade and tower maintenance teams, built around the work order lifecycle, where projects, teams, field activity and client reports converge."
     stack: [Elixir, Phoenix LiveView, Ash, GraphQL]
   - name: Fundación Telefónica Dashboards
     owner: "Fundación Telefónica Ecuador"
     page: /projects/fundacion-telefonica/
+    cover: /assets/img/projects/fundacion-telefonica/p-01.jpg
     summary: "KPIs on the effectiveness of educational programs for Fundación Telefónica Ecuador."
     stack: [Apache Hop, Looker Studio]
   - name: SIMIEC
@@ -87,6 +90,7 @@ projects:
   - name: Text Tools for Workdocs
     owner: "montools"
     page: /projects/text-tools/
+    cover: /assets/img/projects/text-tools/overview.webp
     summary: "A monday.com app to review, transform and find-and-replace selected text without leaving the document."
     stack: [React, monday.com]
   - name: SITRAN

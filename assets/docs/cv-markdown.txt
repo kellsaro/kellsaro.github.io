@@ -13,7 +13,7 @@ permalink: /assets/docs/Maykell-Sanchez-Romero-CV.md
 {%- capture absolute_link -%}]({{ '/' | absolute_url }}{%- endcapture -%}
 # {{ site.author }}
 
-**Senior Software Engineer, Ruby on Rails & React**
+**Senior Software Engineer**
 
 - Email: {{ contact.email }}
 - LinkedIn: https://www.{{ contact.linkedin }}
