@@ -63,6 +63,7 @@ css: ["/assets/css/resume.css"]
 </div>
 {%- endif %}
 
+{% comment %} Download CV section hidden on purpose. CV files are still generated and available at their URLs; re-enable by removing the comment wrapper.
 <div class="resume-actions">
   <span class="resume-actions-label">Download CV:</span>
   <a class="resume-button resume-button-primary" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.pdf' | absolute_url }}" download>PDF (EN)</a>
@@ -70,6 +71,7 @@ css: ["/assets/css/resume.css"]
   <a class="resume-button" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV.md' | absolute_url }}" download>MD (EN)</a>
   <a class="resume-button" href="{{ '/assets/docs/Maykell-Sanchez-Romero-CV-ES.md' | absolute_url }}" download>MD (ES)</a>
 </div>
+{% endcomment %}
 
 <section class="resume-section resume-screen-only" aria-labelledby="at-a-glance">
   <h2 id="at-a-glance">At a glance</h2>
@@ -172,4 +174,4 @@ css: ["/assets/css/resume.css"]
   <p class="resume-plain-line">{% for lang in resume.languages %}{{ lang.name }} ({{ lang.level | downcase }}){% unless forloop.last %}, {% endunless %}{% endfor %}</p>
 </section>
 
-<p class="resume-footnote resume-screen-only">Last updated {{ site.time | date: "%B %Y" }}. See the <a href="{{ '/experience/' | absolute_url }}">full experience</a> and the <a href="{{ '/technical-expertise/' | absolute_url }}">technical profile</a> for more detail. A Spanish CV is available above as PDF (ES) and MD (ES).</p>
+<p class="resume-footnote resume-screen-only">Last updated {{ site.time | date: "%B %Y" }}. See the <a href="{{ '/experience/' | absolute_url }}">full experience</a> and the <a href="{{ '/technical-expertise/' | absolute_url }}">technical profile</a> for more detail.</p>
